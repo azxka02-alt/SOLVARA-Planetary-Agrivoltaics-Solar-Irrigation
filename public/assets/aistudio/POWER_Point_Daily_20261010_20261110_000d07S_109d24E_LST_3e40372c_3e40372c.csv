@@ -1,0 +1,44 @@
+-BEGIN HEADER-
+NASA/POWER Source Native Resolution Daily Data 
+Dates (month/day/year): 10/10/2026 through 11/10/2026 in LST
+Location: latitude  -0.0677   longitude 109.24 
+elevation from MERRA-2: Average for 0.5 x 0.625 degree lat/lon region = 23.15 meters
+The value for missing source data that cannot be computed or is outside of the sources availability range: -999 
+parameter(s): 
+ALLSKY_SFC_SW_DWN     CERES SYN1deg All Sky Surface Shortwave Downward Irradiance (MJ/m^2/day) 
+GWETTOP               MERRA-2 Surface Soil Wetness (1) 
+PRECTOTCORR           MERRA-2 Precipitation Corrected (mm/day) 
+-END HEADER-
+YEAR,DOY,ALLSKY_SFC_SW_DWN,GWETTOP,PRECTOTCORR
+2026,283,17.15,0.59,1.57
+2026,284,13.6,0.59,2.62
+2026,285,16.11,0.59,3.08
+2026,286,18.16,0.59,2.95
+2026,287,14.93,0.61,5.36
+2026,288,14.94,0.6,3.33
+2026,289,13.55,0.6,4.91
+2026,290,16.93,0.63,6.5
+2026,291,16.14,0.63,7.58
+2026,292,15.38,0.64,10.3
+2026,293,18.13,0.84,154.68
+2026,294,15.69,0.72,3.39
+2026,295,16.22,0.71,3.83
+2026,296,14.7,0.68,2.15
+2026,297,16.33,0.65,0.07
+2026,298,14.57,0.63,1.89
+2026,299,10.75,0.7,18.46
+2026,300,12.58,0.85,104.6
+2026,301,10.55,0.76,9.52
+2026,302,15.0,0.75,4.4
+2026,303,17.78,0.74,7.43
+2026,304,18.27,0.74,5.51
+2026,305,20.52,0.73,4.48
+2026,306,20.37,0.74,10.06
+2026,307,18.54,0.73,4.94
+2026,308,-999.0,0.74,10.0
+2026,309,-999.0,0.74,10.11
+2026,310,-999.0,0.74,7.61
+2026,311,-999.0,0.74,9.62
+2026,312,-999.0,0.74,8.87
+2026,313,-999.0,0.76,12.27
+2026,314,-999.0,-999.0,-999.0

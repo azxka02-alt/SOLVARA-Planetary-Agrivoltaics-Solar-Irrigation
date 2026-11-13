@@ -1,0 +1,6 @@
+{
+  "name": "SOLVARA — Planetary Agrivoltaics & Solar Irrigation",
+  "description": "Planetary-scale agrivoltaics & satellite solar irrigation intelligence powered by live NASA POWER telemetry, real-time district geocoding, and farmer WhatsApp alerts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
