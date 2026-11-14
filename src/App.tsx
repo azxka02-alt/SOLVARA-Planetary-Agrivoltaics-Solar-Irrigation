@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import {
   buildSparklineGeometry,
   fetchNasaPowerForCoords,
@@ -30,117 +30,9 @@ import {
   readPersistedLanguage,
   syncHtmlDirection,
 } from './components/LanguageSwitcher';
+import { IntroSplashScreen } from './components/IntroSplashScreen';
 
-// --- CUSTOM SOLVARA EMBLEM & GLOWING DUOTONE SVG ICONS ---
-const SolvaraLogo = ({ className = 'w-11 h-11' }: { className?: string }) => {
-  const uid = React.useId().replace(/:/g, '');
-  const bgId = `solvara-bg-${uid}`;
-  const orbitId = `solvara-orbit-${uid}`;
-  const dropId = `solvara-drop-${uid}`;
-  const panelId = `solvara-panel-${uid}`;
-  const glowId = `solvara-glow-${uid}`;
-
-  return (
-    <svg className={className} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SOLVARA Emblem">
-      <defs>
-        <radialGradient id={bgId} cx="50%" cy="45%" r="55%">
-          <stop offset="0%" stopColor="#0f294d" />
-          <stop offset="65%" stopColor="#07162e" />
-          <stop offset="100%" stopColor="#030916" />
-        </radialGradient>
-        <linearGradient id={orbitId} x1="10%" y1="90%" x2="90%" y2="10%">
-          <stop offset="0%" stopColor="#10b981" />
-          <stop offset="50%" stopColor="#34d399" />
-          <stop offset="100%" stopColor="#22d3ee" />
-        </linearGradient>
-        <linearGradient id={dropId} x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stopColor="#e0f2fe" />
-          <stop offset="38%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#0284c7" />
-        </linearGradient>
-        <linearGradient id={panelId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1e40af" stopOpacity="0.92" />
-          <stop offset="100%" stopColor="#0c2654" stopOpacity="0.96" />
-        </linearGradient>
-        <filter id={glowId} x="-25%" y="-25%" width="150%" height="150%">
-          <feGaussianBlur stdDeviation="2.4" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      <circle cx="60" cy="60" r="54" fill={`url(#${bgId})`} stroke={`url(#${orbitId})`} strokeOpacity="0.45" strokeWidth="1.6" />
-      <circle cx="60" cy="60" r="49" stroke="#22d3ee" strokeOpacity="0.18" strokeWidth="1" />
-
-      <circle cx="24" cy="34" r="1" fill="#bae6fd" fillOpacity="0.7" />
-      <circle cx="95" cy="30" r="1.2" fill="#6ee7b7" fillOpacity="0.75" />
-      <circle cx="28" cy="88" r="1" fill="#7dd3fc" fillOpacity="0.55" />
-
-      <path
-        d="M 21 63 A 39 39 0 0 1 99 63"
-        stroke={`url(#${orbitId})`}
-        strokeWidth="2.8"
-        strokeLinecap="round"
-        filter={`url(#${glowId})`}
-      />
-      <path
-        d="M 27.5 62 A 32.5 32.5 0 0 1 92.5 62"
-        stroke="#6ee7b7"
-        strokeOpacity="0.85"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <rect x="73" y="29.5" width="5.5" height="3.2" rx="0.8" transform="rotate(26 73 29.5)" fill="#6ee7b7" />
-      <rect x="80.5" y="33.5" width="7" height="3.6" rx="0.8" transform="rotate(34 80.5 33.5)" fill="#22d3ee" />
-
-      <path d="M22 61 L46 42 L53 77 L27 77 Z" fill={`url(#${panelId})`} stroke="#7dd3fc" strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M28 56.5 L48 64 M34 51.5 L50 58 M36 49.5 L31 77 M42 45 L40 77" stroke="#bae6fd" strokeOpacity="0.55" strokeWidth="1" />
-      <path d="M98 61 L74 42 L67 77 L93 77 Z" fill={`url(#${panelId})`} stroke="#7dd3fc" strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M92 56.5 L72 64 M86 51.5 L70 58 M84 49.5 L89 77 M78 45 L80 77" stroke="#bae6fd" strokeOpacity="0.55" strokeWidth="1" />
-      <path d="M32 80 L58 80 L58 97 C46 96 36 89 32 80 Z" fill={`url(#${panelId})`} stroke="#7dd3fc" strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M88 80 L62 80 L62 97 C74 96 84 89 88 80 Z" fill={`url(#${panelId})`} stroke="#7dd3fc" strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M45 80 L47 93 M75 80 L73 93 M37 86 L58 87 M83 86 L62 87" stroke="#bae6fd" strokeOpacity="0.55" strokeWidth="1" />
-
-      <g filter={`url(#${glowId})`}>
-        <path
-          d="M60 21 C60 21 81 46 81 62 C81 73.6 71.6 83 60 83 C48.4 83 39 73.6 39 62 C39 46 60 21 60 21 Z"
-          fill={`url(#${dropId})`}
-          stroke="#bae6fd"
-          strokeWidth="1.6"
-        />
-      </g>
-      <path
-        d="M60 30 C60 30 75 49 75 61.5 C75 69.8 68.3 76.5 60 76.5 C51.7 76.5 45 69.8 45 61.5 C45 49 60 30 60 30 Z"
-        fill="#0ea5e9"
-        fillOpacity="0.35"
-        stroke="#e0f2fe"
-        strokeOpacity="0.7"
-        strokeWidth="1.2"
-      />
-      <path
-        d="M60 39.5 C60 39.5 69 52 69 60.5 C69 65.5 65 69.5 60 69.5 C55 69.5 51 65.5 51 60.5 C51 52 60 39.5 60 39.5 Z"
-        fill="#7dd3fc"
-        fillOpacity="0.75"
-        stroke="#ffffff"
-        strokeOpacity="0.85"
-        strokeWidth="1"
-      />
-      <ellipse cx="57.5" cy="54" rx="2.4" ry="5" transform="rotate(-12 57.5 54)" fill="#ffffff" fillOpacity="0.85" />
-
-      <path
-        d="M 15 73 C 23 95, 67 96, 94 70 C 110 54, 110 35, 96 29 C 90 26.5, 81 28, 72 32"
-        stroke={`url(#${orbitId})`}
-        strokeWidth="3.2"
-        strokeLinecap="round"
-        filter={`url(#${glowId})`}
-      />
-      <rect x="74" y="75.5" width="11" height="5.2" rx="1.6" transform="rotate(-38 74 75.5)" fill="#064e3b" stroke="#6ee7b7" strokeWidth="1.3" />
-      <line x1="78" y1="74" x2="80.5" y2="77" stroke="#22d3ee" strokeWidth="1.1" />
-    </svg>
-  );
-};
+// --- GLOWING DUOTONE SVG ICONS ---
 
 const SunIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
   <svg className={`${className} drop-shadow-[0_0_5px_currentColor]`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
@@ -348,10 +240,40 @@ interface DroughtZone {
 }
 
 export default function SolvaraCommand() {
+  const [showIntro, setShowIntro] = useState<boolean>(true);
+  const [isDashboardRevealed, setIsDashboardRevealed] = useState<boolean>(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [selectedLang, setSelectedLang] = useState<FullLang>(() => readPersistedLanguage());
 
   const [activeTab, setActiveTab] = useState<'macro' | 'ops' | 'feasibility'>('macro');
+  const appShellRef = useRef<HTMLDivElement | null>(null);
+  const mainContainerRef = useRef<HTMLElement | null>(null);
+  const headerBrandRef = useRef<HTMLSpanElement | null>(null);
+
+  const scrollToTopInstant = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    }
+    if (typeof document !== 'undefined') {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+    if (appShellRef.current) {
+      appShellRef.current.scrollTop = 0;
+    }
+    if (mainContainerRef.current) {
+      mainContainerRef.current.scrollTop = 0;
+    }
+  };
+
+  const handleSelectTab = (nextTab: 'macro' | 'ops' | 'feasibility') => {
+    scrollToTopInstant();
+    setActiveTab(nextTab);
+  };
+
+  useLayoutEffect(() => {
+    scrollToTopInstant();
+  }, [activeTab]);
 
   const lang: FullLang = normalizeLanguageCode(selectedLang);
   const isRtl = lang === 'ar';
@@ -1149,12 +1071,52 @@ export default function SolvaraCommand() {
 
   return (
     <div
+      ref={appShellRef}
       dir={isRtl ? 'rtl' : 'ltr'}
       lang={lang}
-      className={`min-h-screen font-sans transition-colors duration-300 ${
+      className={`font-sans transition-colors duration-300 ${
+        showIntro ? 'h-screen overflow-hidden' : 'min-h-screen'
+      } ${
         isDark ? 'bg-[#0A0F1C] text-slate-100' : 'bg-[#F8FAFC] text-slate-800'
       }`}
     >
+      {showIntro && (
+        <IntroSplashScreen
+          lang={lang}
+          onSelectLanguage={handleSelectLanguage}
+          startButtonLabel={t.intro.startButton}
+          logoAriaLabel={t.intro.logoAria}
+          searchPlaceholder={t.header.langSearchPlaceholder}
+          noMatchLabel={t.header.langNoMatch}
+          switcherLabel={t.header.langSwitcherLabel}
+          targetBrandRef={headerBrandRef}
+          onRevealStart={() => {
+            setIsDashboardRevealed(true);
+            scrollToTopInstant();
+          }}
+          onComplete={() => {
+            setShowIntro(false);
+            setIsDashboardRevealed(true);
+            scrollToTopInstant();
+          }}
+        />
+      )}
+      <div
+        aria-hidden={showIntro && !isDashboardRevealed}
+        className={showIntro && !isDashboardRevealed ? 'pointer-events-none select-none' : undefined}
+        style={
+          showIntro
+            ? {
+                opacity: isDashboardRevealed ? 1 : 0,
+                transform: isDashboardRevealed
+                  ? 'translateY(0px) scale(1)'
+                  : 'translateY(14px) scale(0.985)',
+                willChange: 'opacity, transform',
+                transition: 'opacity 800ms ease-out, transform 800ms ease-out',
+              }
+            : undefined
+        }
+      >
       {/* ===================== TOP NAVIGATION HEADER ===================== */}
       <header
         className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors ${
@@ -1164,19 +1126,18 @@ export default function SolvaraCommand() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
-          {/* Logo & Platform Name */}
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="relative flex items-center justify-center shrink-0">
-              <SolvaraLogo className="w-10 h-10 sm:w-11 sm:h-11 drop-shadow-[0_0_12px_rgba(34,211,238,0.38)]" />
-              <div
-                className={`absolute -bottom-0.5 -end-0.5 w-3.5 h-3.5 bg-emerald-400 border-2 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.7)] ${
-                  isDark ? 'border-[#0A0F1C]' : 'border-white'
-                }`}
-              />
-            </div>
+          {/* Brand Wordmark (Logo image appears exclusively on Intro Splash Screen) */}
+          <div className="flex items-center min-w-0">
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span dir="ltr" translate="no" className={`notranslate font-extrabold tracking-wider text-lg sm:text-xl whitespace-nowrap ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                <span
+                  ref={headerBrandRef}
+                  dir="ltr"
+                  translate="no"
+                  className={`notranslate inline-block font-extrabold tracking-wider text-lg sm:text-xl whitespace-nowrap ${
+                    isDark ? 'text-white' : 'text-slate-900'
+                  }`}
+                >
                   SOL<span className={`bg-gradient-to-r bg-clip-text text-transparent ${
                     isDark ? 'from-emerald-400 via-teal-300 to-cyan-400' : 'from-emerald-600 via-teal-600 to-cyan-600'
                   }`}>VARA</span>
@@ -1202,7 +1163,7 @@ export default function SolvaraCommand() {
               : 'bg-slate-100 border-slate-200'
           }`}>
             <button
-              onClick={() => setActiveTab('macro')}
+              onClick={() => handleSelectTab('macro')}
               className={`flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === 'macro'
                   ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-500/25'
@@ -1215,7 +1176,7 @@ export default function SolvaraCommand() {
               {t.header.tabs.macro}
             </button>
             <button
-              onClick={() => setActiveTab('ops')}
+              onClick={() => handleSelectTab('ops')}
               className={`flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === 'ops'
                   ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-500/25'
@@ -1228,7 +1189,7 @@ export default function SolvaraCommand() {
               {t.header.tabs.ops}
             </button>
             <button
-              onClick={() => setActiveTab('feasibility')}
+              onClick={() => handleSelectTab('feasibility')}
               className={`flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === 'feasibility'
                   ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-500/25'
@@ -1290,7 +1251,7 @@ export default function SolvaraCommand() {
           isDark ? 'border-slate-800/40 bg-slate-900/30' : 'border-slate-200 bg-slate-100/80'
         }`}>
           <button
-            onClick={() => setActiveTab('macro')}
+            onClick={() => handleSelectTab('macro')}
             className={`flex-1 min-w-[115px] text-center py-1.5 px-2 text-xs font-medium rounded-lg whitespace-nowrap ${
               activeTab === 'macro'
                 ? 'bg-emerald-500 text-white font-semibold'
@@ -1302,7 +1263,7 @@ export default function SolvaraCommand() {
             {t.header.mobileTabs.macro}
           </button>
           <button
-            onClick={() => setActiveTab('ops')}
+            onClick={() => handleSelectTab('ops')}
             className={`flex-1 min-w-[115px] text-center py-1.5 px-2 text-xs font-medium rounded-lg whitespace-nowrap ${
               activeTab === 'ops'
                 ? 'bg-emerald-500 text-white font-semibold'
@@ -1314,7 +1275,7 @@ export default function SolvaraCommand() {
             {t.header.mobileTabs.ops}
           </button>
           <button
-            onClick={() => setActiveTab('feasibility')}
+            onClick={() => handleSelectTab('feasibility')}
             className={`flex-1 min-w-[115px] text-center py-1.5 px-2 text-xs font-medium rounded-lg whitespace-nowrap ${
               activeTab === 'feasibility'
                 ? 'bg-emerald-500 text-white font-semibold'
@@ -1329,12 +1290,12 @@ export default function SolvaraCommand() {
       </header>
 
       {/* ===================== MAIN CONTENT WRAPPER ===================== */}
-      <main key={lang} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main ref={mainContainerRef} key={lang} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* ============================================================== */}
         {/* ===================== TAB 1: DROUGHT & PUMP MAP =============== */}
         {/* ============================================================== */}
         {activeTab === 'macro' && (
-          <div className="space-y-6 animate-fadeIn">
+          <div key="tab-macro" className="space-y-6 animate-tabSlideDown">
             {/* Top Operational Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
@@ -2696,7 +2657,7 @@ export default function SolvaraCommand() {
         {/* ===================== TAB 2: PRECISION IRRIGATION OPS ========= */}
         {/* ============================================================== */}
         {activeTab === 'ops' && (
-          <div className="space-y-6 animate-fadeIn">
+          <div key="tab-ops" className="space-y-6 animate-tabSlideDown">
             {/* Live Status Banner */}
             <div
               className={`p-4 rounded-2xl border transition-all flex flex-col md:flex-row md:items-center justify-between gap-3 ${
@@ -3348,7 +3309,7 @@ export default function SolvaraCommand() {
         {/* ===================== TAB 3: SITE INTELLIGENCE =============== */}
         {/* ============================================================== */}
         {activeTab === 'feasibility' && (
-          <div className="space-y-6 animate-fadeIn">
+          <div key="tab-feasibility" className="space-y-6 animate-tabSlideDown">
             <div
               className={`p-6 rounded-2xl border transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 ${
                 isDark
@@ -3706,6 +3667,7 @@ export default function SolvaraCommand() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

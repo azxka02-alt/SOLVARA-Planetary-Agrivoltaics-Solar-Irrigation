@@ -370,6 +370,10 @@ export interface TranslationDictionary {
     copiedBtn: string;
     closeBtn: string;
   };
+  intro: {
+    startButton: string;
+    logoAria: string;
+  };
 }
 
 const SHARED_CROPS_EN: Record<string, string> = {
@@ -726,6 +730,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'Copied!',
       closeBtn: 'Close',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Enter SOLVARA platform',
+    },
   },
   id: {
     header: {
@@ -1079,6 +1087,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'Tersalin!',
       closeBtn: 'Tutup',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Masuk ke platform SOLVARA',
+    },
   },
   ar: {
     header: {
@@ -1430,6 +1442,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'نسخ الرسالة',
       copiedBtn: 'تم النسخ!',
       closeBtn: 'إغلاق',
+    },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'الدخول إلى منصة SOLVARA',
     },
   },
   pt: {
@@ -1784,6 +1800,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'Copiado!',
       closeBtn: 'Fechar',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Acessar plataforma SOLVARA',
+    },
   },
   es: {
     header: {
@@ -2136,6 +2156,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'Copiar Mensaje',
       copiedBtn: '¡Copiado!',
       closeBtn: 'Cerrar',
+    },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Entrar a la plataforma SOLVARA',
     },
   },
   hi: {
@@ -2490,6 +2514,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'कॉपी हो गया!',
       closeBtn: 'बंद करें',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'SOLVARA प्लेटफ़ॉर्म शुरू करें',
+    },
   },
   fr: {
     header: {
@@ -2843,6 +2871,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'Copié !',
       closeBtn: 'Fermer',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Accéder à la plateforme SOLVARA',
+    },
   },
   ja: {
     header: {
@@ -3194,6 +3226,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'メッセージをコピー',
       copiedBtn: 'コピー完了！',
       closeBtn: '閉じる',
+    },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'SOLVARA プラットフォームを起動',
     },
   },
   ko: {
@@ -3547,6 +3583,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: '복사됨!',
       closeBtn: '닫기',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'SOLVARA 플랫폼 시작',
+    },
   },
   it: {
     header: {
@@ -3898,6 +3938,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'Copia Messaggio',
       copiedBtn: 'Copiato!',
       closeBtn: 'Chiudi',
+    },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Accedi alla piattaforma SOLVARA',
     },
   },
   th: {
@@ -4252,6 +4296,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'คัดลอกแล้ว!',
       closeBtn: 'ปิด',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'เข้าสู่แพลตฟอร์ม SOLVARA',
+    },
   },
   sv: {
     header: {
@@ -4604,6 +4652,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'Kopiera meddelande',
       copiedBtn: 'Kopierat!',
       closeBtn: 'Stäng',
+    },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Öppna SOLVARA-plattformen',
     },
   },
   no: {
@@ -4958,6 +5010,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'Kopiert!',
       closeBtn: 'Lukk',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Åpne SOLVARA-plattformen',
+    },
   },
   nl: {
     header: {
@@ -5311,6 +5367,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copiedBtn: 'Gekopieerd!',
       closeBtn: 'Sluiten',
     },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'Open SOLVARA-platform',
+    },
   },
   de: {
     header: {
@@ -5663,6 +5723,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'Nachricht kopieren',
       copiedBtn: 'Kopiert!',
       closeBtn: 'Schließen',
+    },
+    intro: {
+      startButton: 'Launch System',
+      logoAria: 'SOLVARA-Plattform starten',
     },
   },
 };

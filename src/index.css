@@ -150,6 +150,70 @@
   animation-delay: 450ms;
 }
 
+@keyframes tabSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tabSlideDown {
+  animation: tabSlideDown 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes introTwinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.25);
+  }
+}
+
+.animate-intro-twinkle {
+  animation: introTwinkle 4.2s ease-in-out infinite;
+}
+
+@keyframes orbitPulseRing {
+  0%, 100% {
+    opacity: 0.42;
+    transform: scale(0.985) rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03) rotate(180deg);
+  }
+}
+
+.animate-orbit-pulse {
+  animation: orbitPulseRing 9s linear infinite;
+}
+
+@keyframes neonShockwave {
+  0% {
+    opacity: 0.96;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  55% {
+    opacity: 0.82;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-neon-shockwave {
+  will-change: transform, opacity;
+  animation: neonShockwave 1.2s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-severe-ripple,
   .animate-severe-ripple-delayed,
@@ -157,7 +221,11 @@
   .animate-pipeline-dots,
   .animate-orbital-scanline,
   .animate-hydration-shimmer,
-  .animate-spin-slow {
+  .animate-spin-slow,
+  .animate-tabSlideDown,
+  .animate-intro-twinkle,
+  .animate-orbit-pulse,
+  .animate-neon-shockwave {
     animation: none !important;
   }
 }
