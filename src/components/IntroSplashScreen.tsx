@@ -523,9 +523,7 @@ export const IntroSplashScreen: React.FC<IntroSplashScreenProps> = ({
                 'opacity 420ms ease-out, transform 420ms ease-out, filter 420ms ease-out, border-color 200ms, background-color 200ms, box-shadow 200ms',
             }}
           >
-            <span translate="no" className="notranslate">
-              {startButtonLabel}
-            </span>
+            <span>{startButtonLabel}</span>
             <ArrowRight
               className={`w-4 h-4 text-emerald-300 transition-transform duration-200 ${
                 isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'

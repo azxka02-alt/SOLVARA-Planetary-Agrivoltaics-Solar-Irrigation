@@ -1088,7 +1088,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Tutup',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Luncurkan Sistem',
       logoAria: 'Masuk ke platform SOLVARA',
     },
   },
@@ -1444,7 +1444,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'إغلاق',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'تشغيل النظام',
       logoAria: 'الدخول إلى منصة SOLVARA',
     },
   },
@@ -1801,7 +1801,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Fechar',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Iniciar Sistema',
       logoAria: 'Acessar plataforma SOLVARA',
     },
   },
@@ -2158,7 +2158,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Cerrar',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Iniciar Sistema',
       logoAria: 'Entrar a la plataforma SOLVARA',
     },
   },
@@ -2515,7 +2515,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'बंद करें',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'सिस्टम शुरू करें',
       logoAria: 'SOLVARA प्लेटफ़ॉर्म शुरू करें',
     },
   },
@@ -2872,7 +2872,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Fermer',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Lancer le système',
       logoAria: 'Accéder à la plateforme SOLVARA',
     },
   },
@@ -3228,7 +3228,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: '閉じる',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'システムを起動',
       logoAria: 'SOLVARA プラットフォームを起動',
     },
   },
@@ -3584,7 +3584,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: '닫기',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: '시스템 시작',
       logoAria: 'SOLVARA 플랫폼 시작',
     },
   },
@@ -3940,7 +3940,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Chiudi',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Avvia Sistema',
       logoAria: 'Accedi alla piattaforma SOLVARA',
     },
   },
@@ -4297,7 +4297,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'ปิด',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'เปิดใช้งานระบบ',
       logoAria: 'เข้าสู่แพลตฟอร์ม SOLVARA',
     },
   },
@@ -4654,7 +4654,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Stäng',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Starta systemet',
       logoAria: 'Öppna SOLVARA-plattformen',
     },
   },
@@ -5011,7 +5011,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Lukk',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Start systemet',
       logoAria: 'Åpne SOLVARA-plattformen',
     },
   },
@@ -5368,7 +5368,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Sluiten',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'Systeem starten',
       logoAria: 'Open SOLVARA-platform',
     },
   },
@@ -5725,7 +5725,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       closeBtn: 'Schließen',
     },
     intro: {
-      startButton: 'Launch System',
+      startButton: 'System starten',
       logoAria: 'SOLVARA-Plattform starten',
     },
   },
