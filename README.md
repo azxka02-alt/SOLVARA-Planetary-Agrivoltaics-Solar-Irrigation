@@ -55,8 +55,7 @@ SOLVARA integrates authentic open-access Earth observation datasets provided by 
 
 * **Frontend:** React, TypeScript, Vite, Tailwind CSS
 * **Data & Localization:** Live NASA POWER JSON API (`services/nasaPower.ts`), Multi-language Engine (`src/translations.ts`), Zero-Dependency Custom SVG Visualizations
-* **Live App Preview (Google AI Studio):** [View SOLVARA in AI Studio](https://ai.studio)
-
+* **Live Web Application (Vercel):** [Launch SOLVARA Web App](https://solvara-planetary-agrivoltaics-sola-nine.vercel.app)
 ---
 
 ## 🚀 Run Locally
@@ -67,10 +66,10 @@ SOLVARA integrates authentic open-access Earth observation datasets provided by 
 ### Steps
 1. **Install dependencies:**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
-2. **Configure environment variables:**
-   Copy `.env.example` to `.env.local` and add your Gemini API key if required:
+2. **Configure environment variables (Optional for AI Advisor):**
+   Copy `.env.example` to `.env.local` and add your own Gemini API key if desired:
    ```env
    GEMINI_API_KEY=your_gemini_api_key_here
    ```
