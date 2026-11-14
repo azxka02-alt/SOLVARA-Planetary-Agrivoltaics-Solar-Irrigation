@@ -17,33 +17,25 @@ export interface WorldLanguageOption {
 export const WORLD_LANGUAGES: WorldLanguageOption[] = [
   { code: 'en', shortCode: 'EN', nativeName: 'English', englishName: 'English', dir: 'ltr', dictLang: 'en', hasFullDictionary: true },
   { code: 'id', shortCode: 'ID', nativeName: 'Bahasa Indonesia', englishName: 'Indonesian', dir: 'ltr', dictLang: 'id', hasFullDictionary: true },
-  { code: 'ar', shortCode: 'AR', nativeName: 'العربية', englishName: 'Arabic', dir: 'rtl', dictLang: 'ar', hasFullDictionary: true },
-  { code: 'pt', shortCode: 'PT', nativeName: 'Português', englishName: 'Portuguese', dir: 'ltr', dictLang: 'pt', hasFullDictionary: true },
-  { code: 'es', shortCode: 'ES', nativeName: 'Español', englishName: 'Spanish', dir: 'ltr', dictLang: 'es', hasFullDictionary: true },
-  { code: 'hi', shortCode: 'HI', nativeName: 'हिन्दी', englishName: 'Hindi', dir: 'ltr', dictLang: 'hi', hasFullDictionary: true },
   { code: 'fr', shortCode: 'FR', nativeName: 'Français', englishName: 'French', dir: 'ltr', dictLang: 'fr', hasFullDictionary: true },
-  // 17 additional searchable world languages
-  { code: 'de', shortCode: 'DE', nativeName: 'Deutsch', englishName: 'German', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'zh', shortCode: 'ZH', nativeName: '中文', englishName: 'Chinese (Mandarin)', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'ja', shortCode: 'JA', nativeName: '日本語', englishName: 'Japanese', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'ko', shortCode: 'KO', nativeName: '한국어', englishName: 'Korean', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'tr', shortCode: 'TR', nativeName: 'Türkçe', englishName: 'Turkish', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'sw', shortCode: 'SW', nativeName: 'Kiswahili', englishName: 'Swahili', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'vi', shortCode: 'VI', nativeName: 'Tiếng Việt', englishName: 'Vietnamese', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'th', shortCode: 'TH', nativeName: 'ไทย', englishName: 'Thai', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'bn', shortCode: 'BN', nativeName: 'বাংলা', englishName: 'Bengali', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'ur', shortCode: 'UR', nativeName: 'اردو', englishName: 'Urdu', dir: 'rtl', dictLang: 'ar', hasFullDictionary: false },
-  { code: 'ru', shortCode: 'RU', nativeName: 'Русский', englishName: 'Russian', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'it', shortCode: 'IT', nativeName: 'Italiano', englishName: 'Italian', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'nl', shortCode: 'NL', nativeName: 'Nederlands', englishName: 'Dutch', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'pl', shortCode: 'PL', nativeName: 'Polski', englishName: 'Polish', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'ms', shortCode: 'MS', nativeName: 'Bahasa Melayu', englishName: 'Malay', dir: 'ltr', dictLang: 'id', hasFullDictionary: false },
-  { code: 'tl', shortCode: 'TL', nativeName: 'Filipino', englishName: 'Tagalog', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
-  { code: 'ha', shortCode: 'HA', nativeName: 'Hausa', englishName: 'Hausa', dir: 'ltr', dictLang: 'en', hasFullDictionary: false },
+  { code: 'de', shortCode: 'DE', nativeName: 'Deutsch', englishName: 'German', dir: 'ltr', dictLang: 'de', hasFullDictionary: true },
+  { code: 'nl', shortCode: 'NL', nativeName: 'Nederlands', englishName: 'Dutch', dir: 'ltr', dictLang: 'nl', hasFullDictionary: true },
+  { code: 'sv', shortCode: 'SV', nativeName: 'Svenska', englishName: 'Swedish', dir: 'ltr', dictLang: 'sv', hasFullDictionary: true },
+  { code: 'no', shortCode: 'NO', nativeName: 'Norsk', englishName: 'Norwegian', dir: 'ltr', dictLang: 'no', hasFullDictionary: true },
+  { code: 'th', shortCode: 'TH', nativeName: 'ไทย', englishName: 'Thai', dir: 'ltr', dictLang: 'th', hasFullDictionary: true },
+  { code: 'ja', shortCode: 'JA', nativeName: '日本語', englishName: 'Japanese', dir: 'ltr', dictLang: 'ja', hasFullDictionary: true },
+  { code: 'ko', shortCode: 'KO', nativeName: '한국어', englishName: 'Korean', dir: 'ltr', dictLang: 'ko', hasFullDictionary: true },
+  { code: 'it', shortCode: 'IT', nativeName: 'Italiano', englishName: 'Italian', dir: 'ltr', dictLang: 'it', hasFullDictionary: true },
+  { code: 'ar', shortCode: 'AR', nativeName: 'العربية', englishName: 'Arabic', dir: 'rtl', dictLang: 'ar', hasFullDictionary: true },
+  { code: 'es', shortCode: 'ES', nativeName: 'Español', englishName: 'Spanish', dir: 'ltr', dictLang: 'es', hasFullDictionary: true },
+  { code: 'pt', shortCode: 'PT', nativeName: 'Português', englishName: 'Portuguese', dir: 'ltr', dictLang: 'pt', hasFullDictionary: true },
+  { code: 'hi', shortCode: 'HI', nativeName: 'हिन्दी', englishName: 'Hindi', dir: 'ltr', dictLang: 'hi', hasFullDictionary: true },
 ];
 
 export function getWorldLanguageOption(code: string): WorldLanguageOption {
-  return WORLD_LANGUAGES.find((item) => item.code === code) ?? WORLD_LANGUAGES[0];
+  const clean = code.trim().toLowerCase().split('-')[0];
+  const mapped = clean === 'nb' || clean === 'nn' ? 'no' : clean;
+  return WORLD_LANGUAGES.find((item) => item.code === mapped) ?? WORLD_LANGUAGES[0];
 }
 
 export function getNumberLocale(lang: FullLang): string {
@@ -60,6 +52,22 @@ export function getNumberLocale(lang: FullLang): string {
       return 'hi-IN';
     case 'fr':
       return 'fr-FR';
+    case 'ja':
+      return 'ja-JP';
+    case 'ko':
+      return 'ko-KR';
+    case 'it':
+      return 'it-IT';
+    case 'th':
+      return 'th-TH';
+    case 'sv':
+      return 'sv-SE';
+    case 'no':
+      return 'nb-NO';
+    case 'nl':
+      return 'nl-NL';
+    case 'de':
+      return 'de-DE';
     default:
       return 'en-US';
   }
@@ -462,6 +470,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -646,7 +662,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
         { label: 'PV Capacity', val: '120 kWp', sub: 'Bifacial elevated' },
         { label: 'Annual Yield', val: '198 MWh', sub: 'PR 81.4%' },
         { label: 'Water Lift', val: '145 m³/day', sub: '18m TDH head' },
-        { label: 'Capex Est.', val: '$108K', sub: 'Turnkey + VFD' },
+        { label: 'Capex Est.', val: '108K USD', sub: 'Turnkey + VFD' },
         { label: 'Payback', val: '3.4 Yrs', sub: 'Diesel displaced' },
         { label: 'CO₂ Offset', val: '142 t/yr', sub: 'Verified Tier-1' },
         { label: 'Crop Shade', val: '+18%', sub: 'Microclimate gain' },
@@ -807,6 +823,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -990,10 +1014,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       metrics: [
         { label: 'Kapasitas PV', val: '120 kWp', sub: 'Bifacial tinggi' },
         { label: 'Energi Tahunan', val: '198 MWh', sub: 'PR 81.4%' },
-        { label: 'Angkat Air', val: '145 m³/hari', sub: 'Head 18m TDH' },
-        { label: 'Est. Capex', val: '$108K', sub: 'Turnkey + VFD' },
+        { label: 'Angkat Air', val: '145 m³/day', sub: 'Head 18m TDH' },
+        { label: 'Est. Capex', val: '108K USD', sub: 'Turnkey + VFD' },
         { label: 'Balik Modal', val: '3.4 Thn', sub: 'Gantikan diesel' },
-        { label: 'Kurangi CO₂', val: '142 t/thn', sub: 'Terverifikasi' },
+        { label: 'Kurangi CO₂', val: '142 t/yr', sub: 'Terverifikasi' },
         { label: 'Naungan Crop', val: '+18%', sub: 'Mikroklimat sejuk' },
       ],
       reasoningTitle: 'Penalaran Spasial & Agronomi AI',
@@ -1051,9 +1075,9 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       onlineStatus: 'Online',
       previewTag: 'Pratinjau Ponsel Petani',
       todayLabel: 'HARI INI',
-      copyBtn: 'Copy Message',
-      copiedBtn: 'Copied!',
-      closeBtn: 'Close',
+      copyBtn: 'Salin Pesan',
+      copiedBtn: 'Tersalin!',
+      closeBtn: 'Tutup',
     },
   },
   ar: {
@@ -1151,6 +1175,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -1334,10 +1366,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       metrics: [
         { label: 'سعة الألواح', val: '120 kWp', sub: 'ألواح ثنائية الوجه' },
         { label: 'الإنتاج السنوي', val: '198 MWh', sub: 'كفاءة 81.4%' },
-        { label: 'ضخ المياه', val: '145 m³/يوم', sub: 'رفع 18 متر' },
-        { label: 'التكلفة التقديرية', val: '$108K', sub: 'نظام متكامل VFD' },
+        { label: 'ضخ المياه', val: '145 m³/day', sub: '18m TDH' },
+        { label: 'التكلفة التقديرية', val: '108K USD', sub: 'نظام متكامل VFD' },
         { label: 'الاسترداد', val: '3.4 سنوات', sub: 'بديل الديزل' },
-        { label: 'خفض CO₂', val: '142 طن/سنة', sub: 'موثق' },
+        { label: 'خفض CO₂', val: '142 t/yr', sub: 'موثق' },
         { label: 'تظليل المحصول', val: '+18%', sub: 'تحسن المناخ الدقيق' },
       ],
       reasoningTitle: 'التحليل المكاني والزراعي الذكي',
@@ -1375,7 +1407,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       solarMaxBadge: 'ذروة 98.4 kW',
       solarPeakZen: '12:15 (الذروة)',
       irradianceMonthlyTitle: 'ملف الإشعاع لـ 12 شهراً',
-      irradianceMonthlySubtitle: 'التوزيع الموسمي التاريخي (kWh/m²/يوم)',
+      irradianceMonthlySubtitle: 'التوزيع الموسمي التاريخي (kWh/m²/day)',
       irradianceAvgBadge: 'المتوسط 6.08 kWh/m²',
       months: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
     },
@@ -1496,6 +1528,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -1679,10 +1719,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       metrics: [
         { label: 'Capacidade PV', val: '120 kWp', sub: 'Bifacial elevado' },
         { label: 'Geração Anual', val: '198 MWh', sub: 'PR 81.4%' },
-        { label: 'Bombeamento', val: '145 m³/dia', sub: 'Altura 18m TDH' },
-        { label: 'Capex Est.', val: '$108K', sub: 'Turnkey + VFD' },
+        { label: 'Bombeamento', val: '145 m³/day', sub: '18m TDH' },
+        { label: 'Capex Est.', val: '108K USD', sub: 'Turnkey + VFD' },
         { label: 'Retorno', val: '3.4 Anos', sub: 'Substitui diesel' },
-        { label: 'CO₂ Evitado', val: '142 t/ano', sub: 'Verificado' },
+        { label: 'CO₂ Evitado', val: '142 t/yr', sub: 'Verificado' },
         { label: 'Sombra Útil', val: '+18%', sub: 'Microclima ameno' },
       ],
       reasoningTitle: 'Raciocínio Espacial e Agronômico IA',
@@ -1841,6 +1881,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -2024,10 +2072,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       metrics: [
         { label: 'Capacidad PV', val: '120 kWp', sub: 'Bifacial elevado' },
         { label: 'Energía Anual', val: '198 MWh', sub: 'PR 81.4%' },
-        { label: 'Bombeo', val: '145 m³/día', sub: 'Altura 18m TDH' },
-        { label: 'Capex Est.', val: '$108K', sub: 'Llave en mano' },
+        { label: 'Bombeo', val: '145 m³/day', sub: '18m TDH' },
+        { label: 'Capex Est.', val: '108K USD', sub: 'Llave en mano + VFD' },
         { label: 'Retorno', val: '3.4 Años', sub: 'Sin diésel' },
-        { label: 'CO₂ Evitado', val: '142 t/año', sub: 'Verificado' },
+        { label: 'CO₂ Evitado', val: '142 t/yr', sub: 'Verificado' },
         { label: 'Sombra Cultivo', val: '+18%', sub: 'Microclima fresco' },
       ],
       reasoningTitle: 'Razonamiento Espacial y Agronómico IA',
@@ -2065,7 +2113,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       solarMaxBadge: 'Pico 98.4 kW',
       solarPeakZen: '12:15 (Cenit)',
       irradianceMonthlyTitle: 'Perfil Mensual de Irradiancia',
-      irradianceMonthlySubtitle: 'Distribución estacional histórica (kWh/m²/día)',
+      irradianceMonthlySubtitle: 'Distribución estacional histórica (kWh/m²/day)',
       irradianceAvgBadge: 'Prom 6.08 kWh/m²',
       months: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
     },
@@ -2186,6 +2234,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -2369,10 +2425,10 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       metrics: [
         { label: 'PV क्षमता', val: '120 kWp', sub: 'बाइफेशियल पैनल' },
         { label: 'वार्षिक ऊर्जा', val: '198 MWh', sub: 'PR 81.4%' },
-        { label: 'जल उठाव', val: '145 m³/दिन', sub: '18m TDH हेड' },
-        { label: 'अनुमानित लागत', val: '$108K', sub: 'टर्नकी + VFD' },
+        { label: 'जल उठाव', val: '145 m³/day', sub: '18m TDH हेड' },
+        { label: 'अनुमानित लागत', val: '108K USD', sub: 'टर्नकी + VFD' },
         { label: 'पेबैक', val: '3.4 वर्ष', sub: 'डीजल मुक्त' },
-        { label: 'CO₂ कमी', val: '142 t/वर्ष', sub: 'सत्यापित' },
+        { label: 'CO₂ कमी', val: '142 t/yr', sub: 'सत्यापित' },
         { label: 'फसल छाया', val: '+18%', sub: 'सूक्ष्म जलवायु लाभ' },
       ],
       reasoningTitle: 'AI स्थानिक और कृषि तर्क',
@@ -2410,7 +2466,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       solarMaxBadge: 'शिखर 98.4 kW',
       solarPeakZen: '12:15 (शिखर)',
       irradianceMonthlyTitle: '12-माह विकिरण प्रोफ़ाइल',
-      irradianceMonthlySubtitle: 'ऐतिहासिक मौसमी वितरण (kWh/m²/दिन)',
+      irradianceMonthlySubtitle: 'ऐतिहासिक मौसमी वितरण (kWh/m²/day)',
       irradianceAvgBadge: 'औसत 6.08 kWh/m²',
       months: ['जन', 'फर', 'मार्च', 'अप्रै', 'मई', 'जून', 'जुल', 'अग', 'सित', 'अक्टू', 'नव', 'दिस'],
     },
@@ -2531,6 +2587,14 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
           es: 'Español',
           hi: 'हिन्दी',
           fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
         },
       },
       simulator: {
@@ -2712,12 +2776,12 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       tierGrade: 'Classe A Prime',
       confidencePrefix: 'Confiance',
       metrics: [
-        { label: 'Capacité PV', val: '120 kWc', sub: 'Bifacial surélevé' },
+        { label: 'Capacité PV', val: '120 kWp', sub: 'Bifacial surélevé' },
         { label: 'Production/an', val: '198 MWh', sub: 'PR 81.4%' },
-        { label: 'Pompage', val: '145 m³/jour', sub: 'HMT 18m' },
-        { label: 'Capex Est.', val: '$108K', sub: 'Clé en main + VFD' },
+        { label: 'Pompage', val: '145 m³/day', sub: '18m TDH' },
+        { label: 'Capex Est.', val: '108K USD', sub: 'Clé en main + VFD' },
         { label: 'Retour', val: '3.4 Ans', sub: 'Hors diesel' },
-        { label: 'CO₂ Évité', val: '142 t/an', sub: 'Vérifié' },
+        { label: 'CO₂ Évité', val: '142 t/yr', sub: 'Vérifié' },
         { label: 'Ombrage Utile', val: '+18%', sub: 'Microclimat frais' },
       ],
       reasoningTitle: 'Analyse Spatiale & Agronomique IA',
@@ -2755,7 +2819,7 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       solarMaxBadge: 'Pic 98.4 kW',
       solarPeakZen: '12:15 (Zénith)',
       irradianceMonthlyTitle: 'Profil Mensuel d’Irradiance',
-      irradianceMonthlySubtitle: 'Distribution saisonnière historique (kWh/m²/jour)',
+      irradianceMonthlySubtitle: 'Distribution saisonnière historique (kWh/m²/day)',
       irradianceAvgBadge: 'Moy 6.08 kWh/m²',
       months: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'],
     },
@@ -2778,6 +2842,2827 @@ export const TRANSLATIONS: Record<FullLang, TranslationDictionary> = {
       copyBtn: 'Copier le message',
       copiedBtn: 'Copié !',
       closeBtn: 'Fermer',
+    },
+  },
+  ja: {
+    header: {
+      subtitle: 'グローバル・アグリボルタイクス＆衛星太陽光灌漑コマンド',
+      langSwitcherLabel: '言語選択',
+      langSearchPlaceholder: '言語を検索...',
+      langFullLabel: '完全なUI',
+      langFallbackNote: '完全ローカライズ',
+      langNoMatch: '一致する言語が見つかりません',
+      tabs: {
+        macro: '干ばつ・ポンプマップ',
+        ops: '精密灌漑運用',
+        feasibility: '適地インテリジェンス',
+      },
+      mobileTabs: {
+        macro: '干ばつマップ',
+        ops: '運用管理',
+        feasibility: '適地評価',
+      },
+      telemetry: {
+        syncing: 'NASA POWER 同期中...',
+        live: 'NASA POWER ライブ',
+        ready: 'NASA POWER 準備完了',
+        sourceLive: 'ライブ NASA POWER API',
+        sourceFallback: 'NASA POWER 補正済みバックアップ',
+        solarDate: '日射観測日',
+        moistureDate: '土壌水分日',
+      },
+      themeTooltip: {
+        toLight: 'ライトモードへ切替',
+        toDark: 'ダークモードへ切替',
+      },
+    },
+    tab1: {
+      title: '世界干ばつストレス＆ソーラーポンプ監視',
+      subtitle: 'ライブ NASA POWER 衛星テレメトリ、実在地区検出、自動 VFD ポンプ制御',
+      mobileFilterBtn: 'フィルター・凡例',
+      zonesWord: 'ゾーン',
+      filteredBadge: '絞込中',
+      filtersTitle: 'テレメトリ・フィルター',
+      resetFilters: 'リセット',
+      targetRegionLabel: '対象サブ地域',
+      allRegionsOption: 'すべての地域',
+      stapleCropLabel: '作物',
+      allCropsOption: 'すべての作物',
+      severityLabel: '干ばつ深刻度',
+      severities: {
+        All: 'すべて',
+        Severe: '深刻',
+        Moderate: '中程度',
+        Mild: '軽度・良好',
+      },
+      crops: {
+        Maize: 'トウモロコシ',
+        Wheat: '小麦',
+        Tomatoes: 'トマト',
+        Olives: 'オリーブ',
+        Almonds: 'アーモンド',
+        Pistachios: 'ピスタチオ',
+        Soybeans: '大豆',
+        Cotton: '綿花',
+        Citrus: '柑橘類',
+        'Date Palms': 'ナツメヤシ',
+        Grapes: 'ブドウ',
+        Rice: '水稲',
+        Horticulture: '園芸作物',
+        'Chili & Leafy Greens': '唐辛子・葉物野菜',
+      },
+      mapLegendTitle: 'マップ凡例',
+      legendSevere: '深刻な乾燥 (< 20%)',
+      legendModerate: '中程度のストレス (20-29%)',
+      legendMild: '軽度 / 最適 (>= 30%)',
+      legendPump: 'ソーラーポンプ拠点',
+      globalExplorer: {
+        title: 'グローバル衛星座標・都市エクスプローラー',
+        subtitle: 'NASA パートナー拠点を選択するか、世界中の都市・GPS を検索してライブ NASA POWER データと実在地区を取得',
+        cityPlaceholder: '世界の都市を検索（例: 長野、メンドーサ、セビリア、ナイロビ）...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'NASA データ取得',
+        fetchingBtn: '衛星同期中...',
+        presetsLabel: 'ベンチマーク:',
+        syncLangBtn: '地域言語に合わせる',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: '緯度補正フォールバック',
+        districtsPrefix: '実在地区',
+        geocodeError: '都市が見つかりません。近隣の主要都市または緯度・経度を入力してください。',
+        invalidCoordsError: '有効な座標を入力してください（緯度 -90〜90、経度 -180〜180）。',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: '異常気象シミュレーター (What-If)',
+        simActive: 'シミュレーション中',
+        liveBaseline: 'NASA リアルタイム基準',
+        resetBtn: 'NASA ライブ値に戻す',
+        rainfallLabel: '日降水量シミュレーション',
+        solarLabel: '日射量シミュレーション',
+        extremeDry: '0 mm（極度乾燥）',
+      },
+      map: {
+        resolutionLabel: '空間解像度:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: '能力:',
+        pumpStatuses: {
+          Active: '稼働中',
+          Standby: '待機中',
+          Optimizing: '最適化中',
+        },
+        interactiveHint: '各ゾーンのピンをクリックして衛星テレメトリと太陽光設計を確認',
+        showAllPrefix: 'すべて表示',
+      },
+      districtsStrip: {
+        title: 'ポンティアナク地区別テレメトリ',
+      },
+      priorityBanner: {
+        title: 'AI ソーラーポンプ優先稼働指示',
+        pumpSitePrefix: '優先サイト:',
+        criticalMoistureText: '危機的土壌水分',
+        recordsText: '観測値:',
+        macroWetnessText: '流域土壌水分',
+      },
+      telemetryPanel: {
+        title: 'ゾーン別テレメトリ',
+        droughtSuffix: '干ばつ',
+        plantationSuffix: '区画',
+        smapMoisture: '土壌水分 (GWETTOP)',
+        criticalDry: '極度乾燥',
+        moderate: '中程度',
+        humidOptimal: '適正水分',
+        volumetricDepth: '表層根域水分',
+        sevenDayTrend: '7日間水分推移',
+        deficit: '減少',
+        gain: '増加',
+        nasaRadiance: '全天日射量',
+        strong: '高発電ポテンシャル',
+        moderateSolar: '標準日射',
+        solarPumpYield: 'ソーラーポンプ出力',
+        capacityUnit: '段階',
+        surfaceTempLabel: '地表気温 (T2M)',
+      },
+      peatland: {
+        eyebrow: '生態系早期警戒アラート',
+        moisturePrefix: '現在の土壌水分',
+        sendWarningBtn: '農家へ WhatsApp/SMS 警報を送信',
+        confirmedTitle: '早期警報を送信しました',
+        confirmedBodyPrefix: '対象地域の農家グループへ WhatsApp/SMS を送信:',
+      },
+      solarSizing: {
+        eyebrow: 'スマート PV 設計計算',
+        title: '太陽光アレイ容量・燃料削減試算',
+        arraySizeLabel: '推奨ソーラーアレイ',
+        panelUnit: '枚 (550Wp パネル)',
+        dailyWaterLabel: '推定日次揚水量',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: '月間燃料削減見込み',
+        vsDiesel: '対ディーゼルポンプ',
+        saveFuelPrefix: '削減量',
+        saveFuelSuffix: 'L 軽油 / 月',
+      },
+      advisor: {
+        eyebrow: 'ローカル衛星推論エンジン',
+        title: 'SOLVARA AI 営農アドバイザー',
+        liveBriefPrefix: 'ライブ要約',
+        quickPromptsTitle: 'クイック営農相談',
+        analyzingPrefix: 'NASA テレメトリ解析中:',
+        prompts: {
+          schedule: '本日の最適灌漑時間帯は？',
+          peatland: '乾燥ストレス緩和計画は？',
+          roi: '太陽光 vs ディーゼル ROI 比較',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: '自律型ソーラー VFD ポンプ制御 オンライン',
+      bannerSubtitle: 'MPPT 追従 + VFD インバーターが NASA POWER データと完全同期',
+      telemetryOk: 'テレメトリ正常',
+      kpis: {
+        solarOutput: 'PV アレイ出力',
+        solarSub: 'MPPT 追従効率 98.6%',
+        pumpCapacity: 'ポンプ流量',
+        pumpSub: 'VFD 可変速制御',
+        waterReserve: '貯水タンク残量',
+        waterSub: '20,000 L 重力式バッファ',
+        rain3Day: '3日平均降水量',
+        rainLatestPrefix: '最新:',
+        rainOptimalSolar: '晴天・太陽光最適',
+        rainActiveRecharge: '降水による自然補給',
+        yieldSaved: '収穫量保全率',
+        yieldSub: '萎凋・枯死の防止',
+      },
+      heatmap: {
+        title: '140区画圃場水分マトリクス＆緊急灌漑シミュレーション',
+        subtitle: '乾燥ストレス区画への放射状ソーラー点滴灌漑ウェーブを再現',
+        scaleLabel: '縮尺:',
+        reRunBtn: '緊急ソーラー灌漑を実行',
+        pumpingActive: '灌漑ウェーブ作動中',
+        resetDemoBtn: '乾燥状態をリセット',
+        plotPrefix: '区画 #',
+        legend: {
+          severe: '深刻',
+          high: '高ストレス',
+          moderate: '中程度',
+          low: '軽度',
+          hydrated: '潤沢',
+        },
+        cellLabels: {
+          hydrated: '潤沢（最適）',
+          severe: '深刻な乾燥 (<15%)',
+          high: '高ストレス (15-25%)',
+          moderate: '中ストレス (25-40%)',
+          low: '低ストレス (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: '相似則: P ∝ N³',
+        title: 'VFD 効率オプティマイザー',
+        subtitle: 'リアルタイム根域水分に応じてポンプ回転数と電力を最適変調',
+        sourcePlotArray: '圃場マトリクス',
+        autoSyncOn: '自動同期 ON',
+        autoSyncOff: '自動同期 OFF',
+        liveRootMoisturePrefix: '実効根域水分',
+        criticalWord: '危機的',
+        hydratedWord: '潤沢',
+        zoneTelemetryPrefix: 'ゾーン・テレメトリ',
+        meanArrayPrefix: '平均:',
+        suggestedAdjustment: '推奨周波数調整',
+        optimalSynced: '最適値同期済み',
+        rampDown: '減速省エネ',
+        rampUp: '増速揚水',
+        activeInverterSpeed: '現在のインバーター周波数:',
+        targetPrefix: '目標:',
+        recommendedTooltipPrefix: '推奨目標:',
+        manualSliderLabel: '手動周波数調整 (20 - 50 Hz)',
+        nominalRpmSuffix: '定格回転数',
+        syncedBtn: 'インバーター同期済み',
+        applyBtnPrefix: '適用',
+        kpiSuggestedSpeed: '目標 VFD 周波数',
+        kpiAdjustedFlow: '調整後流量',
+        kpiVsActivePrefix: '現在値比',
+        kpiVsActiveSuffix: '稼働中',
+        kpiInverterLoad: 'インバーター負荷',
+        kpiVsCurrentSuffix: 'kW 削減',
+        kpiBaseline50Hz: '50 Hz 基準値',
+        kpiEnergySaved: '省エネ削減率',
+        kpiToBatterySuffix: 'kWh/day 節約',
+      },
+      allocation: {
+        title: '太陽光電力ディスパッチ配分',
+        subtitle: '優先地区ごとのリアルタイム PV 電力配分バランス',
+      },
+      forecast: {
+        title: '揚水量 24時間ソーラー予測',
+        subtitlePrefix: '最適稼働時間帯',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: '（ピーク日射と同期）',
+        estTotal: '推定 114,500 L/day',
+        peakLabel: '12h (ピーク)',
+      },
+    },
+    tab3: {
+      rankBadge: '第1位 アグリボルタイクス適地',
+      siteCodePrefix: 'SITE CODE:',
+      siteTitleSuffix: 'アグリボルタイクス事業性評価書',
+      siteSubtitlePrefix: 'ライブ NASA POWER テレメトリに基づく多基準空間適地評価:',
+      suitabilityScore: '適地総合スコア',
+      tierGrade: 'Tier-A 最優秀',
+      confidencePrefix: '信頼度',
+      metrics: [
+        { label: 'PV 設備容量', val: '120 kWp', sub: '高架両面発電' },
+        { label: '年間発電量', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: '日次揚水量', val: '145 m³/day', sub: '18m TDH 揚程' },
+        { label: '初期投資概算', val: '108K USD', sub: '一式 + VFD' },
+        { label: '投資回収', val: '3.4 年', sub: '脱ディーゼル' },
+        { label: 'CO₂ 削減', val: '142 t/yr', sub: 'Tier-1 認証' },
+        { label: '作物遮光効果', val: '+18%', sub: '微気象改善' },
+      ],
+      reasoningTitle: 'AI 空間・農学的評価根拠',
+      confidenceBadgePrefix: 'モデル信頼度',
+      reasons: [
+        {
+          title: '日射資源の検証:',
+          bodyBefore: 'NASA POWER 地表短波日射量の平均は',
+          bodyAfter: 'に達し、大型蓄電池の深放電なしで昼間 VFD 揚水に高い設備利用率を確保できます。',
+        },
+        {
+          title: '根域蒸発散の抑制:',
+          body: '地上高 3.2m の高架アグリボルタイクス架台により、正午ピーク時の表土蒸発散量を 18〜24% 低減します。',
+        },
+        {
+          title: 'ゼロ・ディーゼル水利経済性:',
+          body: 'DC 直結 VFD ソーラー揚水により遠隔地への燃料輸送コストを撤廃し、農家の収益を安定化します。',
+        },
+      ],
+      riskTitle: 'サイトリスク緩和策',
+      riskBodyBefore: '季節性の雲量増加や極端な猛暑は揚水サイクルに影響します。',
+      riskBodyHighlight: '20,000 L 重力式バッファ貯水槽',
+      riskBodyAfter: 'と WhatsApp 自動渇水アラートを併用して曇天日に備えてください。',
+      weightsTitle: 'MCDA 多基準評価ウェイト',
+      weightsSubtitle: 'グローバル適地ランキング用加重スコアリング枠組み',
+      weights: [
+        '日射量資源 (NASA POWER)',
+        '土壌水分不足の緊急度',
+        '帯水層・用水路への近接性',
+        '作物遮光シナジー',
+        'ディーゼル・系統代替 ROI',
+      ],
+      solarProfileTitle: '24時間太陽光発電カーブ',
+      solarProfileSubtitle: '時間帯別 PV アレイ出力プロファイル',
+      solarMaxBadge: 'ピーク 98.4 kW',
+      solarPeakZen: '12:15 (南中)',
+      irradianceMonthlyTitle: '12ヶ月日射量プロファイル',
+      irradianceMonthlySubtitle: '過去の季節別 kWh/m²/day 分布',
+      irradianceAvgBadge: '平均 6.08 kWh/m²',
+      months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+    },
+    footer: {
+      brandLine: 'SOLVARA グローバル・アグリボルタイクス • NASA POWER & SMAP テレメトリスイート',
+      resolution: '0.5° × 0.625° NASA POWER グリッド',
+      iec: 'IEC 61724 PV 性能規格',
+      vfdProtocol: 'Modbus VFD 相似則制御',
+    },
+    toast: {
+      title: '農家向け早期警報を送信',
+      bodyPrefix: 'WhatsApp/SMS 警報を以下の地域へ送信しました:',
+      bodyMiddle: '·',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'オンライン',
+      previewTag: '農家モバイルプレビュー',
+      todayLabel: '今日',
+      copyBtn: 'メッセージをコピー',
+      copiedBtn: 'コピー完了！',
+      closeBtn: '閉じる',
+    },
+  },
+  ko: {
+    header: {
+      subtitle: '글로벌 영농형 태양광 및 위성 스마트 관개 지휘 플랫폼',
+      langSwitcherLabel: '언어 선택기',
+      langSearchPlaceholder: '언어 검색...',
+      langFullLabel: '전체 UI',
+      langFallbackNote: '완전 현지화',
+      langNoMatch: '일치하는 언어가 없습니다',
+      tabs: {
+        macro: '가뭄 및 펌프 지도',
+        ops: '정밀 관개 제어',
+        feasibility: '입지 인텔리전스',
+      },
+      mobileTabs: {
+        macro: '가뭄 지도',
+        ops: '관개 운영',
+        feasibility: '입지 분석',
+      },
+      telemetry: {
+        syncing: 'NASA POWER 동기화 중...',
+        live: 'NASA POWER 실시간',
+        ready: 'NASA POWER 준비됨',
+        sourceLive: '실시간 NASA POWER API',
+        sourceFallback: 'NASA POWER 보정 백업',
+        solarDate: '일사 관측일',
+        moistureDate: '수분 관측일',
+      },
+      themeTooltip: {
+        toLight: '라이트 모드로 전환',
+        toDark: '다크 모드로 전환',
+      },
+    },
+    tab1: {
+      title: '글로벌 가뭄 스트레스 및 태양광 펌프 모니터링',
+      subtitle: '실시간 NASA POWER 위성 텔레메트리, 실제 행정구역 감지 및 자동 VFD 펌프 배차',
+      mobileFilterBtn: '필터 및 범례',
+      zonesWord: '구역',
+      filteredBadge: '필터 적용됨',
+      filtersTitle: '텔레메트리 필터',
+      resetFilters: '초기화',
+      targetRegionLabel: '대상 세부 지역',
+      allRegionsOption: '모든 지역',
+      stapleCropLabel: '작물',
+      allCropsOption: '모든 작물',
+      severityLabel: '가뭄 심각도',
+      severities: {
+        All: '전체',
+        Severe: '심각',
+        Moderate: '보통',
+        Mild: '경미 / 양호',
+      },
+      crops: {
+        Maize: '옥수수',
+        Wheat: '밀',
+        Tomatoes: '토마토',
+        Olives: '올리브',
+        Almonds: '아몬드',
+        Pistachios: '피스타치오',
+        Soybeans: '대두',
+        Cotton: '면화',
+        Citrus: '감귤류',
+        'Date Palms': '대추야자',
+        Grapes: '포도',
+        Rice: '벼',
+        Horticulture: '원예 작물',
+        'Chili & Leafy Greens': '고추 및 엽채류',
+      },
+      mapLegendTitle: '지도 범례',
+      legendSevere: '심각한 가뭄 (< 20%)',
+      legendModerate: '중간 스트레스 (20-29%)',
+      legendMild: '양호 / 최적 (>= 30%)',
+      legendPump: '태양광 펌프 스테이션',
+      globalExplorer: {
+        title: '글로벌 위성 좌표 및 도시 탐색기',
+        subtitle: 'NASA 파트너 기준점을 선택하거나 전 세계 도시/GPS를 검색하여 실시간 NASA POWER 및 실제 행정구역을 조회하세요',
+        cityPlaceholder: '전 세계 도시 검색 (예: 상주, 멘도사, 세비야, 나이로비)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'NASA 데이터 조회',
+        fetchingBtn: '위성 동기화 중...',
+        presetsLabel: '벤치마크:',
+        syncLangBtn: '지역 언어 맞추기',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: '위도 보정 대체 데이터',
+        districtsPrefix: '실제 구역',
+        geocodeError: '도시를 찾을 수 없습니다. 인근 주요 도시를 검색하거나 위도/경도를 입력하세요.',
+        invalidCoordsError: '유효한 좌표를 입력하세요 (위도 -90~90, 경도 -180~180).',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: '극한 기상 가상 시뮬레이터 (What-If)',
+        simActive: '시뮬레이션 활성',
+        liveBaseline: 'NASA 실시간 기준',
+        resetBtn: 'NASA 실시간 값 복원',
+        rainfallLabel: '일일 강수량 시뮬레이션',
+        solarLabel: '일사량 시뮬레이션',
+        extremeDry: '0 mm (극심한 가뭄)',
+      },
+      map: {
+        resolutionLabel: '공간 해상도:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: '용량:',
+        pumpStatuses: {
+          Active: '가동 중',
+          Standby: '대기 중',
+          Optimizing: '최적화 중',
+        },
+        interactiveHint: '구역 마커를 클릭하여 위성 텔레메트리와 태양광 펌프 설계를 확인하세요',
+        showAllPrefix: '전체 보기',
+      },
+      districtsStrip: {
+        title: '폰티아낙 구역별 텔레메트리',
+      },
+      priorityBanner: {
+        title: 'AI 태양광 펌프 우선 배차 권고',
+        pumpSitePrefix: '우선 구역:',
+        criticalMoistureText: '위험 토양 수분',
+        recordsText: '관측 기록:',
+        macroWetnessText: '유역 토양 수분',
+      },
+      telemetryPanel: {
+        title: '구역 텔레메트리',
+        droughtSuffix: '가뭄',
+        plantationSuffix: '필지',
+        smapMoisture: '토양 수분 (GWETTOP)',
+        criticalDry: '심각 건조',
+        moderate: '보통',
+        humidOptimal: '적정 수분',
+        volumetricDepth: '표층 근권부 수분',
+        sevenDayTrend: '7일 수분 추세',
+        deficit: '감소',
+        gain: '증가',
+        nasaRadiance: '태양 일사량',
+        strong: '고발전 잠재력',
+        moderateSolar: '보통 일사',
+        solarPumpYield: '태양광 펌프 출력',
+        capacityUnit: '단계',
+        surfaceTempLabel: '지표 기온 (T2M)',
+      },
+      peatland: {
+        eyebrow: '생태계 조기 경보',
+        moisturePrefix: '현재 토양 수분',
+        sendWarningBtn: '농가 WhatsApp/SMS 경보 발송',
+        confirmedTitle: '조기 경보 발송 완료',
+        confirmedBodyPrefix: '해당 지역 농가 그룹으로 WhatsApp/SMS 알림 발송:',
+      },
+      solarSizing: {
+        eyebrow: '스마트 PV 설계 계산',
+        title: '태양광 용량 및 연료 절감 산출',
+        arraySizeLabel: '권장 태양광 어레이',
+        panelUnit: '매 (550Wp 모듈)',
+        dailyWaterLabel: '일일 예상 양수량',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: '월간 예상 비용 절감',
+        vsDiesel: '디젤 펌프 대비',
+        saveFuelPrefix: '월간 절감',
+        saveFuelSuffix: 'L 경유 / 월',
+      },
+      advisor: {
+        eyebrow: '로컬 텔레메트리 추론 엔진',
+        title: 'SOLVARA AI 영농 어드바이저',
+        liveBriefPrefix: '실시간 브리핑',
+        quickPromptsTitle: '빠른 영농 질의',
+        analyzingPrefix: 'NASA 텔레메트리 분석 중:',
+        prompts: {
+          schedule: '오늘 최적 관개 시간대는?',
+          peatland: '가뭄 스트레스 완화 방안은?',
+          roi: '태양광 vs 디젤 펌프 ROI 비교',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: '자율형 태양광 VFD 펌프 제어 온라인',
+      bannerSubtitle: 'MPPT 추적 + VFD 인버터 제어가 NASA POWER 데이터와 실시간 동기화됨',
+      telemetryOk: '텔레메트리 정상',
+      kpis: {
+        solarOutput: 'PV 어레이 출력',
+        solarSub: 'MPPT 추적 효율 98.6%',
+        pumpCapacity: '펌프 유량',
+        pumpSub: 'VFD 가변 속도 제어',
+        waterReserve: '저장 탱크 잔량',
+        waterSub: '20,000 L 중력식 버퍼',
+        rain3Day: '3일 평균 강수량',
+        rainLatestPrefix: '최신:',
+        rainOptimalSolar: '태양광 발전 최적',
+        rainActiveRecharge: '자연 강수 보충 중',
+        yieldSaved: '작물 수확량 보존율',
+        yieldSub: '시들음 피해 예방',
+      },
+      heatmap: {
+        title: '140개 필지 토양 수분 매트릭스 및 비상 관개 시뮬레이션',
+        subtitle: '건조 스트레스 필지로 퍼져나가는 방사형 태양광 점적 관개 파동 모의',
+        scaleLabel: '축척:',
+        reRunBtn: '비상 태양광 관개 실행',
+        pumpingActive: '관개 파동 가동 중',
+        resetDemoBtn: '가뭄 상태 초기화',
+        plotPrefix: '필지 #',
+        legend: {
+          severe: '심각',
+          high: '높음',
+          moderate: '보통',
+          low: '낮음',
+          hydrated: '충분',
+        },
+        cellLabels: {
+          hydrated: '수분 충분 (최적)',
+          severe: '심각한 스트레스 (<15%)',
+          high: '높은 스트레스 (15-25%)',
+          moderate: '중간 스트레스 (25-40%)',
+          low: '낮은 스트레스 (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: '상사 법칙: P ∝ N³',
+        title: 'VFD 효율 최적화 엔진',
+        subtitle: '실시간 근권부 수분에 맞춰 펌프 회전수(RPM)와 전력을 동적 변조',
+        sourcePlotArray: '필지 매트릭스',
+        autoSyncOn: '자동 동기화 ON',
+        autoSyncOff: '자동 동기화 OFF',
+        liveRootMoisturePrefix: '유효 근권부 수분',
+        criticalWord: '위험',
+        hydratedWord: '충분',
+        zoneTelemetryPrefix: '구역 텔레메트리',
+        meanArrayPrefix: '평균:',
+        suggestedAdjustment: '권장 주파수 조정',
+        optimalSynced: '최적 동기화됨',
+        rampDown: '감속 절전',
+        rampUp: '가속 증압',
+        activeInverterSpeed: '현재 인버터 속도:',
+        targetPrefix: '목표:',
+        recommendedTooltipPrefix: '권장 목표:',
+        manualSliderLabel: '수동 주파수 제어 (20 - 50 Hz)',
+        nominalRpmSuffix: '정격 RPM',
+        syncedBtn: '인버터 동기화됨',
+        applyBtnPrefix: '적용',
+        kpiSuggestedSpeed: '목표 VFD 주파수',
+        kpiAdjustedFlow: '조정된 유량',
+        kpiVsActivePrefix: '현재 대비',
+        kpiVsActiveSuffix: '가동 중',
+        kpiInverterLoad: '인버터 부하',
+        kpiVsCurrentSuffix: 'kW 절감',
+        kpiBaseline50Hz: '50 Hz 기준선',
+        kpiEnergySaved: '에너지 절감률',
+        kpiToBatterySuffix: 'kWh/day 절감',
+      },
+      allocation: {
+        title: '태양광 전력 배분 현황',
+        subtitle: '우선순위 구역별 실시간 PV 출력 분배 비율',
+      },
+      forecast: {
+        title: '24시간 양수량 태양광 예측',
+        subtitlePrefix: '최적 가동 창',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: '(최대 일사량 구간 동기화)',
+        estTotal: '예상 114,500 L/day',
+        peakLabel: '12h (피크)',
+      },
+    },
+    tab3: {
+      rankBadge: '1순위 영농형 태양광 최적 입지',
+      siteCodePrefix: 'SITE CODE:',
+      siteTitleSuffix: '영농형 태양광 타당성 분석 보고서',
+      siteSubtitlePrefix: '실시간 NASA POWER 텔레메트리 기반 다기준 공간 의사결정 분석:',
+      suitabilityScore: '입지 적합도 점수',
+      tierGrade: 'Tier-A 최우수 등급',
+      confidencePrefix: '신뢰도',
+      metrics: [
+        { label: 'PV 설비 용량', val: '120 kWp', sub: '고상 양면 모듈' },
+        { label: '연간 발전량', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: '일일 양수량', val: '145 m³/day', sub: '18m TDH 양정' },
+        { label: '예상 투자비', val: '108K USD', sub: '턴키 + VFD' },
+        { label: '투자 회수', val: '3.4 년', sub: '디젤 대체' },
+        { label: 'CO₂ 감축', val: '142 t/yr', sub: 'Tier-1 인증' },
+        { label: '작물 차광 효과', val: '+18%', sub: '미기후 개선' },
+      ],
+      reasoningTitle: 'AI 공간 및 농학적 추론 근거',
+      confidenceBadgePrefix: '모델 신뢰도',
+      reasons: [
+        {
+          title: '태양광 자원 검증:',
+          bodyBefore: 'NASA POWER 지표 단파 일사량 평균이',
+          bodyAfter: '로 측정되어 대용량 배터리 방전 없이도 주간 VFD 펌핑의 높은 설비 이용률을 보장합니다.',
+        },
+        {
+          title: '근권부 증발산 완화:',
+          body: '3.2m 높이의 고상 영농형 태양광 구조물은 정오 고온 시간대 표토 증발산을 18~24% 감소시킵니다.',
+        },
+        {
+          title: '무디젤 수리 경제성:',
+          body: 'DC 직결 VFD 태양광 양수는 연료 운송 비용을 완전히 제거하여 소농의 관개 수익성을 안정화합니다.',
+        },
+      ],
+      riskTitle: '입지 리스크 완화 노트',
+      riskBodyBefore: '계절성 구름이나 극한 폭염으로 양수 주기가 변할 수 있습니다.',
+      riskBodyHighlight: '20,000 L 중력식 버퍼 저장 탱크',
+      riskBodyAfter: '와 자동 WhatsApp 가뭄 경보를 결합하여 흐린 날에도 안정적으로 급수하세요.',
+      weightsTitle: 'MCDA 다기준 가중치',
+      weightsSubtitle: '입지 우선순위 산정을 위한 가중 공간 평가 프레임워크',
+      weights: [
+        '태양 일사량 (NASA POWER)',
+        '토양 수분 결핍 시급성',
+        '대수층 / 수로 접근성',
+        '작물 차광 시너지',
+        '디젤·계통 대체 ROI',
+      ],
+      solarProfileTitle: '24시간 태양광 발전 곡선',
+      solarProfileSubtitle: '시간대별 PV 어레이 출력 프로파일',
+      solarMaxBadge: '최대 98.4 kW',
+      solarPeakZen: '12:15 (정오)',
+      irradianceMonthlyTitle: '12개월 일사량 분포',
+      irradianceMonthlySubtitle: '월별 kWh/m²/day 계절 변화 추이',
+      irradianceAvgBadge: '연평균 6.08 kWh/m²',
+      months: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    },
+    footer: {
+      brandLine: 'SOLVARA 글로벌 영농형 태양광 • NASA POWER & SMAP 텔레메트리 스위트',
+      resolution: '0.5° × 0.625° NASA POWER 격자',
+      iec: 'IEC 61724 PV 성능 표준',
+      vfdProtocol: 'Modbus VFD 상사 제어 프로토콜',
+    },
+    toast: {
+      title: '농가 조기 경보 발송됨',
+      bodyPrefix: 'WhatsApp/SMS 경보가 다음 지역 농가로 발송되었습니다:',
+      bodyMiddle: '·',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: '온라인',
+      previewTag: '농가 모바일 미리보기',
+      todayLabel: '오늘',
+      copyBtn: '메시지 복사',
+      copiedBtn: '복사됨!',
+      closeBtn: '닫기',
+    },
+  },
+  it: {
+    header: {
+      subtitle: 'Comando Globale Agrivoltaico e Irrigazione Solare Satellitare',
+      langSwitcherLabel: 'Selettore lingua',
+      langSearchPlaceholder: 'Cerca lingua...',
+      langFullLabel: 'UI Completa',
+      langFallbackNote: 'Localizzazione completa',
+      langNoMatch: 'Nessuna lingua trovata',
+      tabs: {
+        macro: 'Mappa Siccità e Pompe',
+        ops: 'Operazioni Irrigazione',
+        feasibility: 'Analisi del Sito',
+      },
+      mobileTabs: {
+        macro: 'Mappa Siccità',
+        ops: 'Operazioni',
+        feasibility: 'Fattibilità',
+      },
+      telemetry: {
+        syncing: 'Sincronizzazione NASA POWER...',
+        live: 'NASA POWER In Diretta',
+        ready: 'NASA POWER Pronto',
+        sourceLive: 'API NASA POWER Live',
+        sourceFallback: 'Backup Calibrato NASA POWER',
+        solarDate: 'Solare',
+        moistureDate: 'Umidità',
+      },
+      themeTooltip: {
+        toLight: 'Passa a Modalità Chiara',
+        toDark: 'Passa a Modalità Scura',
+      },
+    },
+    tab1: {
+      title: 'Monitoraggio Globale Siccità e Pompaggio Solare',
+      subtitle: 'Telemetria satellitare NASA POWER dal vivo, rilevamento reale dei distretti e dispacciamento VFD automatico',
+      mobileFilterBtn: 'Filtri e Legenda',
+      zonesWord: 'Zone',
+      filteredBadge: 'Filtrato',
+      filtersTitle: 'Filtri Telemetria',
+      resetFilters: 'Ripristina',
+      targetRegionLabel: 'Sottoregione Target',
+      allRegionsOption: 'Tutte le Regioni',
+      stapleCropLabel: 'Coltura',
+      allCropsOption: 'Tutte le Colture',
+      severityLabel: 'Gravità Siccità',
+      severities: {
+        All: 'Tutte',
+        Severe: 'Grave',
+        Moderate: 'Moderata',
+        Mild: 'Lieve / Ottimale',
+      },
+      crops: {
+        Maize: 'Mais',
+        Wheat: 'Grano',
+        Tomatoes: 'Pomodori',
+        Olives: 'Ulivi',
+        Almonds: 'Mandorli',
+        Pistachios: 'Pistacchi',
+        Soybeans: 'Soia',
+        Cotton: 'Cotone',
+        Citrus: 'Agrumi',
+        'Date Palms': 'Palme da Dattero',
+        Grapes: 'Uva',
+        Rice: 'Riso',
+        Horticulture: 'Orticoltura',
+        'Chili & Leafy Greens': 'Peperoncino e Verdure a Foglia',
+      },
+      mapLegendTitle: 'Legenda Mappa',
+      legendSevere: 'Stress Grave (< 20%)',
+      legendModerate: 'Stress Moderato (20-29%)',
+      legendMild: 'Lieve / Ottimale (>= 30%)',
+      legendPump: 'Stazione di Pompaggio Solare',
+      globalExplorer: {
+        title: 'Esploratore Globale Coordinate e Città Satellitari',
+        subtitle: 'Scegli un benchmark NASA o cerca qualsiasi città / GPS nel mondo per ottenere dati NASA POWER e distretti reali',
+        cityPlaceholder: 'Cerca qualsiasi città nel mondo (es. Catania, Siviglia, Mendoza)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'Ottieni Dati NASA',
+        fetchingBtn: 'Sincronizzazione...',
+        presetsLabel: 'Benchmark:',
+        syncLangBtn: 'Sincronizza Lingua Locale',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: 'BACKUP CALIBRATO PER LATITUDINE',
+        districtsPrefix: 'Distretti Reali',
+        geocodeError: 'Città non trovata. Prova un centro vicino o inserisci latitudine e longitudine.',
+        invalidCoordsError: 'Inserisci coordinate valide (Latitudine da -90 a 90, Longitudine da -180 a 180).',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: 'Simulatore Clima Estremo (What-If)',
+        simActive: 'Simulazione Attiva',
+        liveBaseline: 'Linea Base NASA Live',
+        resetBtn: 'Ripristina Dati NASA',
+        rainfallLabel: 'Pioggia Giornaliera Simulata',
+        solarLabel: 'Irradianza Solare Simulata',
+        extremeDry: '0 mm (Siccità Estrema)',
+      },
+      map: {
+        resolutionLabel: 'Risoluzione:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: 'Portata:',
+        pumpStatuses: {
+          Active: 'Attiva',
+          Standby: 'Standby',
+          Optimizing: 'In Ottimizzazione',
+        },
+        interactiveHint: 'Clicca una zona per visualizzare telemetria e dimensionamento solare',
+        showAllPrefix: 'Mostra Tutte',
+      },
+      districtsStrip: {
+        title: 'Telemetria Distretti',
+      },
+      priorityBanner: {
+        title: 'Priorità Dispacciamento Solare IA',
+        pumpSitePrefix: 'Sito Prioritario:',
+        criticalMoistureText: 'umidità critica del suolo',
+        recordsText: 'registra',
+        macroWetnessText: 'umidità del bacino',
+      },
+      telemetryPanel: {
+        title: 'Telemetria di Zona',
+        droughtSuffix: 'Siccità',
+        plantationSuffix: 'Appezzamento',
+        smapMoisture: 'Umidità del Suolo (GWETTOP)',
+        criticalDry: 'Secco Critico',
+        moderate: 'Moderato',
+        humidOptimal: 'Ottimale',
+        volumetricDepth: 'Zona radicale superficiale',
+        sevenDayTrend: 'Tendenza 7 Giorni',
+        deficit: 'deficit',
+        gain: 'recupero',
+        nasaRadiance: 'Radiazione Solare',
+        strong: 'Alta Resa',
+        moderateSolar: 'Moderata',
+        solarPumpYield: 'Capacità Solare',
+        capacityUnit: 'Barre',
+        surfaceTempLabel: 'Temp. Aria Superficiale (T2M)',
+      },
+      peatland: {
+        eyebrow: 'Allerta Precoce Ecosistema',
+        moisturePrefix: 'Umidità del suolo',
+        sendWarningBtn: 'Invia Allerta WhatsApp/SMS Agricoltori',
+        confirmedTitle: 'Allerta Inviata',
+        confirmedBodyPrefix: 'Notifica WhatsApp/SMS inviata agli agricoltori in',
+      },
+      solarSizing: {
+        eyebrow: 'Ingegneria PV Intelligente',
+        title: 'Dimensionamento Solare e Risparmio',
+        arraySizeLabel: 'Impianto Solare Consigliato',
+        panelUnit: 'Pannelli 550Wp',
+        dailyWaterLabel: 'Acqua Pompata Stimata',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: 'Risparmio Mensile Stimato',
+        vsDiesel: 'vs Pompa Diesel',
+        saveFuelPrefix: 'Risparmia',
+        saveFuelSuffix: 'L diesel / mese',
+      },
+      advisor: {
+        eyebrow: 'Motore Telemetrico Locale',
+        title: 'Consulente Agronomico IA SOLVARA',
+        liveBriefPrefix: 'RIEPILOGO LIVE',
+        quickPromptsTitle: 'Richieste Rapide',
+        analyzingPrefix: 'Analisi telemetria NASA per',
+        prompts: {
+          schedule: 'Miglior orario di irrigazione oggi?',
+          peatland: 'Piano di mitigazione dello stress?',
+          roi: 'ROI Pompa Solare vs Diesel?',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: 'DISPACCIAMENTO AUTONOMO POMPE SOLARI VFD ONLINE',
+      bannerSubtitle: 'Modulazione MPPT + Inverter VFD sincronizzata con NASA POWER',
+      telemetryOk: 'TELEMETRIA NOMINALE',
+      kpis: {
+        solarOutput: 'Potenza Array PV',
+        solarSub: 'Tracking MPPT 98.6%',
+        pumpCapacity: 'Portata Pompa',
+        pumpSub: 'VFD Velocità Variabile',
+        waterReserve: 'Riserva Serbatoio',
+        waterSub: 'Serbatoio 20,000 L',
+        rain3Day: 'Pioggia Media 3G',
+        rainLatestPrefix: 'Ultima:',
+        rainOptimalSolar: 'Solare Ottimale',
+        rainActiveRecharge: 'Ricarica Attiva',
+        yieldSaved: 'Raccolto Protetto',
+        yieldSub: 'Prevenzione appassimento',
+      },
+      heatmap: {
+        title: 'Matrice Umidità 140 Parcelle e Irrigazione d’Emergenza',
+        subtitle: 'Simula l’onda radiale di idratazione solare a goccia nei campi in stress',
+        scaleLabel: 'SCALA:',
+        reRunBtn: 'Avvia Irrigazione Solare d’Emergenza',
+        pumpingActive: 'Onda di Idratazione Attiva',
+        resetDemoBtn: 'Ripristina Stress',
+        plotPrefix: 'Parcella #',
+        legend: {
+          severe: 'Grave',
+          high: 'Alto Stress',
+          moderate: 'Moderato',
+          low: 'Lieve',
+          hydrated: 'Idratato',
+        },
+        cellLabels: {
+          hydrated: 'Idratato (Ottimale)',
+          severe: 'Stress Grave (<15%)',
+          high: 'Alto Stress (15-25%)',
+          moderate: 'Stress Moderato (25-40%)',
+          low: 'Stress Lieve (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: 'Legge di Affinità: P ∝ N³',
+        title: 'Ottimizzatore Efficienza VFD',
+        subtitle: 'Modula dinamicamente i giri della pompa secondo l’umidità radicale in tempo reale',
+        sourcePlotArray: 'Matrice Campo',
+        autoSyncOn: 'Auto-Sincronia ON',
+        autoSyncOff: 'Auto-Sincronia OFF',
+        liveRootMoisturePrefix: 'Umidità Radicale Effettiva',
+        criticalWord: 'critiche',
+        hydratedWord: 'idratate',
+        zoneTelemetryPrefix: 'Telemetria Zona',
+        meanArrayPrefix: 'Media:',
+        suggestedAdjustment: 'Regolazione Suggerita',
+        optimalSynced: 'Sincronizzato',
+        rampDown: 'Riduci Hz',
+        rampUp: 'Aumenta Hz',
+        activeInverterSpeed: 'Velocità Attiva:',
+        targetPrefix: 'Obiettivo:',
+        recommendedTooltipPrefix: 'Obiettivo ottimale:',
+        manualSliderLabel: 'Controllo Manuale Frequenza (20 - 50 Hz)',
+        nominalRpmSuffix: 'RPM Nominali',
+        syncedBtn: 'Inverter Sincronizzato',
+        applyBtnPrefix: 'Applica',
+        kpiSuggestedSpeed: 'Frequenza Target VFD',
+        kpiAdjustedFlow: 'Portata Regolata',
+        kpiVsActivePrefix: 'vs',
+        kpiVsActiveSuffix: 'attivo',
+        kpiInverterLoad: 'Carico Inverter',
+        kpiVsCurrentSuffix: 'kW risparmiati',
+        kpiBaseline50Hz: 'Base 50 Hz',
+        kpiEnergySaved: 'Energia Risparmiata',
+        kpiToBatterySuffix: 'kWh/day risparmiati',
+      },
+      allocation: {
+        title: 'Allocazione Dispacciamento Solare',
+        subtitle: 'Ripartizione potenza PV in tempo reale per priorità di zona',
+      },
+      forecast: {
+        title: 'Produzione Idrica · Previsione 24H',
+        subtitlePrefix: 'Finestra di picco',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: 'allineata alla massima irradianza',
+        estTotal: 'Stima 114,500 L/day',
+        peakLabel: '12h (Picco)',
+      },
+    },
+    tab3: {
+      rankBadge: 'SITO AGRIVOLTAICO #1',
+      siteCodePrefix: 'SITE CODE:',
+      siteTitleSuffix: 'Dossier di Fattibilità Agrivoltaica',
+      siteSubtitlePrefix: 'Intelligenza spaziale multicriterio ancorata ai dati NASA POWER presso',
+      suitabilityScore: 'Indice di Idoneità',
+      tierGrade: 'Classe A Prime',
+      confidencePrefix: 'Affidabilità',
+      metrics: [
+        { label: 'Capacità PV', val: '120 kWp', sub: 'Bifacciale elevato' },
+        { label: 'Resa Annua', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: 'Pompaggio', val: '145 m³/day', sub: '18m TDH' },
+        { label: 'Capex Stimato', val: '108K USD', sub: 'Chiavi in mano + VFD' },
+        { label: 'Ritorno', val: '3.4 Anni', sub: 'Zero diesel' },
+        { label: 'CO₂ Evitata', val: '142 t/yr', sub: 'Verificata' },
+        { label: 'Ombreggiamento', val: '+18%', sub: 'Microclima fresco' },
+      ],
+      reasoningTitle: 'Analisi Spaziale e Agronomica IA',
+      confidenceBadgePrefix: 'Affidabilità Modello',
+      reasons: [
+        {
+          title: 'Verifica Risorsa Solare:',
+          bodyBefore: 'L’irradianza media NASA POWER raggiunge',
+          bodyAfter: 'garantendo un elevato fattore di capacità per il pompaggio VFD diurno senza cicli gravosi di batteria.',
+        },
+        {
+          title: 'Mitigazione Evapotraspirazione:',
+          body: 'Le strutture agrivoltaiche elevate a 3,2 m riducono l’evapotraspirazione superficiale del 18–24% nelle ore più calde.',
+        },
+        {
+          title: 'Economia Idraulica Zero-Diesel:',
+          body: 'Il pompaggio VFD diretto in CC elimina la logistica del carburante e stabilizza i margini agricoli.',
+        },
+      ],
+      riskTitle: 'Nota di Mitigazione dei Rischi',
+      riskBodyBefore: 'La copertura nuvolosa stagionale o le ondate di calore possono spostare i cicli di pompaggio. Abbina',
+      riskBodyHighlight: 'un serbatoio a gravità da 20,000 L',
+      riskBodyAfter: 'alle allerte automatiche WhatsApp per coprire eventuali giornate nuvolose.',
+      weightsTitle: 'Pesi Multicriterio MCDA',
+      weightsSubtitle: 'Modello ponderato per la classificazione dei siti',
+      weights: [
+        'Irradianza Solare (NASA POWER)',
+        'Urgenza Deficit Idrico',
+        'Prossimità Falda / Canale',
+        'Sinergia Ombreggiamento Colture',
+        'ROI Sostituzione Diesel e Rete',
+      ],
+      solarProfileTitle: 'Curva di Generazione Solare 24H',
+      solarProfileSubtitle: 'Profilo orario di potenza PV',
+      solarMaxBadge: 'Picco 98.4 kW',
+      solarPeakZen: '12:15 (Zenit)',
+      irradianceMonthlyTitle: 'Profilo Mensile di Irradianza',
+      irradianceMonthlySubtitle: 'Distribuzione stagionale storica (kWh/m²/day)',
+      irradianceAvgBadge: 'Media 6.08 kWh/m²',
+      months: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+    },
+    footer: {
+      brandLine: 'SOLVARA Agrivoltaico Planetario • Suite Telemetrica NASA POWER & SMAP',
+      resolution: 'Griglia NASA POWER 0.5° × 0.625°',
+      iec: 'Prestazioni PV IEC 61724',
+      vfdProtocol: 'Controllo VFD Modbus',
+    },
+    toast: {
+      title: 'Allerta Precoce Inviata',
+      bodyPrefix: 'Allerta WhatsApp/SMS inviata agli agricoltori in',
+      bodyMiddle: 'per',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'Online',
+      previewTag: 'Anteprima Cellulare Agricoltore',
+      todayLabel: 'OGGI',
+      copyBtn: 'Copia Messaggio',
+      copiedBtn: 'Copiato!',
+      closeBtn: 'Chiudi',
+    },
+  },
+  th: {
+    header: {
+      subtitle: 'ศูนย์ควบคุมเกษตรโซลาร์เซลล์และระบบชลประทานดาวเทียมระดับโลก',
+      langSwitcherLabel: 'ตัวเลือกภาษา',
+      langSearchPlaceholder: 'ค้นหาภาษา...',
+      langFullLabel: 'อินเทอร์เฟซเต็มรูปแบบ',
+      langFallbackNote: 'การแจ้งเตือนภาษาท้องถิ่น + UI อังกฤษ',
+      langNoMatch: 'ไม่พบภาษาที่ตรงกัน',
+      tabs: {
+        macro: 'แผนที่ภัยแล้งและปั๊มน้ำ',
+        ops: 'ปฏิบัติการชลประทานแม่นยำ',
+        feasibility: 'ข้อมูลเชิงลึกพื้นที่',
+      },
+      mobileTabs: {
+        macro: 'แผนที่ภัยแล้ง',
+        ops: 'ปฏิบัติการ',
+        feasibility: 'ข้อมูลพื้นที่',
+      },
+      telemetry: {
+        syncing: 'กำลังซิงค์ NASA POWER...',
+        live: 'NASA POWER สด',
+        ready: 'NASA POWER พร้อมใช้งาน',
+        sourceLive: 'API NASA POWER แบบเรียลไทม์',
+        sourceFallback: 'ข้อมูลสำรองปรับเทียบ NASA POWER',
+        solarDate: 'แสงอาทิตย์',
+        moistureDate: 'ความชื้น',
+      },
+      themeTooltip: {
+        toLight: 'สลับเป็นโหมดสว่าง',
+        toDark: 'สลับเป็นโหมดมืด',
+      },
+    },
+    tab1: {
+      title: 'การติดตามภาวะแห้งแล้งระดับโลกและปั๊มน้ำพลังงานแสงอาทิตย์',
+      subtitle: 'ข้อมูลดาวเทียม NASA POWER แบบเรียลไทม์ การตรวจจับอำเภอจริง และการสั่งงานปั๊ม VFD อัตโนมัติ',
+      mobileFilterBtn: 'ตัวกรองและคำอธิบาย',
+      zonesWord: 'โซน',
+      filteredBadge: 'กรองแล้ว',
+      filtersTitle: 'ตัวกรองข้อมูลระยะไกล',
+      resetFilters: 'รีเซ็ต',
+      targetRegionLabel: 'พื้นที่ย่อยเป้าหมาย',
+      allRegionsOption: 'ทุกพื้นที่',
+      stapleCropLabel: 'พืชผล / สินค้าเกษตร',
+      allCropsOption: 'พืชผลทั้งหมด',
+      severityLabel: 'ระดับความรุนแรงภัยแล้ง',
+      severities: {
+        All: 'ทั้งหมด',
+        Severe: 'รุนแรง',
+        Moderate: 'ปานกลาง',
+        Mild: 'เล็กน้อย',
+      },
+      crops: {
+        ...SHARED_CROPS_EN,
+        Maize: 'ข้าวโพด',
+        Wheat: 'ข้าวสาลี',
+        Tomatoes: 'มะเขือเทศ',
+        Olives: 'มะกอก',
+        Almonds: 'อัลมอนด์',
+        Pistachios: 'พิสตาชิโอ',
+        Soybeans: 'ถั่วเหลือง',
+        Cotton: 'ฝ้าย',
+        Citrus: 'ส้ม',
+        'Date Palms': 'อินทผลัม',
+        Grapes: 'องุ่น',
+        Rice: 'ข้าว',
+        Horticulture: 'พืชสวน',
+        'Chili & Leafy Greens': 'พริกและผักใบ',
+      },
+      mapLegendTitle: 'คำอธิบายแผนที่',
+      legendSevere: 'เครียดน้ำรุนแรง (< 20%)',
+      legendModerate: 'เครียดน้ำปานกลาง (20-29%)',
+      legendMild: 'เล็กน้อย / เหมาะสม (>= 30%)',
+      legendPump: 'สถานีปั๊มน้ำโซลาร์',
+      globalExplorer: {
+        title: 'เครื่องมือสำรวจพิกัดดาวเทียมและเมืองทั่วโลก',
+        subtitle: 'เลือกมาตรฐานพันธมิตร NASA หรือระบุเมือง / พิกัด GPS ใดก็ได้ทั่วโลกเพื่อรับข้อมูล NASA POWER สดและชื่อเขตจริง',
+        cityPlaceholder: 'ค้นหาเมืองใดก็ได้ทั่วโลก (เช่น Bangkok, Chiang Mai, Nairobi, Seville)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'ดึงข้อมูลดาวเทียม NASA',
+        fetchingBtn: 'กำลังซิงค์ดาวเทียม...',
+        presetsLabel: 'จุดอ้างอิง:',
+        syncLangBtn: 'ปรับภาษาตามภูมิภาค',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: 'ข้อมูลสำรองตามละติจูด',
+        districtsPrefix: 'เขตพื้นที่',
+        geocodeError: 'ไม่พบเมือง ลองชื่อเมืองใหญ่ใกล้เคียงหรือกรอกละติจูด/ลองจิจูดโดยตรง',
+        invalidCoordsError: 'กรุณากรอกพิกัดที่ถูกต้อง (ละติจูด -90 ถึง 90, ลองจิจูด -180 ถึง 180)',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: 'เครื่องจำลองสภาพอากาศสุดขั้ว (What-If)',
+        simActive: 'กำลังจำลองสถานการณ์',
+        liveBaseline: 'ฐานข้อมูลสด NASA',
+        resetBtn: 'รีเซ็ตเป็นข้อมูล NASA สด',
+        rainfallLabel: 'ปริมาณฝนรายวันจำลอง',
+        solarLabel: 'ความเข้มแสงอาทิตย์จำลอง',
+        extremeDry: '0 mm (แล้งจัด)',
+      },
+      map: {
+        resolutionLabel: 'ความละเอียดเชิงพื้นที่:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: 'กำลังสูบ:',
+        pumpStatuses: {
+          Active: 'ทำงาน',
+          Standby: 'พร้อมใช้งาน',
+          Optimizing: 'กำลังปรับสมดุล',
+        },
+        interactiveHint: 'คลิกเครื่องหมายโซนเพื่อตรวจสอบข้อมูลดาวเทียมและขนาดโซลาร์',
+        showAllPrefix: 'แสดงทั้งหมด',
+      },
+      districtsStrip: {
+        title: 'ข้อมูลระยะไกลระดับเขตพื้นที่',
+      },
+      priorityBanner: {
+        title: 'ลำดับความสำคัญการจ่ายน้ำปั๊มโซลาร์ AI',
+        pumpSitePrefix: 'จุดสำคัญอันดับแรก:',
+        criticalMoistureText: 'ความชื้นดินวิกฤต',
+        recordsText: 'บันทึก',
+        macroWetnessText: 'ความชื้นดินลุ่มน้ำ',
+      },
+      telemetryPanel: {
+        title: 'ข้อมูลระยะไกลประจำโซน',
+        droughtSuffix: 'ภาวะแล้ง',
+        plantationSuffix: 'แปลงเพาะปลูก',
+        smapMoisture: 'ความชื้นดิน (GWETTOP)',
+        criticalDry: 'แห้งวิกฤต',
+        moderate: 'ปานกลาง',
+        humidOptimal: 'เหมาะสม',
+        volumetricDepth: 'ชั้นรากผิวดิน',
+        sevenDayTrend: 'แนวโน้มความชื้น 7 วัน',
+        deficit: 'ขาดดุล',
+        gain: 'เพิ่มขึ้น',
+        nasaRadiance: 'รังสีดวงอาทิตย์',
+        strong: 'ผลผลิตสูง',
+        moderateSolar: 'ปานกลาง',
+        solarPumpYield: 'กำลังปั๊มโซลาร์',
+        capacityUnit: 'ระดับ',
+        surfaceTempLabel: 'อุณหภูมิอากาศผิวดิน (T2M)',
+      },
+      peatland: {
+        eyebrow: 'ระบบเตือนภัยล่วงหน้าระบบนิเวศ',
+        moisturePrefix: 'ความชื้นดิน',
+        sendWarningBtn: 'ส่งการแจ้งเตือนเกษตรกรทาง WhatsApp/SMS',
+        confirmedTitle: 'ส่งการแจ้งเตือนแล้ว',
+        confirmedBodyPrefix: 'จัดคิวการแจ้งเตือน WhatsApp/SMS สำหรับเกษตรกรใน',
+      },
+      solarSizing: {
+        eyebrow: 'วิศวกรรม PV อัจฉริยะ',
+        title: 'การคำนวณขนาดปั๊มโซลาร์และการประหยัดเชื้อเพลิง',
+        arraySizeLabel: 'ขนาดแผงโซลาร์ที่แนะนำ',
+        panelUnit: 'แผง 550Wp',
+        dailyWaterLabel: 'ปริมาณน้ำสูบเฉลี่ยต่อวัน',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: 'ประหยัดค่าน้ำมันต่อเดือน',
+        vsDiesel: 'เทียบกับปั๊มดีเซล',
+        saveFuelPrefix: 'ลดการใช้',
+        saveFuelSuffix: 'L ดีเซล / เดือน',
+      },
+      advisor: {
+        eyebrow: 'เครื่องยนต์วิเคราะห์แบบ Zero-API',
+        title: 'ที่ปรึกษาเกษตรอัจฉริยะ SOLVARA AI',
+        liveBriefPrefix: 'สรุปสด',
+        quickPromptsTitle: 'คำถามด่วนสำหรับนักปฐพีวิทยา',
+        analyzingPrefix: 'กำลังวิเคราะห์ข้อมูลดาวเทียม NASA สำหรับ',
+        prompts: {
+          schedule: 'ตารางชลประทานที่ดีที่สุดวันนี้คือช่วงใด?',
+          peatland: 'แผนลดความเครียดระบบนิเวศและไฟป่า?',
+          roi: 'เปรียบเทียบความคุ้มค่าปั๊มดีเซลกับโซลาร์?',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: 'ระบบควบคุมปั๊มโซลาร์ VFD อัตโนมัติออนไลน์',
+      bannerSubtitle: 'การปรับคลื่น MPPT + Variable Frequency Drive แบบวงปิดซิงค์กับ NASA POWER',
+      telemetryOk: 'ข้อมูลปกติ',
+      kpis: {
+        solarOutput: 'กำลังผลิตแผง PV',
+        solarSub: 'ติดตามจุด MPPT 98.6%',
+        pumpCapacity: 'อัตราการไหลของปั๊ม',
+        pumpSub: 'ปรับรอบ VFD อัตโนมัติ',
+        waterReserve: 'น้ำสำรองถังพัก',
+        waterSub: 'อ่างเก็บน้ำ 20,000 L',
+        rain3Day: 'ฝนเฉลี่ย 3 วัน',
+        rainLatestPrefix: 'ล่าสุด:',
+        rainOptimalSolar: 'แสงแดดเหมาะสม',
+        rainActiveRecharge: 'เติมน้ำธรรมชาติ',
+        yieldSaved: 'ผลผลิตที่ปกป้องได้',
+        yieldSub: 'ป้องกันพืชเหี่ยวเฉา',
+      },
+      heatmap: {
+        title: 'เมทริกซ์ความชื้น 140 แปลงและคลื่นให้น้ำฉุกเฉิน',
+        subtitle: 'จำลองการให้น้ำหยดพลังงานแสงอาทิตย์แบบรัศมีทั่วแปลงที่ขาดน้ำ',
+        scaleLabel: 'สเกล:',
+        reRunBtn: 'เริ่มให้น้ำโซลาร์ฉุกเฉิน',
+        pumpingActive: 'กำลังปล่อยคลื่นความชื้น',
+        resetDemoBtn: 'รีเซ็ตความเครียดแปลง',
+        plotPrefix: 'แปลง #',
+        legend: {
+          severe: 'รุนแรง',
+          high: 'เครียดสูง',
+          moderate: 'ปานกลาง',
+          low: 'เครียดต่ำ',
+          hydrated: 'ชุ่มชื้นแล้ว',
+        },
+        cellLabels: {
+          hydrated: 'ชุ่มชื้น (เหมาะสม)',
+          severe: 'เครียดรุนแรง (<15%)',
+          high: 'เครียดสูง (15-25%)',
+          moderate: 'เครียดปานกลาง (25-40%)',
+          low: 'เครียดต่ำ (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: 'กฎความคล้าย: P ∝ N³',
+        title: 'ตัวปรับปรุงประสิทธิภาพ VFD',
+        subtitle: 'ปรับรอบมอเตอร์ปั๊มหอยโข่งตามความชื้นเขตรากแบบเรียลไทม์',
+        sourcePlotArray: 'เมทริกซ์แปลง',
+        autoSyncOn: 'ซิงค์อัตโนมัติ เปิด',
+        autoSyncOff: 'ซิงค์อัตโนมัติ ปิด',
+        liveRootMoisturePrefix: 'ความชื้นรากสุทธิ',
+        criticalWord: 'วิกฤต',
+        hydratedWord: 'ชุ่มชื้น',
+        zoneTelemetryPrefix: 'ข้อมูลโซน',
+        meanArrayPrefix: 'ค่าเฉลี่ยเมทริกซ์:',
+        suggestedAdjustment: 'ค่าปรับที่แนะนำ',
+        optimalSynced: 'ซิงค์เหมาะสมแล้ว',
+        rampDown: 'ลดความถี่',
+        rampUp: 'เพิ่มความถี่',
+        activeInverterSpeed: 'ความถี่อินเวอร์เตอร์ปัจจุบัน:',
+        targetPrefix: 'เป้าหมาย:',
+        recommendedTooltipPrefix: 'เป้าหมายเหมาะสม:',
+        manualSliderLabel: 'ปรับความถี่ด้วยตนเอง (20 - 50 Hz)',
+        nominalRpmSuffix: 'RPM มาตรฐาน',
+        syncedBtn: 'อินเวอร์เตอร์ซิงค์แล้ว',
+        applyBtnPrefix: 'ใช้งาน',
+        kpiSuggestedSpeed: 'ความเร็ว VFD เป้าหมาย',
+        kpiAdjustedFlow: 'อัตราการไหลที่ปรับแล้ว',
+        kpiVsActivePrefix: 'เทียบกับ',
+        kpiVsActiveSuffix: 'ที่ทำงานอยู่',
+        kpiInverterLoad: 'โหลดอินเวอร์เตอร์',
+        kpiVsCurrentSuffix: 'kW ที่ประหยัดได้',
+        kpiBaseline50Hz: 'ฐานเต็มพิกัด 50 Hz',
+        kpiEnergySaved: 'พลังงานที่ประหยัดได้',
+        kpiToBatterySuffix: 'kWh/day ที่ประหยัดได้',
+      },
+      allocation: {
+        title: 'การจัดสรรพลังงานโซลาร์',
+        subtitle: 'แบ่งจ่ายพลังงาน PV แบบเรียลไทม์ไปยังเขตความสำคัญสูงสุด',
+      },
+      forecast: {
+        title: 'ปริมาณน้ำสูบ · พยากรณ์แสงอาทิตย์ 24 ชม.',
+        subtitlePrefix: 'ช่วงเวลาสูบน้ำสูงสุด',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: 'สอดคล้องกับความเข้มแสงสูงสุด',
+        estTotal: 'ประมาณ 114,500 L/day',
+        peakLabel: '12 น. (สูงสุด)',
+      },
+    },
+    tab3: {
+      rankBadge: 'พื้นที่เกษตรโซลาร์อันดับ #1',
+      siteCodePrefix: 'รหัสพื้นที่:',
+      siteTitleSuffix: 'รายงานความเป็นไปได้เกษตรโซลาร์เซลล์',
+      siteSubtitlePrefix: 'ข้อมูลอัจฉริยะเชิงพื้นที่หลายเกณฑ์อ้างอิงจากดาวเทียม NASA POWER สด ณ',
+      suitabilityScore: 'คะแนนความเหมาะสม',
+      tierGrade: 'ระดับ Tier-A Prime',
+      confidencePrefix: 'ความเชื่อมั่น',
+      metrics: [
+        { label: 'กำลังติดตั้ง PV', val: '120 kWp', sub: 'Bifacial ยกสูง' },
+        { label: 'ผลผลิตต่อปี', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: 'กำลังสูบน้ำ', val: '145 m³/day', sub: 'แรงส่ง 18m TDH' },
+        { label: 'งบลงทุนประมาณ', val: '108K USD', sub: 'ครบชุด + VFD' },
+        { label: 'ระยะคืนทุน', val: '3.4 ปี', sub: 'ทดแทนดีเซล' },
+        { label: 'ลดคาร์บอน', val: '142 t/yr', sub: 'รับรอง Tier-1' },
+        { label: 'ร่มเงาพืชผล', val: '+18%', sub: 'ปรับสภาพภูมิอากาศจุลภาค' },
+      ],
+      reasoningTitle: 'การวิเคราะห์เชิงพื้นที่และปฐพีวิทยา AI',
+      confidenceBadgePrefix: 'ความเชื่อมั่นโมเดล',
+      reasons: [
+        {
+          title: 'การยืนยันทรัพยากรแสงอาทิตย์:',
+          bodyBefore: 'รังสีคลื่นสั้นผิวดินจาก NASA POWER เฉลี่ย',
+          bodyAfter: 'ให้ค่า Capacity Factor สูงสำหรับการสูบน้ำ VFD ช่วงกลางวันโดยไม่ต้องใช้แบตเตอรี่ขนาดใหญ่',
+        },
+        {
+          title: 'การลดภาวะขาดน้ำเขตราก:',
+          body: 'โครงสร้างแผงเกษตรโซลาร์สูง 3.2 ม. ช่วยลดการระเหยของน้ำจากผิวดินลง 18–24% ในช่วงแดดจัดกลางวัน',
+        },
+        {
+          title: 'เศรษฐศาสตร์ชลประทานปลอดดีเซล:',
+          body: 'การขับปั๊ม VFD ด้วยไฟฟ้ากระแสตรงโดยตรงช่วยตัดต้นทุนขนส่งน้ำมันและสร้างเสถียรภาพรายได้เกษตรกรรายย่อย',
+        },
+      ],
+      riskTitle: 'บันทึกการลดความเสี่ยงพื้นที่',
+      riskBodyBefore: 'เมฆตามฤดูกาลหรือคลื่นความร้อนจัดอาจเปลี่ยนช่วงการทำงานสูงสุด ควรผสาน',
+      riskBodyHighlight: 'ถังเก็บน้ำแรงโน้มถ่วง 20,000 L',
+      riskBodyAfter: 'เข้ากับระบบเตือนภัยแล้ง WhatsApp อัตโนมัติเพื่อรองรับช่วงเมฆครึ้มหลายวัน',
+      weightsTitle: 'น้ำหนักเกณฑ์ MCDA',
+      weightsSubtitle: 'กรอบการให้คะแนนเชิงพื้นที่แบบถ่วงน้ำหนักเพื่อจัดอันดับพื้นที่',
+      weights: [
+        'ความเข้มรังสีแสงอาทิตย์ (NASA POWER)',
+        'ความเร่งด่วนภาวะขาดน้ำดิน',
+        'ความใกล้แหล่งน้ำบาดาล / คลองส่งน้ำ',
+        'ความเกื้อกูลร่มเงาต่อพืชผล',
+        'ผลตอบแทนทดแทนกริดและดีเซล ROI',
+      ],
+      solarProfileTitle: 'กราฟการผลิตไฟฟ้าโซลาร์ 24 ชม.',
+      solarProfileSubtitle: 'โปรไฟล์กำลังผลิตแผง PV รายชั่วโมง',
+      solarMaxBadge: 'สูงสุด 98.4 kW',
+      solarPeakZen: '12:15 (จุดยอด)',
+      irradianceMonthlyTitle: 'โปรไฟล์ความเข้มแสง 12 เดือน',
+      irradianceMonthlySubtitle: 'การกระจายค่าเฉลี่ยตามฤดูกาลในหน่วย kWh/m²/day',
+      irradianceAvgBadge: 'เฉลี่ย 6.08 kWh/m²',
+      months: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'],
+    },
+    footer: {
+      brandLine: 'SOLVARA เกษตรโซลาร์เซลล์ระดับโลก • ชุดข้อมูล NASA POWER & SMAP',
+      resolution: 'กริด NASA POWER 0.5° × 0.625°',
+      iec: 'มาตรฐานประสิทธิภาพ PV IEC 61724',
+      vfdProtocol: 'การควบคุมความคล้าย VFD Modbus',
+    },
+    toast: {
+      title: 'ส่งคำเตือนล่วงหน้าถึงเกษตรกรแล้ว',
+      bodyPrefix: 'ส่งการแจ้งเตือน WhatsApp/SMS ไปยังเกษตรกรใน',
+      bodyMiddle: 'สำหรับ',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'Online',
+      previewTag: 'ตัวอย่างมือถือเกษตรกร',
+      todayLabel: 'วันนี้',
+      copyBtn: 'คัดลอกข้อความ',
+      copiedBtn: 'คัดลอกแล้ว!',
+      closeBtn: 'ปิด',
+    },
+  },
+  sv: {
+    header: {
+      subtitle: 'Global plattform för agrivoltaik & satellitstyrd solbevattning',
+      langSwitcherLabel: 'Språkväljare',
+      langSearchPlaceholder: 'Sök språk...',
+      langFullLabel: 'Fullt gränssnitt',
+      langFallbackNote: 'Lokala varningar + EN-gränssnitt',
+      langNoMatch: 'Inget matchande språk',
+      tabs: {
+        macro: 'Torka & Pumpkarta',
+        ops: 'Precisionsbevattning',
+        feasibility: 'Platsintelligens',
+      },
+      mobileTabs: {
+        macro: 'Torkkarta',
+        ops: 'Drift',
+        feasibility: 'Platsdata',
+      },
+      telemetry: {
+        syncing: 'Synkar NASA POWER...',
+        live: 'NASA POWER Live',
+        ready: 'NASA POWER Redo',
+        sourceLive: 'Live NASA POWER API',
+        sourceFallback: 'Kalibrerad NASA POWER-reserv',
+        solarDate: 'Sol',
+        moistureDate: 'Fukt',
+      },
+      themeTooltip: {
+        toLight: 'Byt till ljust läge',
+        toDark: 'Byt till mörkt läge',
+      },
+    },
+    tab1: {
+      title: 'Global torkstress & övervakning av solpumpar',
+      subtitle: 'Direkt NASA POWER-satellittelemetri, verklig distriktsidentifiering och automatisk VFD-pumpstyrning',
+      mobileFilterBtn: 'Filter & Teckenförklaring',
+      zonesWord: 'Zoner',
+      filteredBadge: 'Filtrerad',
+      filtersTitle: 'Telemetrifilter',
+      resetFilters: 'Återställ',
+      targetRegionLabel: 'Delregion',
+      allRegionsOption: 'Alla regioner',
+      stapleCropLabel: 'Gröda / Råvara',
+      allCropsOption: 'Alla grödor',
+      severityLabel: 'Torkans svårighetsgrad',
+      severities: {
+        All: 'Alla',
+        Severe: 'Allvarlig',
+        Moderate: 'Måttlig',
+        Mild: 'Mild',
+      },
+      crops: {
+        ...SHARED_CROPS_EN,
+        Maize: 'Majs',
+        Wheat: 'Vete',
+        Tomatoes: 'Tomater',
+        Olives: 'Oliver',
+        Almonds: 'Mandel',
+        Pistachios: 'Pistasch',
+        Soybeans: 'Sojabönor',
+        Cotton: 'Bomull',
+        Citrus: 'Citrus',
+        'Date Palms': 'Dadelpalmer',
+        Grapes: 'Druvor',
+        Rice: 'Ris',
+        Horticulture: 'Trädgårdsodling',
+        'Chili & Leafy Greens': 'Chili & Bladgrönt',
+      },
+      mapLegendTitle: 'Teckenförklaring',
+      legendSevere: 'Svår stress (< 20%)',
+      legendModerate: 'Måttlig stress (20-29%)',
+      legendMild: 'Mild / Optimal (>= 30%)',
+      legendPump: 'Solpumpstation',
+      globalExplorer: {
+        title: 'Global satellitkoordinat- & stadsutforskare',
+        subtitle: 'Välj ett NASA-partnermått eller ange valfri stad / GPS-koordinat globalt för NASA POWER-data och verkliga distriktsnamn',
+        cityPlaceholder: 'Sök valfri stad i världen (t.ex. Stockholm, Uppsala, Seville, Nairobi)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'Hämta NASA-satellitdata',
+        fetchingBtn: 'Synkar satellit...',
+        presetsLabel: 'Referenspunkter:',
+        syncLangBtn: 'Synka språk till region',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: 'LATITUDKALIBRERAD RESERV',
+        districtsPrefix: 'Distrikt',
+        geocodeError: 'Staden hittades inte. Prova en större närliggande stad eller ange latitud/longitud direkt.',
+        invalidCoordsError: 'Ange giltiga koordinater (Latitud -90 till 90, Longitud -180 till 180).',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: 'What-If-simulator för extremväder',
+        simActive: 'Simulering aktiv',
+        liveBaseline: 'Live NASA-baslinje',
+        resetBtn: 'Återställ till live NASA-data',
+        rainfallLabel: 'Simulerad daglig nederbörd',
+        solarLabel: 'Simulerad solinstrålning',
+        extremeDry: '0 mm (Extrem torka)',
+      },
+      map: {
+        resolutionLabel: 'Upplösning:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: 'Kap:',
+        pumpStatuses: {
+          Active: 'Aktiv',
+          Standby: 'Vänteläge',
+          Optimizing: 'Optimerar',
+        },
+        interactiveHint: 'Klicka på valfri zonmarkör för telemetri & soldimensionering',
+        showAllPrefix: 'Visa alla',
+      },
+      districtsStrip: {
+        title: 'Distriktstelemetri',
+      },
+      priorityBanner: {
+        title: 'AI-prioritering för solpumpsdrift',
+        pumpSitePrefix: 'Prioriterad plats:',
+        criticalMoistureText: 'kritisk markfuktighet',
+        recordsText: 'visar',
+        macroWetnessText: 'regional markfuktighet',
+      },
+      telemetryPanel: {
+        title: 'Zontelemetri',
+        droughtSuffix: 'Torka',
+        plantationSuffix: 'Skifte',
+        smapMoisture: 'Markfuktighet (GWETTOP)',
+        criticalDry: 'Kritiskt torrt',
+        moderate: 'Måttlig',
+        humidOptimal: 'Optimal',
+        volumetricDepth: 'Ytlig rotzon',
+        sevenDayTrend: '7-dagars fukttrend',
+        deficit: 'underskott',
+        gain: 'ökning',
+        nasaRadiance: 'Solstrålning',
+        strong: 'Hög avkastning',
+        moderateSolar: 'Måttlig',
+        solarPumpYield: 'Solpumpskapacitet',
+        capacityUnit: 'Steg',
+        surfaceTempLabel: 'Lufttemperatur vid ytan (T2M)',
+      },
+      peatland: {
+        eyebrow: 'Tidig varning för ekosystem',
+        moisturePrefix: 'Markfuktighet',
+        sendWarningBtn: 'Skicka tidig WhatsApp/SMS-varning till lantbrukare',
+        confirmedTitle: 'Varning skickad',
+        confirmedBodyPrefix: 'WhatsApp/SMS-varning köad för lantbrukare i',
+      },
+      solarSizing: {
+        eyebrow: 'Smart PV-teknik',
+        title: 'Dimensionering av solpump & bränslebesparing',
+        arraySizeLabel: 'Rekommenderad solcellsyta',
+        panelUnit: '550Wp-paneler',
+        dailyWaterLabel: 'Beräknat dagligt vattenflöde',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: 'Månatlig bränslebesparing',
+        vsDiesel: 'jämfört med dieselpump',
+        saveFuelPrefix: 'Ersätter',
+        saveFuelSuffix: 'L diesel / månad',
+      },
+      advisor: {
+        eyebrow: 'Zero-API Telemetrimotor',
+        title: 'SOLVARA AI Agronområdgivare',
+        liveBriefPrefix: 'LIVE-RAPPORT',
+        quickPromptsTitle: 'Snabbfrågor för agronom',
+        analyzingPrefix: 'Analyserar NASA-telemetri för',
+        prompts: {
+          schedule: 'Bästa bevattningsschema idag?',
+          peatland: 'Stress & åtgärdsplan för ekosystemet?',
+          roi: 'ROI för diesel vs solpump?',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: 'AUTONOM SOLDRIVEN VFD-PUMPSTYRNING ONLINE',
+      bannerSubtitle: 'Sluten MPPT + frekvensomriktare synkroniserad med NASA POWER',
+      telemetryOk: 'TELEMETRI NORMAL',
+      kpis: {
+        solarOutput: 'PV-uteffekt',
+        solarSub: 'MPPT-följning 98,6%',
+        pumpCapacity: 'Pumpflöde',
+        pumpSub: 'Variabelt varvtal VFD',
+        waterReserve: 'Bufferttankreserv',
+        waterSub: '20 000 L reservoar',
+        rain3Day: '3-dagars regnsnitt',
+        rainLatestPrefix: 'Senaste:',
+        rainOptimalSolar: 'Optimalt solljus',
+        rainActiveRecharge: 'Aktiv påfyllning',
+        yieldSaved: 'Skyddad skörd',
+        yieldSub: 'Förhindrar vissningsskador',
+      },
+      heatmap: {
+        title: '140-skiftes fuktmatris & akut bevattningsvåg',
+        subtitle: 'Simulera radiell soldriven droppbevattning över torrstressade skiften',
+        scaleLabel: 'SKALA:',
+        reRunBtn: 'Kör akut solbevattning',
+        pumpingActive: 'Bevattningsvåg aktiv',
+        resetDemoBtn: 'Återställ fältstress',
+        plotPrefix: 'Skifte #',
+        legend: {
+          severe: 'Svår',
+          high: 'Hög stress',
+          moderate: 'Måttlig',
+          low: 'Låg stress',
+          hydrated: 'Bevattnad',
+        },
+        cellLabels: {
+          hydrated: 'Bevattnad (Optimal)',
+          severe: 'Svår stress (<15%)',
+          high: 'Hög stress (15-25%)',
+          moderate: 'Måttlig stress (25-40%)',
+          low: 'Låg stress (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: 'Affinitetslag: P ∝ N³',
+        title: 'VFD-effektivitetsoptimerare',
+        subtitle: 'Modulera pumpens varvtal dynamiskt baserat på fuktighet i rotzonen',
+        sourcePlotArray: 'Fältmatris',
+        autoSyncOn: 'Autosynk PÅ',
+        autoSyncOff: 'Autosynk AV',
+        liveRootMoisturePrefix: 'Effektiv rotfuktighet',
+        criticalWord: 'kritisk',
+        hydratedWord: 'bevattnad',
+        zoneTelemetryPrefix: 'Zontelemetri',
+        meanArrayPrefix: 'Matrissnitt:',
+        suggestedAdjustment: 'Föreslaget delta',
+        optimalSynced: 'Optimalt synkad',
+        rampDown: 'Varva ner',
+        rampUp: 'Varva upp',
+        activeInverterSpeed: 'Aktiv omriktarfrekvens:',
+        targetPrefix: 'Mål:',
+        recommendedTooltipPrefix: 'Optimalt mål:',
+        manualSliderLabel: 'Manuell frekvensstyrning (20 - 50 Hz)',
+        nominalRpmSuffix: 'Nominellt RPM',
+        syncedBtn: 'Omriktare synkad',
+        applyBtnPrefix: 'Tillämpa',
+        kpiSuggestedSpeed: 'Målfrekvens VFD',
+        kpiAdjustedFlow: 'Justerat flöde',
+        kpiVsActivePrefix: 'mot',
+        kpiVsActiveSuffix: 'aktiv',
+        kpiInverterLoad: 'Omriktarlast',
+        kpiVsCurrentSuffix: 'kW sparat',
+        kpiBaseline50Hz: 'Full 50 Hz baslinje',
+        kpiEnergySaved: 'Sparad energi',
+        kpiToBatterySuffix: 'kWh/day sparat',
+      },
+      allocation: {
+        title: 'Fördelning av solenergi',
+        subtitle: 'Realtidsfördelning av PV-effekt mellan prioriterade distriktszoner',
+      },
+      forecast: {
+        title: 'Vattenproduktion · 24H solprognos',
+        subtitlePrefix: 'Toppfönster för pumpning',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: 'anpassat till maximal instrålning',
+        estTotal: 'Uppsk. 114 500 L/day',
+        peakLabel: '12h (Topp)',
+      },
+    },
+    tab3: {
+      rankBadge: 'RANK #1 AGRIVOLTAIK-PLATS',
+      siteCodePrefix: 'PLATSKOD:',
+      siteTitleSuffix: 'Förstudie för agrivoltaik',
+      siteSubtitlePrefix: 'Flerkriterieanalys förankrad i live NASA POWER-telemetri vid',
+      suitabilityScore: 'Lämplighetspoäng',
+      tierGrade: 'Tier-A Prime',
+      confidencePrefix: 'Tillförlitlighet',
+      metrics: [
+        { label: 'PV-kapacitet', val: '120 kWp', sub: 'Upphöjd bifacial' },
+        { label: 'Årsavkastning', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: 'Vattenlyft', val: '145 m³/day', sub: '18m TDH lyfthöjd' },
+        { label: 'Investering', val: '108K USD', sub: 'Nyckelfärdig + VFD' },
+        { label: 'Återbetalning', val: '3,4 år', sub: 'Ersatt diesel' },
+        { label: 'CO₂-besparing', val: '142 t/yr', sub: 'Verifierad Tier-1' },
+        { label: 'Grödskugga', val: '+18%', sub: 'Mikroklimatvinst' },
+      ],
+      reasoningTitle: 'AI-baserad rumslig & agronomisk analys',
+      confidenceBadgePrefix: 'Modelltillförlitlighet',
+      reasons: [
+        {
+          title: 'Verifiering av solresurs:',
+          bodyBefore: 'NASA POWER ytlig kortvågsstrålning ligger i snitt på',
+          bodyAfter: 'vilket ger hög kapacitetsfaktor för VFD-pumpning dagtid utan tunga battericykler.',
+        },
+        {
+          title: 'Minskning av rotzonsunderskott:',
+          body: 'Upphöjda 3,2 m agrivoltaiska stativ minskar avdunstningen i matjorden med 18–24% under mittdagens värmetoppar.',
+        },
+        {
+          title: 'Dieselfri hydraulekonomi:',
+          body: 'Direkt DC-kopplad VFD-pumpning eliminerar bränsletransporter och stabiliserar lönsamheten för lokala odlare.',
+        },
+      ],
+      riskTitle: 'Notering om riskreducering',
+      riskBodyBefore: 'Säsongsbetonat molntäcke eller värmeböljor kan förskjuta pumptoppar. Kombinera',
+      riskBodyHighlight: '20 000 L gravitationsbuffert',
+      riskBodyAfter: 'med automatiska WhatsApp-varningar vid torka över flera molniga dagar.',
+      weightsTitle: 'MCDA-kriterievikter',
+      weightsSubtitle: 'Viktat rumsligt poängramverk för platsrankning',
+      weights: [
+        'Solinstrålning (NASA POWER)',
+        'Brådskande markfuktsunderskott',
+        'Närhet till akvifer / kanal',
+        'Skuggsynergi för grödor',
+        'ROI för nät- & dieselersättning',
+      ],
+      solarProfileTitle: '24H solproduktionskurva',
+      solarProfileSubtitle: 'Timvis uteffekt från PV-anläggningen',
+      solarMaxBadge: 'Topp 98.4 kW',
+      solarPeakZen: '12:15 (Zenit)',
+      irradianceMonthlyTitle: '12-månaders instrålningsprofil',
+      irradianceMonthlySubtitle: 'Historisk säsongs fördelning i kWh/m²/day',
+      irradianceAvgBadge: 'Snitt 6.08 kWh/m²',
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+    },
+    footer: {
+      brandLine: 'SOLVARA Planetär Agrivoltaik • NASA POWER & SMAP Telemetrisvit',
+      resolution: '0.5° × 0.625° NASA POWER Rutnät',
+      iec: 'IEC 61724 PV-prestanda',
+      vfdProtocol: 'Modbus VFD Affinitetsstyrning',
+    },
+    toast: {
+      title: 'Tidig varning skickad till lantbrukare',
+      bodyPrefix: 'WhatsApp/SMS-varning skickad till odlare i',
+      bodyMiddle: 'för',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'Online',
+      previewTag: 'Mobil förhandsvisning',
+      todayLabel: 'IDAG',
+      copyBtn: 'Kopiera meddelande',
+      copiedBtn: 'Kopierat!',
+      closeBtn: 'Stäng',
+    },
+  },
+  no: {
+    header: {
+      subtitle: 'Global plattform for agrivoltaikk og satellittstyrt solvanningsdrift',
+      langSwitcherLabel: 'Språkvelger',
+      langSearchPlaceholder: 'Søk språk...',
+      langFullLabel: 'Fullt grensesnitt',
+      langFallbackNote: 'Lokale varsler + EN-grensesnitt',
+      langNoMatch: 'Ingen samsvarende språk',
+      tabs: {
+        macro: 'Tørke- & Pumpekart',
+        ops: 'Presisjonsvanning',
+        feasibility: 'Stedsintelligens',
+      },
+      mobileTabs: {
+        macro: 'Tørkekart',
+        ops: 'Drift',
+        feasibility: 'Stedsdata',
+      },
+      telemetry: {
+        syncing: 'Synkroniserer NASA POWER...',
+        live: 'NASA POWER Live',
+        ready: 'NASA POWER Klar',
+        sourceLive: 'Live NASA POWER API',
+        sourceFallback: 'Kalibrert NASA POWER-reserve',
+        solarDate: 'Sol',
+        moistureDate: 'Fuktighet',
+      },
+      themeTooltip: {
+        toLight: 'Bytt til lys modus',
+        toDark: 'Bytt til mørk modus',
+      },
+    },
+    tab1: {
+      title: 'Global tørkestress og overvåking av solpumper',
+      subtitle: 'Direkte NASA POWER-satellittelemetri, ekte distriktsgjenkjenning og automatisk VFD-pumpestyring',
+      mobileFilterBtn: 'Filtre & Tegnforklaring',
+      zonesWord: 'Soner',
+      filteredBadge: 'Filtrert',
+      filtersTitle: 'Telemetrifiltre',
+      resetFilters: 'Tilbakestill',
+      targetRegionLabel: 'Underregion',
+      allRegionsOption: 'Alle regioner',
+      stapleCropLabel: 'Avling / Vare',
+      allCropsOption: 'Alle avlinger',
+      severityLabel: 'Tørkegrad',
+      severities: {
+        All: 'Alle',
+        Severe: 'Alvorlig',
+        Moderate: 'Moderat',
+        Mild: 'Mild',
+      },
+      crops: {
+        ...SHARED_CROPS_EN,
+        Maize: 'Mais',
+        Wheat: 'Hvete',
+        Tomatoes: 'Tomater',
+        Olives: 'Oliven',
+        Almonds: 'Mandler',
+        Pistachios: 'Pistasj',
+        Soybeans: 'Soyabønner',
+        Cotton: 'Bomull',
+        Citrus: 'Sitrus',
+        'Date Palms': 'Daddelpalmer',
+        Grapes: 'Druer',
+        Rice: 'Ris',
+        Horticulture: 'Hagebruk',
+        'Chili & Leafy Greens': 'Chili og bladgrønt',
+      },
+      mapLegendTitle: 'Kartforklaring',
+      legendSevere: 'Alvorlig stress (< 20%)',
+      legendModerate: 'Moderat stress (20-29%)',
+      legendMild: 'Mild / Optimal (>= 30%)',
+      legendPump: 'Solpumpestasjon',
+      globalExplorer: {
+        title: 'Global satellittkoordinat- og byutforsker',
+        subtitle: 'Velg en NASA-partnerreferanse eller oppgi valgfri by / GPS-koordinater for direkte NASA POWER-data og ekte distriktsnavn',
+        cityPlaceholder: 'Søk etter valgfri by i verden (f.eks. Oslo, Bergen, Seville, Nairobi)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'Hent NASA-satellittdata',
+        fetchingBtn: 'Synkroniserer satellitt...',
+        presetsLabel: 'Referanser:',
+        syncLangBtn: 'Synk språk til region',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: 'BREDDEGRADKALIBRERT RESERVE',
+        districtsPrefix: 'Distrikter',
+        geocodeError: 'Fant ikke byen. Prøv en større by i nærheten eller oppgi breddegrad/lengdegrad direkte.',
+        invalidCoordsError: 'Oppgi gyldige koordinater (Breddegrad -90 til 90, Lengdegrad -180 til 180).',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: 'What-If-simulator for ekstremvær',
+        simActive: 'Simulering aktiv',
+        liveBaseline: 'Live NASA-grunnlinje',
+        resetBtn: 'Tilbakestill til live NASA-data',
+        rainfallLabel: 'Simulert daglig nedbør',
+        solarLabel: 'Simulert solinnstråling',
+        extremeDry: '0 mm (Ekstrem tørke)',
+      },
+      map: {
+        resolutionLabel: 'Oppløsning:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: 'Kap:',
+        pumpStatuses: {
+          Active: 'Aktiv',
+          Standby: 'Standby',
+          Optimizing: 'Optimerer',
+        },
+        interactiveHint: 'Klikk på en sonemarkør for telemetri og soldimensjonering',
+        showAllPrefix: 'Vis alle',
+      },
+      districtsStrip: {
+        title: 'Distriktstelemetri',
+      },
+      priorityBanner: {
+        title: 'AI-prioritering for solpumpestyring',
+        pumpSitePrefix: 'Prioritert sted:',
+        criticalMoistureText: 'kritisk jordfuktighet',
+        recordsText: 'viser',
+        macroWetnessText: 'regional jordfuktighet',
+      },
+      telemetryPanel: {
+        title: 'Sonetelemetri',
+        droughtSuffix: 'Tørke',
+        plantationSuffix: 'Teig',
+        smapMoisture: 'Jordfuktighet (GWETTOP)',
+        criticalDry: 'Kritisk tørt',
+        moderate: 'Moderat',
+        humidOptimal: 'Optimal',
+        volumetricDepth: 'Øvre rotsone',
+        sevenDayTrend: '7-dagers fuktighetstrend',
+        deficit: 'underskudd',
+        gain: 'økning',
+        nasaRadiance: 'Solstråling',
+        strong: 'Høyt utbytte',
+        moderateSolar: 'Moderat',
+        solarPumpYield: 'Solpumpekapasitet',
+        capacityUnit: 'Trinn',
+        surfaceTempLabel: 'Overflatelufttemp (T2M)',
+      },
+      peatland: {
+        eyebrow: 'Tidlig varsling for økosystem',
+        moisturePrefix: 'Jordfuktighet',
+        sendWarningBtn: 'Send tidlig WhatsApp/SMS-varsel til bønder',
+        confirmedTitle: 'Varsel sendt',
+        confirmedBodyPrefix: 'WhatsApp/SMS-varsel lagt i kø for bønder i',
+      },
+      solarSizing: {
+        eyebrow: 'Smart PV-prosjektering',
+        title: 'Dimensjonering av solpumpe & drivstoffsparing',
+        arraySizeLabel: 'Anbefalt solcelleanlegg',
+        panelUnit: '550Wp-paneler',
+        dailyWaterLabel: 'Estimert daglig vannmengde',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: 'Månedlig drivstoffsparing',
+        vsDiesel: 'mot dieselpumpe',
+        saveFuelPrefix: 'Erstatter',
+        saveFuelSuffix: 'L diesel / måned',
+      },
+      advisor: {
+        eyebrow: 'Zero-API Telemetrimotor',
+        title: 'SOLVARA AI Agronområdgiver',
+        liveBriefPrefix: 'LIVE-RAPPORT',
+        quickPromptsTitle: 'Hurtigspørsmål for agronom',
+        analyzingPrefix: 'Analyserer NASA-telemetri for',
+        prompts: {
+          schedule: 'Beste vanningsplan i dag?',
+          peatland: 'Økosystemstress og tiltaksplan?',
+          roi: 'ROI for diesel vs solpumpe?',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: 'AUTONOM SOL-VFD PUMPESTYRING ONLINE',
+      bannerSubtitle: 'Lukket MPPT + frekvensomformer synkronisert med NASA POWER',
+      telemetryOk: 'TELEMETRI NORMAL',
+      kpis: {
+        solarOutput: 'PV-effekt',
+        solarSub: 'MPPT-sporing 98,6%',
+        pumpCapacity: 'Pumpekapasitet',
+        pumpSub: 'Variabelt turtall VFD',
+        waterReserve: 'Buffertankreserve',
+        waterSub: '20 000 L reservoar',
+        rain3Day: '3-dagers nedbørssnitt',
+        rainLatestPrefix: 'Siste:',
+        rainOptimalSolar: 'Optimalt sollys',
+        rainActiveRecharge: 'Aktiv påfylling',
+        yieldSaved: 'Beskyttet avling',
+        yieldSub: 'Hindrer visneskader',
+      },
+      heatmap: {
+        title: '140-teigers fuktighetsmatrise og nødbølge',
+        subtitle: 'Simuler radiell soldrevet dryppvanning over stressede teiger',
+        scaleLabel: 'SKALA:',
+        reRunBtn: 'Kjør nødvanning med solkraft',
+        pumpingActive: 'Vanningsbølge aktiv',
+        resetDemoBtn: 'Tilbakestill feltstress',
+        plotPrefix: 'Teig #',
+        legend: {
+          severe: 'Alvorlig',
+          high: 'Høyt stress',
+          moderate: 'Moderat',
+          low: 'Lavt stress',
+          hydrated: 'Vannet',
+        },
+        cellLabels: {
+          hydrated: 'Vannet (Optimal)',
+          severe: 'Alvorlig stress (<15%)',
+          high: 'Høyt stress (15-25%)',
+          moderate: 'Moderat stress (25-40%)',
+          low: 'Lavt stress (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: 'Affinitetslov: P ∝ N³',
+        title: 'VFD-effektivitetsoptimerer',
+        subtitle: 'Moduler sentrifugalpumpens turtall dynamisk etter rotsonefuktighet',
+        sourcePlotArray: 'Feltmatrise',
+        autoSyncOn: 'Autosynk PÅ',
+        autoSyncOff: 'Autosynk AV',
+        liveRootMoisturePrefix: 'Effektiv rotfuktighet',
+        criticalWord: 'kritisk',
+        hydratedWord: 'vannet',
+        zoneTelemetryPrefix: 'Sonetelemetri',
+        meanArrayPrefix: 'Matrisesnitt:',
+        suggestedAdjustment: 'Foreslått delta',
+        optimalSynced: 'Optimalt synkronisert',
+        rampDown: 'Reduser turtall',
+        rampUp: 'Øk turtall',
+        activeInverterSpeed: 'Aktiv omformerfrekvens:',
+        targetPrefix: 'Mål:',
+        recommendedTooltipPrefix: 'Optimalt mål:',
+        manualSliderLabel: 'Manuell frekvensstyring (20 - 50 Hz)',
+        nominalRpmSuffix: 'Nominell RPM',
+        syncedBtn: 'Omformer synkronisert',
+        applyBtnPrefix: 'Bruk',
+        kpiSuggestedSpeed: 'Målfrekvens VFD',
+        kpiAdjustedFlow: 'Justert vannmengde',
+        kpiVsActivePrefix: 'mot',
+        kpiVsActiveSuffix: 'aktiv',
+        kpiInverterLoad: 'Omformerlast',
+        kpiVsCurrentSuffix: 'kW spart',
+        kpiBaseline50Hz: 'Full 50 Hz grunnlinje',
+        kpiEnergySaved: 'Spart energi',
+        kpiToBatterySuffix: 'kWh/day spart',
+      },
+      allocation: {
+        title: 'Fordeling av solkraft',
+        subtitle: 'Sanntidsfordeling av PV-effekt på tvers av prioriterte distriktssoner',
+      },
+      forecast: {
+        title: 'Vannproduksjon · 24T solprognose',
+        subtitlePrefix: 'Toppvindu for pumping',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: 'tilpasset maksimal solinnstråling',
+        estTotal: 'Est. 114 500 L/day',
+        peakLabel: '12t (Topp)',
+      },
+    },
+    tab3: {
+      rankBadge: 'RANG #1 AGRIVOLTAIKK-STED',
+      siteCodePrefix: 'STEDSKODE:',
+      siteTitleSuffix: 'Mulighetsstudie for agrivoltaikk',
+      siteSubtitlePrefix: 'Flerkriterie romlig analyse forankret i live NASA POWER-telemetri ved',
+      suitabilityScore: 'Egnethetsscore',
+      tierGrade: 'Tier-A Prime',
+      confidencePrefix: 'Konfidens',
+      metrics: [
+        { label: 'PV-kapasitet', val: '120 kWp', sub: 'Opphøyd bifacial' },
+        { label: 'Årlig utbytte', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: 'Vannløft', val: '145 m³/day', sub: '18m TDH løftehøyde' },
+        { label: 'Capex est.', val: '108K USD', sub: 'Nøkkelferdig + VFD' },
+        { label: 'Tilbakebetaling', val: '3,4 år', sub: 'Erstatter diesel' },
+        { label: 'CO₂-kutt', val: '142 t/yr', sub: 'Verifisert Tier-1' },
+        { label: 'Avlingsskygge', val: '+18%', sub: 'Mikroklimafordel' },
+      ],
+      reasoningTitle: 'AI romlig og agronomisk vurdering',
+      confidenceBadgePrefix: 'Modellkonfidens',
+      reasons: [
+        {
+          title: 'Verifisering av solressurs:',
+          bodyBefore: 'NASA POWER kortbølget overflatestråling har et snitt på',
+          bodyAfter: 'som gir høy kapasitetsfaktor for VFD-pumping på dagtid uten tung batterisykling.',
+        },
+        {
+          title: 'Demping av rotsoneunderskudd:',
+          body: 'Opphøyde 3,2 m agrivoltaiske stativer reduserer fordampning fra matjorden med 18–24% under varmetopper midt på dagen.',
+        },
+        {
+          title: 'Dieselfri hydraulisk økonomi:',
+          body: 'Direkte DC-koblet VFD-pumping fjerner drivstofflogistikk og stabiliserer marginene for lokale bønder.',
+        },
+      ],
+      riskTitle: 'Merknad om risikoreduksjon',
+      riskBodyBefore: 'Sesongmessig skydekke eller hetebølger kan forskyve pumpetopper. Kombiner',
+      riskBodyHighlight: '20 000 L gravitasjonslager',
+      riskBodyAfter: 'med automatiske WhatsApp-tørkevarsler for å dekke flere overskyede dager.',
+      weightsTitle: 'MCDA-kriterievekter',
+      weightsSubtitle: 'Vektet romlig poengrammeverk for rangering av steder',
+      weights: [
+        'Solinnstråling (NASA POWER)',
+        'Hastegrad på jordfuktighetsunderskudd',
+        'Nærhet til akvifer / kanal',
+        'Skyggesynergi for avlinger',
+        'ROI for nett- og dieselerstatning',
+      ],
+      solarProfileTitle: '24T solproduksjonskurve',
+      solarProfileSubtitle: 'Timesprofil for PV-anleggets effekt',
+      solarMaxBadge: 'Topp 98.4 kW',
+      solarPeakZen: '12:15 (Senit)',
+      irradianceMonthlyTitle: '12-måneders innstrålingsprofil',
+      irradianceMonthlySubtitle: 'Historisk sesongfordeling i kWh/m²/day',
+      irradianceAvgBadge: 'Snitt 6.08 kWh/m²',
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+    },
+    footer: {
+      brandLine: 'SOLVARA Planetær Agrivoltaikk • NASA POWER & SMAP Telemetripakke',
+      resolution: '0.5° × 0.625° NASA POWER Rutenett',
+      iec: 'IEC 61724 PV-ytelse',
+      vfdProtocol: 'Modbus VFD Affinitetskontroll',
+    },
+    toast: {
+      title: 'Tidlig varsel sendt til bønder',
+      bodyPrefix: 'WhatsApp/SMS-varsel sendt til bønder i',
+      bodyMiddle: 'for',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'Online',
+      previewTag: 'Mobil forhåndsvisning',
+      todayLabel: 'I DAG',
+      copyBtn: 'Kopier melding',
+      copiedBtn: 'Kopiert!',
+      closeBtn: 'Lukk',
+    },
+  },
+  nl: {
+    header: {
+      subtitle: 'Wereldwijd platform voor agrivoltaïek & satellietgestuurde zonne-irrigatie',
+      langSwitcherLabel: 'Taalkiezer',
+      langSearchPlaceholder: 'Zoek taal...',
+      langFullLabel: 'Volledige UI',
+      langFallbackNote: 'Lokale meldingen + EN-interface',
+      langNoMatch: 'Geen overeenkomende taal',
+      tabs: {
+        macro: 'Droogte- & Pompenkaart',
+        ops: 'Precisie-irrigatie',
+        feasibility: 'Locatie-intelligentie',
+      },
+      mobileTabs: {
+        macro: 'Droogtekaart',
+        ops: 'Operaties',
+        feasibility: 'Locatiedata',
+      },
+      telemetry: {
+        syncing: 'NASA POWER synchroniseren...',
+        live: 'NASA POWER Live',
+        ready: 'NASA POWER Gereed',
+        sourceLive: 'Live NASA POWER API',
+        sourceFallback: 'Gekalibreerde NASA POWER-back-up',
+        solarDate: 'Zon',
+        moistureDate: 'Vocht',
+      },
+      themeTooltip: {
+        toLight: 'Schakel naar lichte modus',
+        toDark: 'Schakel naar donkere modus',
+      },
+    },
+    tab1: {
+      title: 'Wereldwijde droogtestress & zonnepompmonitoring',
+      subtitle: 'Live NASA POWER-satelliettelemetrie, echte districtdetectie en geautomatiseerde VFD-pompaansturing',
+      mobileFilterBtn: 'Filters & Legenda',
+      zonesWord: 'Zones',
+      filteredBadge: 'Gefilterd',
+      filtersTitle: 'Telemetriefilters',
+      resetFilters: 'Reset',
+      targetRegionLabel: 'Doelsubregio',
+      allRegionsOption: 'Alle regio’s',
+      stapleCropLabel: 'Gewas / Product',
+      allCropsOption: 'Alle gewassen',
+      severityLabel: 'Ernst van droogte',
+      severities: {
+        All: 'Alle',
+        Severe: 'Ernstig',
+        Moderate: 'Matig',
+        Mild: 'Mild',
+      },
+      crops: {
+        ...SHARED_CROPS_EN,
+        Maize: 'Maïs',
+        Wheat: 'Tarwe',
+        Tomatoes: 'Tomaten',
+        Olives: 'Olijven',
+        Almonds: 'Amandelen',
+        Pistachios: 'Pistachenoten',
+        Soybeans: 'Sojabonen',
+        Cotton: 'Katoen',
+        Citrus: 'Citrus',
+        'Date Palms': 'Dadelpalmen',
+        Grapes: 'Druiven',
+        Rice: 'Rijst',
+        Horticulture: 'Tuinbouw',
+        'Chili & Leafy Greens': 'Chili & Bladgroenten',
+      },
+      mapLegendTitle: 'Kaartlegenda',
+      legendSevere: 'Ernstige stress (< 20%)',
+      legendModerate: 'Matige stress (20-29%)',
+      legendMild: 'Mild / Optimaal (>= 30%)',
+      legendPump: 'Zonnepompstation',
+      globalExplorer: {
+        title: 'Wereldwijde satellietcoördinaten- & stedenverkenner',
+        subtitle: 'Selecteer een NASA-partnerbenchmark of voer een stad / GPS-coördinaten wereldwijd in voor live NASA POWER-data en echte districtnamen',
+        cityPlaceholder: 'Zoek elke stad ter wereld (bijv. Amsterdam, Wageningen, Seville, Nairobi)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'Haal NASA-satellietdata op',
+        fetchingBtn: 'Satelliet synchroniseren...',
+        presetsLabel: 'Benchmarks:',
+        syncLangBtn: 'Synchroniseer taal met regio',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: 'BREEDTEGRAAD-GEKALIBREERD',
+        districtsPrefix: 'Districten',
+        geocodeError: 'Stad niet gevonden. Probeer een grotere nabijgelegen stad of voer direct breedte-/lengtegraad in.',
+        invalidCoordsError: 'Voer geldige coördinaten in (Breedtegraad -90 tot 90, Lengtegraad -180 tot 180).',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: 'What-If-simulator voor extreem weer',
+        simActive: 'Simulatie actief',
+        liveBaseline: 'Live NASA-basislijn',
+        resetBtn: 'Herstel live NASA-data',
+        rainfallLabel: 'Gesimuleerde dagelijkse neerslag',
+        solarLabel: 'Gesimuleerde zonnestraling',
+        extremeDry: '0 mm (Extreme droogte)',
+      },
+      map: {
+        resolutionLabel: 'Resolutie:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: 'Cap:',
+        pumpStatuses: {
+          Active: 'Actief',
+          Standby: 'Stand-by',
+          Optimizing: 'Optimaliseren',
+        },
+        interactiveHint: 'Klik op een zonemarkering voor telemetrie & zonnedimensionering',
+        showAllPrefix: 'Toon alle',
+      },
+      districtsStrip: {
+        title: 'Districtstelemetrie',
+      },
+      priorityBanner: {
+        title: 'AI-prioriteit voor zonnepompaansturing',
+        pumpSitePrefix: 'Prioriteitslocatie:',
+        criticalMoistureText: 'kritisch bodemvocht',
+        recordsText: 'toont',
+        macroWetnessText: 'regionaal bodemvocht',
+      },
+      telemetryPanel: {
+        title: 'Zonetelemetrie',
+        droughtSuffix: 'Droogte',
+        plantationSuffix: 'Perceel',
+        smapMoisture: 'Bodemvocht (GWETTOP)',
+        criticalDry: 'Kritisch droog',
+        moderate: 'Matig',
+        humidOptimal: 'Optimaal',
+        volumetricDepth: 'Oppervlakte-wortelzone',
+        sevenDayTrend: '7-daagse vochttrend',
+        deficit: 'tekort',
+        gain: 'stijging',
+        nasaRadiance: 'Zonnestraling',
+        strong: 'Hoge opbrengst',
+        moderateSolar: 'Matig',
+        solarPumpYield: 'Zonnepompcapaciteit',
+        capacityUnit: 'Niveaus',
+        surfaceTempLabel: 'Luchttemperatuur oppervlak (T2M)',
+      },
+      peatland: {
+        eyebrow: 'Vroegtijdige ecosysteemwaarschuwing',
+        moisturePrefix: 'Bodemvocht',
+        sendWarningBtn: 'Stuur WhatsApp/SMS-waarschuwing naar boeren',
+        confirmedTitle: 'Waarschuwing verzonden',
+        confirmedBodyPrefix: 'WhatsApp/SMS-waarschuwing in wachtrij voor boeren in',
+      },
+      solarSizing: {
+        eyebrow: 'Slimme PV-engineering',
+        title: 'Zonnepompdimensionering & brandstofbesparing',
+        arraySizeLabel: 'Aanbevolen zonnepaneelveld',
+        panelUnit: '550Wp-panelen',
+        dailyWaterLabel: 'Geschatte dagelijkse wateropbrengst',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: 'Maandelijkse brandstofbesparing',
+        vsDiesel: 't.o.v. dieselpomp',
+        saveFuelPrefix: 'Bespaart',
+        saveFuelSuffix: 'L diesel / maand',
+      },
+      advisor: {
+        eyebrow: 'Zero-API Telemetriemotor',
+        title: 'SOLVARA AI Agronomisch Adviseur',
+        liveBriefPrefix: 'LIVE-RAPPORT',
+        quickPromptsTitle: 'Snelle agronoomvragen',
+        analyzingPrefix: 'NASA-telemetrie analyseren voor',
+        prompts: {
+          schedule: 'Beste irrigatieschema vandaag?',
+          peatland: 'Ecosysteemstress & mitigatieplan?',
+          roi: 'ROI diesel- vs. zonnepomp?',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: 'AUTONOME ZONNE-VFD POMPAANSTURING ONLINE',
+      bannerSubtitle: 'Gesloten MPPT + frequentieregeling gesynchroniseerd met NASA POWER',
+      telemetryOk: 'TELEMETRIE NORMAAL',
+      kpis: {
+        solarOutput: 'PV-vermogen',
+        solarSub: 'MPPT-tracking 98,6%',
+        pumpCapacity: 'Pompdebiet',
+        pumpSub: 'Variabel toerental VFD',
+        waterReserve: 'Buffertankreserve',
+        waterSub: '20.000 L reservoir',
+        rain3Day: '3-daags neerslaggemiddelde',
+        rainLatestPrefix: 'Laatste:',
+        rainOptimalSolar: 'Optimale zoninstraling',
+        rainActiveRecharge: 'Actieve aanvulling',
+        yieldSaved: 'Beschermde oogst',
+        yieldSub: 'Voorkomt verwelkingsschade',
+      },
+      heatmap: {
+        title: '140-percelen vochtmatrix & noodirrigatiegolf',
+        subtitle: 'Simuleer radiale druppelirrigatie op zonne-energie over gestreste percelen',
+        scaleLabel: 'SCHAAL:',
+        reRunBtn: 'Start noodirrigatie op zonne-energie',
+        pumpingActive: 'Hydratatiegolf actief',
+        resetDemoBtn: 'Herstel veldstress',
+        plotPrefix: 'Perceel #',
+        legend: {
+          severe: 'Ernstig',
+          high: 'Hoge stress',
+          moderate: 'Matig',
+          low: 'Lage stress',
+          hydrated: 'Gehydrateerd',
+        },
+        cellLabels: {
+          hydrated: 'Gehydrateerd (Optimaal)',
+          severe: 'Ernstige stress (<15%)',
+          high: 'Hoge stress (15-25%)',
+          moderate: 'Matige stress (25-40%)',
+          low: 'Lage stress (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: 'Affiniteitswet: P ∝ N³',
+        title: 'VFD-efficiëntieoptimizer',
+        subtitle: 'Moduleer het pomptoerental dynamisch op basis van live wortelzonevocht',
+        sourcePlotArray: 'Veldmatrix',
+        autoSyncOn: 'Autosync AAN',
+        autoSyncOff: 'Autosync UIT',
+        liveRootMoisturePrefix: 'Effectief wortelvocht',
+        criticalWord: 'kritisch',
+        hydratedWord: 'gehydrateerd',
+        zoneTelemetryPrefix: 'Zonetelemetrie',
+        meanArrayPrefix: 'Matrixgemiddelde:',
+        suggestedAdjustment: 'Voorgestelde delta',
+        optimalSynced: 'Optimaal gesynchroniseerd',
+        rampDown: 'Aftoeren',
+        rampUp: 'Optoeren',
+        activeInverterSpeed: 'Actieve omvormersnelheid:',
+        targetPrefix: 'Doel:',
+        recommendedTooltipPrefix: 'Optimaal doel:',
+        manualSliderLabel: 'Handmatige frequentie-override (20 - 50 Hz)',
+        nominalRpmSuffix: 'Nominaal RPM',
+        syncedBtn: 'Omvormer gesynchroniseerd',
+        applyBtnPrefix: 'Toepassen',
+        kpiSuggestedSpeed: 'Doelfrequentie VFD',
+        kpiAdjustedFlow: 'Aangepast debiet',
+        kpiVsActivePrefix: 't.o.v.',
+        kpiVsActiveSuffix: 'actief',
+        kpiInverterLoad: 'Omvormerbelasting',
+        kpiVsCurrentSuffix: 'kW bespaard',
+        kpiBaseline50Hz: 'Volle 50 Hz basislijn',
+        kpiEnergySaved: 'Bespaarde energie',
+        kpiToBatterySuffix: 'kWh/day bespaard',
+      },
+      allocation: {
+        title: 'Zonne-energieverdeling',
+        subtitle: 'Realtime PV-vermogensverdeling over prioritaire districtszones',
+      },
+      forecast: {
+        title: 'Wateropbrengst · 24U zonneprognose',
+        subtitlePrefix: 'Piekpompvenster',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: 'afgestemd op maximale instraling',
+        estTotal: 'Geschat 114.500 L/day',
+        peakLabel: '12u (Piek)',
+      },
+    },
+    tab3: {
+      rankBadge: 'RANG #1 AGRIVOLTAÏEK-LOCATIE',
+      siteCodePrefix: 'LOCATIECODE:',
+      siteTitleSuffix: 'Haalbaarheidsdossier Agrivoltaïek',
+      siteSubtitlePrefix: 'Multicriteria ruimtelijke analyse gekoppeld aan live NASA POWER-telemetrie bij',
+      suitabilityScore: 'Geschiktheidsscore',
+      tierGrade: 'Tier-A Prime',
+      confidencePrefix: 'Betrouwbaarheid',
+      metrics: [
+        { label: 'PV-capaciteit', val: '120 kWp', sub: 'Verhoogd bifaciaal' },
+        { label: 'Jaaropbrengst', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: 'Wateropvoer', val: '145 m³/day', sub: '18m TDH opvoerhoogte' },
+        { label: 'Capex schatting', val: '108K USD', sub: 'Turnkey + VFD' },
+        { label: 'Terugverdientijd', val: '3,4 jr', sub: 'Diesel bespaard' },
+        { label: 'CO₂-reductie', val: '142 t/yr', sub: 'Geverifieerd Tier-1' },
+        { label: 'Gewasschaduw', val: '+18%', sub: 'Microklimaatwinst' },
+      ],
+      reasoningTitle: 'AI ruimtelijke & agronomische onderbouwing',
+      confidenceBadgePrefix: 'Modelbetrouwbaarheid',
+      reasons: [
+        {
+          title: 'Verificatie van zonnebron:',
+          bodyBefore: 'NASA POWER kortegolf-instraling op het oppervlak bedraagt gemiddeld',
+          bodyAfter: 'wat zorgt voor een hoge capaciteitsfactor voor VFD-pompen overdag zonder zware batterijbelasting.',
+        },
+        {
+          title: 'Beperking van wortelzonetekort:',
+          body: 'Verhoogde 3,2 m agrivoltaïsche constructies verlagen de verdamping uit de bovenlaag met 18–24% tijdens hittetoppen rond het middaguur.',
+        },
+        {
+          title: 'Dieselvrije hydraulische economie:',
+          body: 'Direct DC-gekoppelde VFD-pompen elimineren brandstoftransport en stabiliseren de marges van lokale telers.',
+        },
+      ],
+      riskTitle: 'Notitie risicobeperking locatie',
+      riskBodyBefore: 'Seizoensbewolking of extreme hittepieken kunnen pompcycli verschuiven. Combineer',
+      riskBodyHighlight: '20.000 L zwaartekrachtbuffer',
+      riskBodyAfter: 'met geautomatiseerde WhatsApp-droogtemeldingen om meerdere bewolkte dagen te overbruggen.',
+      weightsTitle: 'MCDA-criteriawegingen',
+      weightsSubtitle: 'Gewogen ruimtelijk scorekader voor locatieranking',
+      weights: [
+        'Zonnestraling (NASA POWER)',
+        'Urgentie bodemvochttekort',
+        'Nabijheid aquifer / kanaal',
+        'Schaduwsynergie voor gewassen',
+        'ROI net- & dieselvervanging',
+      ],
+      solarProfileTitle: '24U zonne-opwekcurve',
+      solarProfileSubtitle: 'Uurlijks PV-vermogensprofiel',
+      solarMaxBadge: 'Piek 98.4 kW',
+      solarPeakZen: '12:15 (Zenit)',
+      irradianceMonthlyTitle: '12-maands instralingsprofiel',
+      irradianceMonthlySubtitle: 'Historische seizoensverdeling in kWh/m²/day',
+      irradianceAvgBadge: 'Gem. 6.08 kWh/m²',
+      months: ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+    },
+    footer: {
+      brandLine: 'SOLVARA Planetaire Agrivoltaïek • NASA POWER & SMAP Telemetriesuite',
+      resolution: '0.5° × 0.625° NASA POWER Raster',
+      iec: 'IEC 61724 PV-prestaties',
+      vfdProtocol: 'Modbus VFD Affiniteitsregeling',
+    },
+    toast: {
+      title: 'Vroegtijdige waarschuwing verzonden',
+      bodyPrefix: 'WhatsApp/SMS-waarschuwing verzonden naar boeren in',
+      bodyMiddle: 'voor',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'Online',
+      previewTag: 'Mobiele voorvertoning',
+      todayLabel: 'VANDAAG',
+      copyBtn: 'Kopieer bericht',
+      copiedBtn: 'Gekopieerd!',
+      closeBtn: 'Sluiten',
+    },
+  },
+  de: {
+    header: {
+      subtitle: 'Globale Plattform für Agri-Photovoltaik & satellitengesteuerte Solarbewässerung',
+      langSwitcherLabel: 'Sprachauswahl',
+      langSearchPlaceholder: 'Sprache suchen...',
+      langFullLabel: 'Vollständige UI',
+      langFallbackNote: 'Lokale Warnungen + EN-Oberfläche',
+      langNoMatch: 'Keine passende Sprache gefunden',
+      tabs: {
+        macro: 'Dürre- & Pumpenkarte',
+        ops: 'Präzisionsbewässerung',
+        feasibility: 'Standortanalyse',
+      },
+      mobileTabs: {
+        macro: 'Dürrekarte',
+        ops: 'Betrieb',
+        feasibility: 'Standortdaten',
+      },
+      telemetry: {
+        syncing: 'Synchronisiere NASA POWER...',
+        live: 'NASA POWER Live',
+        ready: 'NASA POWER Bereit',
+        sourceLive: 'Live NASA POWER API',
+        sourceFallback: 'Kalibrierte NASA POWER-Reserve',
+        solarDate: 'Solar',
+        moistureDate: 'Feuchte',
+      },
+      themeTooltip: {
+        toLight: 'Zum hellen Modus wechseln',
+        toDark: 'Zum dunklen Modus wechseln',
+      },
+    },
+    tab1: {
+      title: 'Globales Dürrestress- & Solarpumpen-Monitoring',
+      subtitle: 'Live-Satellitentelemetrie von NASA POWER, echte Bezirkserkennung und automatisierte VFD-Pumpensteuerung',
+      mobileFilterBtn: 'Filter & Legende',
+      zonesWord: 'Zonen',
+      filteredBadge: 'Gefiltert',
+      filtersTitle: 'Telemetriefilter',
+      resetFilters: 'Zurücksetzen',
+      targetRegionLabel: 'Ziel-Teilregion',
+      allRegionsOption: 'Alle Regionen',
+      stapleCropLabel: 'Kulturpflanze',
+      allCropsOption: 'Alle Kulturen',
+      severityLabel: 'Dürre-Schweregrad',
+      severities: {
+        All: 'Alle',
+        Severe: 'Schwer',
+        Moderate: 'Mäßig',
+        Mild: 'Leicht',
+      },
+      crops: {
+        ...SHARED_CROPS_EN,
+        Maize: 'Mais',
+        Wheat: 'Weizen',
+        Tomatoes: 'Tomaten',
+        Olives: 'Oliven',
+        Almonds: 'Mandeln',
+        Pistachios: 'Pistazien',
+        Soybeans: 'Sojabohnen',
+        Cotton: 'Baumwolle',
+        Citrus: 'Zitrusfrüchte',
+        'Date Palms': 'Dattelpalmen',
+        Grapes: 'Trauben',
+        Rice: 'Reis',
+        Horticulture: 'Gartenbau',
+        'Chili & Leafy Greens': 'Chili & Blattgemüse',
+      },
+      mapLegendTitle: 'Kartenlegende',
+      legendSevere: 'Starker Stress (< 20%)',
+      legendModerate: 'Mäßiger Stress (20-29%)',
+      legendMild: 'Leicht / Optimal (>= 30%)',
+      legendPump: 'Solarpumpenstation',
+      globalExplorer: {
+        title: 'Globaler Satellitenkoordinaten- & Städte-Explorer',
+        subtitle: 'Wählen Sie einen NASA-Partnerstandort oder geben Sie weltweit eine Stadt / GPS-Koordinaten für Live-NASA-POWER-Daten und echte Bezirksnamen ein',
+        cityPlaceholder: 'Weltweit nach Stadt suchen (z. B. Berlin, München, Seville, Nairobi)...',
+        latLabel: 'LAT',
+        lonLabel: 'LON',
+        fetchBtn: 'NASA-Satellitendaten abrufen',
+        fetchingBtn: 'Synchronisiere Satellit...',
+        presetsLabel: 'Referenzen:',
+        syncLangBtn: 'Sprache an Region anpassen',
+        liveSourceBadge: 'LIVE NASA POWER API',
+        fallbackSourceBadge: 'BREITENGRAD-KALIBRIERTE RESERVE',
+        districtsPrefix: 'Bezirke',
+        geocodeError: 'Stadt nicht gefunden. Versuchen Sie eine größere Nachbarstadt oder geben Sie Breiten-/Längengrad direkt ein.',
+        invalidCoordsError: 'Bitte gültige Koordinaten eingeben (Breitengrad -90 bis 90, Längengrad -180 bis 180).',
+        langNames: {
+          en: 'English',
+          id: 'Bahasa Indonesia',
+          ar: 'العربية',
+          pt: 'Português',
+          es: 'Español',
+          hi: 'हिन्दी',
+          fr: 'Français',
+          ja: '日本語',
+          ko: '한국어',
+          it: 'Italiano',
+          th: 'ไทย',
+          sv: 'Svenska',
+          no: 'Norsk',
+          nl: 'Nederlands',
+          de: 'Deutsch',
+        },
+      },
+      simulator: {
+        title: 'What-If-Extremwettersimulator',
+        simActive: 'Simulation aktiv',
+        liveBaseline: 'Live NASA-Basislinie',
+        resetBtn: 'Auf Live-NASA-Daten zurücksetzen',
+        rainfallLabel: 'Simulierter Tagesniederschlag',
+        solarLabel: 'Simulierte Sonneneinstrahlung',
+        extremeDry: '0 mm (Extreme Dürre)',
+      },
+      map: {
+        resolutionLabel: 'Räuml. Auflösung:',
+        resolutionValue: 'NASA SMAP / POWER 0.5°',
+        pumpCapPrefix: 'Kap:',
+        pumpStatuses: {
+          Active: 'Aktiv',
+          Standby: 'Bereitschaft',
+          Optimizing: 'Optimiert',
+        },
+        interactiveHint: 'Auf beliebigen Zonenmarker klicken für Telemetrie & Solarauslegung',
+        showAllPrefix: 'Alle anzeigen',
+      },
+      districtsStrip: {
+        title: 'Bezirkstelemetrie',
+      },
+      priorityBanner: {
+        title: 'KI-Priorisierung der Solarpumpen',
+        pumpSitePrefix: 'Prioritätsstandort:',
+        criticalMoistureText: 'kritische Bodenfeuchte',
+        recordsText: 'meldet',
+        macroWetnessText: 'regionale Bodenfeuchte',
+      },
+      telemetryPanel: {
+        title: 'Zonentelemetrie',
+        droughtSuffix: 'Dürre',
+        plantationSuffix: 'Schlag',
+        smapMoisture: 'Bodenfeuchte (GWETTOP)',
+        criticalDry: 'Kritisch trocken',
+        moderate: 'Mäßig',
+        humidOptimal: 'Optimal',
+        volumetricDepth: 'Obere Wurzelzone',
+        sevenDayTrend: '7-Tage-Feuchtetrend',
+        deficit: 'Defizit',
+        gain: 'Anstieg',
+        nasaRadiance: 'Sonneneinstrahlung',
+        strong: 'Hoher Ertrag',
+        moderateSolar: 'Mäßig',
+        solarPumpYield: 'Solarpumpenleistung',
+        capacityUnit: 'Stufen',
+        surfaceTempLabel: 'Bodennahe Lufttemp. (T2M)',
+      },
+      peatland: {
+        eyebrow: 'Ökosystem-Frühwarnsystem',
+        moisturePrefix: 'Bodenfeuchte',
+        sendWarningBtn: 'WhatsApp/SMS-Frühwarnung an Landwirte senden',
+        confirmedTitle: 'Warnung gesendet',
+        confirmedBodyPrefix: 'WhatsApp/SMS-Warnung eingereiht für Landwirte in',
+      },
+      solarSizing: {
+        eyebrow: 'Intelligente PV-Auslegung',
+        title: 'Solarpumpendimensionierung & Kraftstoffersparnis',
+        arraySizeLabel: 'Empfohlenes Solarfeld',
+        panelUnit: '550Wp-Module',
+        dailyWaterLabel: 'Geschätzte Tageswassermenge',
+        dailyWaterUnit: 'L/day',
+        dailyEnergyUnit: 'kWh/day',
+        monthlySavingsLabel: 'Monatliche Kraftstoffersparnis',
+        vsDiesel: 'gegenüber Dieselpumpe',
+        saveFuelPrefix: 'Ersetzt',
+        saveFuelSuffix: 'L Diesel / Monat',
+      },
+      advisor: {
+        eyebrow: 'Zero-API Telemetrie-Engine',
+        title: 'SOLVARA KI-Agronomieberater',
+        liveBriefPrefix: 'LIVE-BERICHT',
+        quickPromptsTitle: 'Schnellabfragen für Agronomen',
+        analyzingPrefix: 'Analysiere NASA-Telemetrie für',
+        prompts: {
+          schedule: 'Bester Bewässerungsplan heute?',
+          peatland: 'Ökosystemstress & Maßnahmenplan?',
+          roi: 'ROI Diesel- vs. Solarpumpe?',
+        },
+      },
+    },
+    tab2: {
+      bannerTitle: 'AUTONOME SOLAR-VFD-PUMPENSTEUERUNG ONLINE',
+      bannerSubtitle: 'Geschlossener Regelkreis MPPT + Frequenzumrichter synchronisiert mit NASA POWER',
+      telemetryOk: 'TELEMETRIE NOMINAL',
+      kpis: {
+        solarOutput: 'PV-Leistung',
+        solarSub: 'MPPT-Tracking 98,6%',
+        pumpCapacity: 'Pumpenförderstrom',
+        pumpSub: 'Variable Drehzahl VFD',
+        waterReserve: 'Puffertankreserve',
+        waterSub: '20.000 L Speicher',
+        rain3Day: '3-Tage-Regenschnitt',
+        rainLatestPrefix: 'Letzter:',
+        rainOptimalSolar: 'Optimale Sonne',
+        rainActiveRecharge: 'Aktive Auffüllung',
+        yieldSaved: 'Geschützter Ertrag',
+        yieldSub: 'Verhindert Welkeverluste',
+      },
+      heatmap: {
+        title: '140-Parzellen-Feuchtematrix & Notfallwelle',
+        subtitle: 'Radiale solarbetriebene Tröpfchenbewässerung über gestresste Parzellen simulieren',
+        scaleLabel: 'SKALA:',
+        reRunBtn: 'Notfall-Solarbewässerung starten',
+        pumpingActive: 'Hydratationswelle aktiv',
+        resetDemoBtn: 'Feldstress zurücksetzen',
+        plotPrefix: 'Parzelle #',
+        legend: {
+          severe: 'Schwer',
+          high: 'Hoher Stress',
+          moderate: 'Mäßig',
+          low: 'Geringer Stress',
+          hydrated: 'Bewässert',
+        },
+        cellLabels: {
+          hydrated: 'Bewässert (Optimal)',
+          severe: 'Schwerer Stress (<15%)',
+          high: 'Hoher Stress (15-25%)',
+          moderate: 'Mäßiger Stress (25-40%)',
+          low: 'Geringer Stress (40-60%)',
+        },
+      },
+      vfd: {
+        affinityLawPrefix: 'Affinitätsgesetz: P ∝ N³',
+        title: 'VFD-Effizienzoptimierer',
+        subtitle: 'Pumpendrehzahl dynamisch anhand der Live-Wurzelzonenfeuchte modulieren',
+        sourcePlotArray: 'Feldmatrix',
+        autoSyncOn: 'Auto-Sync EIN',
+        autoSyncOff: 'Auto-Sync AUS',
+        liveRootMoisturePrefix: 'Effektive Wurzelfeuchte',
+        criticalWord: 'kritisch',
+        hydratedWord: 'bewässert',
+        zoneTelemetryPrefix: 'Zonentelemetrie',
+        meanArrayPrefix: 'Matrix-Mittel:',
+        suggestedAdjustment: 'Empfohlenes Delta',
+        optimalSynced: 'Optimal synchronisiert',
+        rampDown: 'Herunterregeln',
+        rampUp: 'Hochregeln',
+        activeInverterSpeed: 'Aktive Umrichterfrequenz:',
+        targetPrefix: 'Ziel:',
+        recommendedTooltipPrefix: 'Optimales Ziel:',
+        manualSliderLabel: 'Manuelle Frequenzvorgabe (20 - 50 Hz)',
+        nominalRpmSuffix: 'Nenn-RPM',
+        syncedBtn: 'Umrichter synchronisiert',
+        applyBtnPrefix: 'Anwenden',
+        kpiSuggestedSpeed: 'Ziel-VFD-Frequenz',
+        kpiAdjustedFlow: 'Angepasster Durchfluss',
+        kpiVsActivePrefix: 'vs.',
+        kpiVsActiveSuffix: 'aktiv',
+        kpiInverterLoad: 'Umrichterlast',
+        kpiVsCurrentSuffix: 'kW gespart',
+        kpiBaseline50Hz: 'Volle 50 Hz Basis',
+        kpiEnergySaved: 'Gesparte Energie',
+        kpiToBatterySuffix: 'kWh/day gespart',
+      },
+      allocation: {
+        title: 'Solarleistungsverteilung',
+        subtitle: 'Echtzeit-Aufteilung der PV-Leistung auf priorisierte Bezirkszonen',
+      },
+      forecast: {
+        title: 'Wasserleistung · 24H-Solarprognose',
+        subtitlePrefix: 'Spitzen-Pumpfenster',
+        subtitleMiddle: '10:00 - 14:30',
+        subtitleSuffix: 'abgestimmt auf maximale Einstrahlung',
+        estTotal: 'Gesch. 114.500 L/day',
+        peakLabel: '12h (Spitze)',
+      },
+    },
+    tab3: {
+      rankBadge: 'RANG #1 AGRI-PV-STANDORT',
+      siteCodePrefix: 'STANDORTCODE:',
+      siteTitleSuffix: 'Agri-PV-Machbarkeitsdossier',
+      siteSubtitlePrefix: 'Multikriterielle Raumanalyse auf Basis von Live-NASA-POWER-Telemetrie in',
+      suitabilityScore: 'Eignungswert',
+      tierGrade: 'Tier-A Prime',
+      confidencePrefix: 'Konfidenz',
+      metrics: [
+        { label: 'PV-Leistung', val: '120 kWp', sub: 'Aufgeständert bifazial' },
+        { label: 'Jahresertrag', val: '198 MWh', sub: 'PR 81.4%' },
+        { label: 'Wasserförderung', val: '145 m³/day', sub: '18m TDH Förderhöhe' },
+        { label: 'Capex-Schätzung', val: '108K USD', sub: 'Schlüsselfertig + VFD' },
+        { label: 'Amortisation', val: '3,4 J.', sub: 'Diesel ersetzt' },
+        { label: 'CO₂-Einsparung', val: '142 t/yr', sub: 'Verifiziert Tier-1' },
+        { label: 'Kulturschatten', val: '+18%', sub: 'Mikroklimavorteil' },
+      ],
+      reasoningTitle: 'KI-basierte räumliche & agronomische Begründung',
+      confidenceBadgePrefix: 'Modellkonfidenz',
+      reasons: [
+        {
+          title: 'Solarressourcen-Verifizierung:',
+          bodyBefore: 'Die kurzwellige NASA POWER-Oberflächenstrahlung liegt im Schnitt bei',
+          bodyAfter: 'und bietet einen hohen Kapazitätsfaktor für VFD-Pumpen am Tag ohne tiefe Batteriezyklen.',
+        },
+        {
+          title: 'Minderung des Wurzelzonendefizits:',
+          body: 'Auf 3,2 m aufgeständerte Agri-PV-Konstruktionen senken die Oberbodenverdunstung während der Mittagshitze um 18–24%.',
+        },
+        {
+          title: 'Dieselfreie Hydraulikökonomie:',
+          body: 'Direkt DC-gekoppeltes VFD-Pumpen eliminiert Treibstofflogistik und stabilisiert die Margen kleinerer Betriebe.',
+        },
+      ],
+      riskTitle: 'Hinweis zur Standort-Risikominderung',
+      riskBodyBefore: 'Saisonale Bewölkung oder Hitzespitzen können Pumpzyklen verschieben. Kombinieren Sie',
+      riskBodyHighlight: '20.000 L Schwerkraftpuffer',
+      riskBodyAfter: 'mit automatisierten WhatsApp-Dürrewarnungen, um mehrtägige Wolkenphasen zu überbrücken.',
+      weightsTitle: 'MCDA-Kriteriengewichtung',
+      weightsSubtitle: 'Gewichtetes räumliches Bewertungsmodell für das Standort-Ranking',
+      weights: [
+        'Sonneneinstrahlung (NASA POWER)',
+        'Dringlichkeit des Bodenfeuchtedefizits',
+        'Nähe zu Grundwasserleiter / Kanal',
+        'Schattensynergie für Kulturen',
+        'Netz- & Dieselersatz-ROI',
+      ],
+      solarProfileTitle: '24H-Solarerzeugungskurve',
+      solarProfileSubtitle: 'Stündliches Leistungsprofil der PV-Anlage',
+      solarMaxBadge: 'Spitze 98.4 kW',
+      solarPeakZen: '12:15 (Zenit)',
+      irradianceMonthlyTitle: '12-Monats-Einstrahlungsprofil',
+      irradianceMonthlySubtitle: 'Historische saisonale Verteilung in kWh/m²/day',
+      irradianceAvgBadge: 'Schnitt 6.08 kWh/m²',
+      months: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+    },
+    footer: {
+      brandLine: 'SOLVARA Planetare Agri-PV • NASA POWER & SMAP Telemetriesuite',
+      resolution: '0.5° × 0.625° NASA POWER Raster',
+      iec: 'IEC 61724 PV-Leistung',
+      vfdProtocol: 'Modbus VFD Affinitätssteuerung',
+    },
+    toast: {
+      title: 'Frühwarnung an Landwirte gesendet',
+      bodyPrefix: 'WhatsApp/SMS-Warnung gesendet an Landwirte in',
+      bodyMiddle: 'für',
+    },
+    whatsappPreview: {
+      botName: 'SOLVARA Sat-Alert Bot',
+      onlineStatus: 'Online',
+      previewTag: 'Mobil-Vorschau Landwirt',
+      todayLabel: 'HEUTE',
+      copyBtn: 'Nachricht kopieren',
+      copiedBtn: 'Kopiert!',
+      closeBtn: 'Schließen',
     },
   },
 };
@@ -2951,6 +5836,244 @@ export function getEcosystemRiskCopy(
       cardTitle,
       label: 'SÛR — HUMIDITÉ STABILISÉE',
       advice: 'Maintenez le mode VFD Éco sous suivi NASA POWER.',
+    };
+  }
+
+  if (lang === 'ja') {
+    const cardTitle = isPeat
+      ? '泥炭地火災・作物萎凋リスク警報'
+      : isDesert
+      ? '極度高温・乾燥萎凋リスク'
+      : '生態系水分不足リスク';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isPeat
+          ? '危険 — 泥炭地火災・乾燥リスク極大'
+          : isDesert
+          ? '危険 — 極度高温・干ばつストレス'
+          : '危険 — 土壌水分が危機的水準',
+        advice: '直ちに VFD ソーラーフル稼働で散水し、農家へ WhatsApp 早期警報を送信してください。',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: '警戒 — 根域の水分不足',
+        advice: '日射ピーク時間帯にソーラー点滴灌漑サイクルを増やし、水分 30% 以上を維持してください。',
+      };
+    }
+    return {
+      cardTitle,
+      label: '安全 — 生態系水分は良好',
+      advice: 'VFD エコモードを維持しつつ NASA POWER 衛星監視を継続してください。',
+    };
+  }
+
+  if (lang === 'ko') {
+    const cardTitle = isPeat
+      ? '이탄지 화재 및 작물 시들음 위험'
+      : isDesert
+      ? '극한 폭염 및 가뭄 시들음 위험'
+      : '생태계 수분 결핍 위험';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isPeat
+          ? '위험 — 이탄지 화재 및 극심한 가뭄'
+          : isDesert
+          ? '위험 — 극한 폭염 및 수분 스트레스'
+          : '위험 — 심각한 토양 수분 부족',
+        advice: '즉시 VFD 태양광 최대 양수를 가동하고 농가에 WhatsApp 조기 경보를 발송하세요.',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: '주의 — 근권부 수분 결핍',
+        advice: '일사량 피크 시간대에 태양광 점적 관개 주기를 늘려 30% 이상을 유지하세요.',
+      };
+    }
+    return {
+      cardTitle,
+      label: '안전 — 생태계 수분 안정적',
+      advice: 'VFD 에코 모드를 유지하며 NASA POWER 위성 모니터링을 지속하세요.',
+    };
+  }
+
+  if (lang === 'it') {
+    const cardTitle = isPeat
+      ? 'Rischio Incendi Torbiere e Appassimento'
+      : isDesert
+      ? 'Rischio Calore Estremo e Appassimento'
+      : 'Rischio Deficit Idrico Ecosistema';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isDesert
+          ? 'CRITICO — CALORE ARIDO ESTREMO'
+          : 'CRITICO — SICCITÀ E STRESS GRAVE',
+        advice: 'Attiva immediatamente il pompaggio solare VFD al massimo e invia allerta WhatsApp agli agricoltori.',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: 'ALLERTA — DEFICIT ZONA RADICALE',
+        advice: 'Aumenta il ciclo di irrigazione solare a goccia nelle ore centrali sopra il 30%.',
+      };
+    }
+    return {
+      cardTitle,
+      label: 'SICURO — UMIDITÀ PROTETTA',
+      advice: 'Mantieni la modalità VFD Eco proseguendo il monitoraggio satellitare NASA POWER.',
+    };
+  }
+
+  if (lang === 'th') {
+    const cardTitle = isPeat
+      ? 'ความเสี่ยงไฟป่าพรุและพืชเหี่ยวเฉา'
+      : isDesert
+      ? 'ความเสี่ยงความร้อนจัดและพืชเหี่ยวแห้ง'
+      : 'ความเสี่ยงการขาดความชื้นระบบนิเวศ';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isPeat
+          ? 'วิกฤต — เสี่ยงไฟป่าพรุและแห้งแล้งรุนแรง'
+          : isDesert
+          ? 'วิกฤต — ความร้อนจัดและเครียดน้ำรุนแรง'
+          : 'วิกฤต — ความชื้นดินขาดดุลรุนแรง',
+        advice: 'เปิดปั๊มโซลาร์ VFD เต็มกำลังทันทีและส่งการแจ้งเตือนด่วน WhatsApp ให้เกษตรกร',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: 'เฝ้าระวัง — เขตรากเริ่มขาดความชื้น',
+        advice: 'เพิ่มรอบการให้น้ำหยดโซลาร์ในช่วงแสงแดดสูงสุดเพื่อรักษาระดับความชื้นเกิน 30%',
+      };
+    }
+    return {
+      cardTitle,
+      label: 'ปลอดภัย — ความชื้นระบบนิเวศสมดุล',
+      advice: 'คงโหมดประหยัดพลังงาน VFD Eco และติดตามข้อมูลดาวเทียม NASA POWER อย่างต่อเนื่อง',
+    };
+  }
+
+  if (lang === 'sv') {
+    const cardTitle = isPeat
+      ? 'Brand- & vissningsrisk i torvmark'
+      : isDesert
+      ? 'Extrem hetta & torkstress'
+      : 'Risk för fuktunderskott i ekosystemet';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isDesert
+          ? 'KRITISK — EXTREM TORR HETTA & VISNING'
+          : 'KRITISK — ALLVARLIGT FUKTUNDERSKOTT',
+        advice: 'Aktivera full VFD-solpumpning omedelbart och skicka tidig WhatsApp-varning till odlare.',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: 'FÖRHÖJD — FUKTBRIST I ROTZONEN',
+        advice: 'Öka droppbevattningen mitt på dagen för att hålla markfuktigheten över 30%.',
+      };
+    }
+    return {
+      cardTitle,
+      label: 'OPTIMAL — EKOSYSTEMETS FUKT SKYDDAD',
+      advice: 'Behåll VFD Eco-läge och fortsätt satellitövervakningen via NASA POWER.',
+    };
+  }
+
+  if (lang === 'no') {
+    const cardTitle = isPeat
+      ? 'Brann- og visningsrisiko i torvmyr'
+      : isDesert
+      ? 'Ekstrem tørkevarme og visningsrisiko'
+      : 'Risiko for fuktunderskudd i økosystemet';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isDesert
+          ? 'KRITISK — EKSTREM VARME & TØRKESTRESS'
+          : 'KRITISK — ALVORLIG FUKTMANGEL',
+        advice: 'Start full VFD-solpumping umiddelbart og send tidlig WhatsApp-varsel til bønder.',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: 'FORHØYET — ROTSONEFUKTUNDERSKUDD',
+        advice: 'Øk dryppvanningen midt på dagen for å stabilisere jordfuktigheten over 30%.',
+      };
+    }
+    return {
+      cardTitle,
+      label: 'OPTIMAL — ØKOSYSTEMETS FUKT BESKYTTET',
+      advice: 'Behold VFD Eco-modus mens NASA POWER-satellittovervåkingen fortsetter.',
+    };
+  }
+
+  if (lang === 'nl') {
+    const cardTitle = isPeat
+      ? 'Veenbrand- & verwelkingsrisico'
+      : isDesert
+      ? 'Extreme droge hitte & verwelkingsrisico'
+      : 'Risico op bodemvochttekort';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isDesert
+          ? 'KRITIEK — EXTREME HITTE & DROOGTESTRESS'
+          : 'KRITIEK — ERNSTIG VOCHTTEKORT',
+        advice: 'Schakel direct volledig VFD-zonnepompen in en stuur een WhatsApp-waarschuwing naar boeren.',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: 'VERHOOGD — TEKORT IN WORTELZONE',
+        advice: 'Verhoog de druppelirrigatie rond het middaguur om het bodemvocht boven 30% te houden.',
+      };
+    }
+    return {
+      cardTitle,
+      label: 'OPTIMAAL — ECOSYSTEEMVOCHT BESCHERMD',
+      advice: 'Handhaaf de VFD Eco-modus en blijf NASA POWER-satellietdata volgen.',
+    };
+  }
+
+  if (lang === 'de') {
+    const cardTitle = isPeat
+      ? 'Moorbrand- & Welkerisiko'
+      : isDesert
+      ? 'Extreme Hitze- & Dürrewelke-Gefahr'
+      : 'Ökosystem-Feuchtedefizitrisiko';
+    if (level === 'critical') {
+      return {
+        cardTitle,
+        label: isDesert
+          ? 'KRITISCH — EXTREME HITZE & TROCKENSTRESS'
+          : 'KRITISCH — SCHWERES FEUCHTEDEFIZIT',
+        advice: 'Sofort volle VFD-Solarpumpenleistung aktivieren und WhatsApp-Frühwarnung an Landwirte senden.',
+      };
+    }
+    if (level === 'moderate') {
+      return {
+        cardTitle,
+        label: 'ERHÖHT — WURZELZONEN-FEUCHTEDEFIZIT',
+        advice: 'Mittäglichen Solar-Tröpfchenzyklus erhöhen, um die Bodenfeuchte über 30% zu stabilisieren.',
+      };
+    }
+    return {
+      cardTitle,
+      label: 'OPTIMAL — ÖKOSYSTEMFEUCHTE GESCHÜTZT',
+      advice: 'VFD-Eco-Modus beibehalten und NASA-POWER-Satellitenüberwachung fortsetzen.',
     };
   }
 
@@ -3138,6 +6261,199 @@ export function getVfdRegimeCopy(
         };
     }
   }
+  if (lang === 'ja') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: '緊急ブーストモード',
+          actionAdvice: '根域乾燥が深刻 (<20%)。急速給水のため VFD インバーターを 47–50 Hz で稼働してください。',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: '適応変調モード',
+          actionAdvice: '相似則に基づき 38–46 Hz へ調整し、PV 消費電力を最大 35% 削減します。',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: '高効率クルーズモード',
+          actionAdvice: '水分は安定しています。30–37 Hz で運転して貯水タンク残量を温存してください。',
+        };
+      default:
+        return {
+          regimeLabel: 'エコ最適スロットル',
+          actionAdvice: '圃場は潤沢です (>55%)。VFD を 22–29 Hz へ下げて消費電力を最大 75% 削減します。',
+        };
+    }
+  }
+  if (lang === 'ko') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: '비상 부스트 모드',
+          actionAdvice: '근권부 건조 심각 (<20%). 신속한 급수를 위해 VFD 인버터를 47–50 Hz로 가동하세요.',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: '적응형 변조 모드',
+          actionAdvice: '상사 법칙에 따라 38–46 Hz로 낮춰 PV 소비 전력을 최대 35% 절감하세요.',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: '고효율 크루즈 모드',
+          actionAdvice: '수분이 안정적입니다. 30–37 Hz로 운전하여 버퍼 저장량을 유지하세요.',
+        };
+      default:
+        return {
+          regimeLabel: '에코 최적 절전 모드',
+          actionAdvice: '토양 수분 충분 (>55%). VFD를 22–29 Hz로 낮춰 전력 소모를 최대 75% 줄이세요.',
+        };
+    }
+  }
+  if (lang === 'it') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: 'MODALITÀ BOOST EMERGENZA',
+          actionAdvice: 'Secchezza radicale critica (<20%). Imposta l’inverter VFD a 47–50 Hz per reidratazione rapida.',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: 'MODULAZIONE ADATTIVA',
+          actionAdvice: 'Riduci a 38–46 Hz per risparmiare fino al 35% di energia PV grazie alla legge cubica.',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: 'MODALITÀ CROCIERA EFFICIENTE',
+          actionAdvice: 'Umidità bilanciata. Opera a 30–37 Hz per preservare la riserva idrica.',
+        };
+      default:
+        return {
+          regimeLabel: 'MODALITÀ ECO OTTIMALE',
+          actionAdvice: 'Campo idratato (>55%). Riduci il VFD a 22–29 Hz tagliando i consumi fino al 75%.',
+        };
+    }
+  }
+
+  if (lang === 'th') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: 'โหมดเร่งกำลังฉุกเฉิน',
+          actionAdvice: 'เขตรากแห้งวิกฤต (<20%) เดินเครื่องอินเวอร์เตอร์ VFD ที่ 47–50 Hz เพื่อคืนความชื้นเร่งด่วน',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: 'โหมดปรับความถี่อัตโนมัติ',
+          actionAdvice: 'ลดความถี่ลงที่ 38–46 Hz เพื่อประหยัดพลังงาน PV สูงสุด 35% ตามกฎความคล้ายกำลังสาม',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: 'โหมดเดินเครื่องประหยัด',
+          actionAdvice: 'ความชื้นสมดุล เดินเครื่องที่ 30–37 Hz เพื่อรักษาปริมาณน้ำสำรองในถัง',
+        };
+      default:
+        return {
+          regimeLabel: 'โหมดประหยัดพลังงานสูงสุด ECO',
+          actionAdvice: 'แปลงชุ่มชื้นเพียงพอ (>55%) ลดรอบ VFD ลงที่ 22–29 Hz ช่วยประหยัดไฟสูงสุด 75%',
+        };
+    }
+  }
+  if (lang === 'sv') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: 'AKUT BOOST-LÄGE',
+          actionAdvice: 'Kritisk rottorka (<20%). Kör VFD-omriktaren på 47–50 Hz för snabb återfuktning.',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: 'ADAPTIV MODULERING',
+          actionAdvice: 'Sänk varvtalet till 38–46 Hz för att minska PV-uttaget med upp till 35% enligt affinitetslagen.',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: 'EFFEKTIVT CRUISE-LÄGE',
+          actionAdvice: 'Balanserad fuktighet. Kör på 30–37 Hz för att bevara buffertreserver.',
+        };
+      default:
+        return {
+          regimeLabel: 'OPTIMALT ECO-LÄGE',
+          actionAdvice: 'Fältet välbevattnat (>55%). Sänk VFD till 22–29 Hz och spara upp till 75% energi.',
+        };
+    }
+  }
+  if (lang === 'no') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: 'NØD-BOOST-MODUS',
+          actionAdvice: 'Kritisk rottørke (<20%). Kjør VFD-omformeren på 47–50 Hz for rask vanning.',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: 'ADAPTIV MODULERING',
+          actionAdvice: 'Senk turtallet til 38–46 Hz for å kutte PV-forbruket med opptil 35% via affinitetsloven.',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: 'EFFEKTIV CRUISE-MODUS',
+          actionAdvice: 'Balansert fuktighet. Kjør på 30–37 Hz for å bevare bufferreserver.',
+        };
+      default:
+        return {
+          regimeLabel: 'OPTIMAL ECO-MODUS',
+          actionAdvice: 'Feltet er vannet (>55%). Senk VFD til 22–29 Hz for å spare opptil 75% strøm.',
+        };
+    }
+  }
+  if (lang === 'nl') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: 'NOOD-BOOSTMODUS',
+          actionAdvice: 'Kritische worteldroogte (<20%). Draai de VFD op 47–50 Hz voor snelle herbevochtiging.',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: 'ADAPTIEVE MODULATIE',
+          actionAdvice: 'Regel terug naar 38–46 Hz om tot 35% PV-vermogen te besparen via de kubische wet.',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: 'EFFICIËNTE CRUISEMODUS',
+          actionAdvice: 'Evenwichtig vochtprofiel. Draai op 30–37 Hz om de bufferreserve te sparen.',
+        };
+      default:
+        return {
+          regimeLabel: 'OPTIMALE ECO-MODUS',
+          actionAdvice: 'Perceel gehydrateerd (>55%). Verlaag VFD naar 22–29 Hz voor tot 75% energiebesparing.',
+        };
+    }
+  }
+  if (lang === 'de') {
+    switch (regime) {
+      case 'boost':
+        return {
+          regimeLabel: 'NOTFALL-BOOST-MODUS',
+          actionAdvice: 'Kritische Wurzeltrockenheit (<20%). VFD-Umrichter mit 47–50 Hz für schnelle Wiederbefeuchtung betreiben.',
+        };
+      case 'adaptive':
+        return {
+          regimeLabel: 'ADAPTIVE MODULATION',
+          actionAdvice: 'Drehzahl auf 38–46 Hz drosseln, um gemäß kubischem Affinitätsgesetz bis zu 35% PV-Leistung zu sparen.',
+        };
+      case 'cruise':
+        return {
+          regimeLabel: 'EFFIZIENTER CRUISE-MODUS',
+          actionAdvice: 'Ausgeglichene Feuchte. Mit 30–37 Hz fahren, um Speicherreserven zu schonen.',
+        };
+      default:
+        return {
+          regimeLabel: 'OPTIMALER ECO-MODUS',
+          actionAdvice: 'Feld ausreichend bewässert (>55%). VFD auf 22–29 Hz senken und bis zu 75% Energie sparen.',
+        };
+    }
+  }
 
   switch (regime) {
     case 'boost':
@@ -3193,7 +6509,31 @@ export function getAdvisorSummary(
     return `${p.zoneName} (${p.locationName}) में ${p.cropLocalized} फसल पर मिट्टी की नमी ${p.moisture}% और सौर विकिरण ${p.solar.toFixed(2)} kWh/m²/दिन दर्ज है। पीक सौर समय में ${liters} ली/दिन के लिए ${p.pumpId} सक्रिय करें।`;
   }
   if (lang === 'fr') {
-    return `${p.zoneName} (${p.locationName}) affiche ${p.moisture}% d’humidité sur ${p.cropLocalized} avec ${p.solar.toFixed(2)} kWh/m²/jour d’irradiance. Activez ${p.pumpId} durant le pic solaire pour pomper ${liters} L/jour.`;
+    return `${p.zoneName} (${p.locationName}) affiche ${p.moisture}% d’humidité sur ${p.cropLocalized} avec ${p.solar.toFixed(2)} kWh/m²/day d’irradiance. Activez ${p.pumpId} durant le pic solaire pour pomper ${liters} L/day.`;
+  }
+  if (lang === 'ja') {
+    return `${p.zoneName}（${p.locationName}）の${p.cropLocalized}区画では土壌水分 ${p.moisture}%、日射量 ${p.solar.toFixed(2)} kWh/m²/day を観測しています。日射ピーク時間帯に ${p.pumpId} を稼働させ、日量 ${liters} L/day の灌漑を推奨します。`;
+  }
+  if (lang === 'ko') {
+    return `${p.zoneName}(${p.locationName})의 ${p.cropLocalized} 필지는 토양 수분 ${p.moisture}%, 일사량 ${p.solar.toFixed(2)} kWh/m²/day를 기록 중입니다. 일사 피크 시간대에 ${p.pumpId}를 가동하여 일일 ${liters} L/day 관개를 권장합니다.`;
+  }
+  if (lang === 'it') {
+    return `${p.zoneName} (${p.locationName}) registra ${p.moisture}% di umidità radicale su ${p.cropLocalized} con irradianza di ${p.solar.toFixed(2)} kWh/m²/day. Attiva ${p.pumpId} nelle ore solari di punta per erogare ${liters} L/day.`;
+  }
+  if (lang === 'th') {
+    return `${p.zoneName} (${p.locationName}) วัดความชื้นดินเขตรากได้ ${p.moisture}% บนแปลง ${p.cropLocalized} ที่ค่ารังสีอาทิตย์ ${p.solar.toFixed(2)} kWh/m²/day แนะนำเดินเครื่อง ${p.pumpId} ช่วงแดดสูงสุดเพื่อสูบน้ำ ${liters} L/day`;
+  }
+  if (lang === 'sv') {
+    return `${p.zoneName} (${p.locationName}) visar ${p.moisture}% markfuktighet för ${p.cropLocalized} med ${p.solar.toFixed(2)} kWh/m²/day solstrålning. Aktivera ${p.pumpId} under soltoppen för att leverera ${liters} L/day.`;
+  }
+  if (lang === 'no') {
+    return `${p.zoneName} (${p.locationName}) måler ${p.moisture}% rotfuktighet på ${p.cropLocalized} med ${p.solar.toFixed(2)} kWh/m²/day innstråling. Start ${p.pumpId} i soltoppen for å levere ${liters} L/day.`;
+  }
+  if (lang === 'nl') {
+    return `${p.zoneName} (${p.locationName}) registreert ${p.moisture}% wortelvocht op ${p.cropLocalized} bij ${p.solar.toFixed(2)} kWh/m²/day zoninstraling. Schakel ${p.pumpId} tijdens de zonnepiek in voor ${liters} L/day.`;
+  }
+  if (lang === 'de') {
+    return `${p.zoneName} (${p.locationName}) misst ${p.moisture}% Wurzelzonenfeuchte bei ${p.cropLocalized} und ${p.solar.toFixed(2)} kWh/m²/day Einstrahlung. ${p.pumpId} während der Mittagsspitze für ${liters} L/day aktivieren.`;
   }
   return `${p.zoneName} (${p.locationName}) records ${p.moisture}% root-zone moisture on ${p.cropLocalized} with ${p.solar.toFixed(2)} kWh/m²/day irradiance. Dispatch ${p.pumpId} during peak solar hours to deliver ${liters} L/day.`;
 }
@@ -3322,7 +6662,7 @@ export function getAdvisorPromptAnswer(
     if (promptId === 'schedule') {
       return {
         title: `Calendrier Optimal (${p.optimalWindow})`,
-        body: `Pilotez ${p.pumpId} (${p.pumpFlowRate}) en deux créneaux solaires à ${p.solar.toFixed(2)} kWh/m²/jour pour fournir ${waterStr} L/jour.`,
+        body: `Pilotez ${p.pumpId} (${p.pumpFlowRate}) en deux créneaux solaires à ${p.solar.toFixed(2)} kWh/m²/day pour fournir ${waterStr} L/day.`,
       };
     }
     if (promptId === 'peatland') {
@@ -3333,7 +6673,159 @@ export function getAdvisorPromptAnswer(
     }
     return {
       title: `ROI Solaire vs Diesel`,
-      body: `Un champ de ${wpStr} Wc (${p.moduleCount} panneaux) génère ${p.dailyEnergyKwh.toFixed(1)} kWh/jour et économise ${p.monthlyDieselLiters} L diesel/mois (~${p.monthlySavingsDisplay}/mois).`,
+      body: `Un champ de ${wpStr} Wp (${p.moduleCount} panneaux) génère ${p.dailyEnergyKwh.toFixed(1)} kWh/day et économise ${p.monthlyDieselLiters} L diesel/mois (~${p.monthlySavingsDisplay}/mois).`,
+    };
+  }
+
+  if (lang === 'ja') {
+    if (promptId === 'schedule') {
+      return {
+        title: `最適灌漑スケジュール (${p.optimalWindow})`,
+        body: `日射量 ${p.solar.toFixed(2)} kWh/m²/day の ${p.optimalWindow} に ${p.pumpId}（${p.pumpFlowRate}）を2パルスで運転し、蒸発損失を抑えつつ ${waterStr} L/day を供給してください。`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `生態系ストレス緩和策 (${p.region})`,
+        body: `${p.locationName} の土壌水分 ${p.moisture}% に基づき VFD 点滴灌漑を継続し、20% 未満へ低下した場合は直ちに WhatsApp 農家警報を発令してください。`,
+      };
+    }
+    return {
+      title: `太陽光 vs ディーゼル ROI 内訳`,
+      body: `${wpStr} Wp アレイ（${p.moduleCount}× 550Wp）は日量 ${p.dailyEnergyKwh.toFixed(1)} kWh/day を発電し、月間 ${p.monthlyDieselLiters} L の軽油（約 ${p.monthlySavingsDisplay}/月）を削減、回収期間は約 3.4 年です。`,
+    };
+  }
+
+  if (lang === 'ko') {
+    if (promptId === 'schedule') {
+      return {
+        title: `최적 관개 스케줄 (${p.optimalWindow})`,
+        body: `일사량 ${p.solar.toFixed(2)} kWh/m²/day 조건의 ${p.optimalWindow} 동안 ${p.pumpId}(${p.pumpFlowRate})를 2단계 펄스로 가동하여 증발 손실을 줄이고 ${waterStr} L/day를 공급하세요.`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `생태계 스트레스 완화 계획 (${p.region})`,
+        body: `${p.locationName}의 토양 수분 ${p.moisture}% 수준에서는 VFD 점적 관개로 근권부를 보호하고, 20% 미만 하락 시 즉시 WhatsApp 농가 경보를 발송하세요.`,
+      };
+    }
+    return {
+      title: `태양광 vs 디젤 펌프 ROI 분석`,
+      body: `${wpStr} Wp 어레이(${p.moduleCount}× 550Wp)는 일일 ${p.dailyEnergyKwh.toFixed(1)} kWh/day를 생산해 월 ${p.monthlyDieselLiters} L의 경유(약 ${p.monthlySavingsDisplay}/월)를 절감하며 약 3.4년 내 회수됩니다.`,
+    };
+  }
+
+  if (lang === 'it') {
+    if (promptId === 'schedule') {
+      return {
+        title: `Programma Irrigazione Ottimale (${p.optimalWindow})`,
+        body: `Aziona ${p.pumpId} (${p.pumpFlowRate}) in due impulsi durante ${p.optimalWindow} a ${p.solar.toFixed(2)} kWh/m²/day per fornire ${waterStr} L/day limitando l’evaporazione.`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `Mitigazione Stress Ecosistema (${p.region})`,
+        body: `Con umidità al ${p.moisture}% a ${p.locationName}, attiva l’irrigazione a goccia VFD e invia allerte WhatsApp agli agricoltori se scende sotto il 20%.`,
+      };
+    }
+    return {
+      title: `Analisi ROI Solare vs Diesel`,
+      body: `Un impianto da ${wpStr} Wp (${p.moduleCount}× 550Wp) genera ${p.dailyEnergyKwh.toFixed(1)} kWh/day, sostituendo ${p.monthlyDieselLiters} L di diesel/mese (~${p.monthlySavingsDisplay}/mese) con rientro in ~3,4 anni.`,
+    };
+  }
+
+  if (lang === 'th') {
+    if (promptId === 'schedule') {
+      return {
+        title: `ตารางสูบน้ำเหมาะสมที่สุด (${p.optimalWindow})`,
+        body: `เดินเครื่อง ${p.pumpId} (${p.pumpFlowRate}) เป็น 2 รอบช่วง ${p.optimalWindow} ที่ค่ารังสี ${p.solar.toFixed(2)} kWh/m²/day เพื่อจ่ายน้ำ ${waterStr} L/day โดยลดการระเหย`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `แผนลดความเครียดระบบนิเวศ (${p.region})`,
+        body: `ที่ความชื้นดิน ${p.moisture}% ใน ${p.locationName} ให้ใช้ระบบน้ำหยด VFD รักษาความชื้นราก และส่งแจ้งเตือน WhatsApp ทันทีหากความชื้นต่ำกว่า 20%`,
+      };
+    }
+    return {
+      title: `สรุปความคุ้มค่า ROI โซลาร์ vs ดีเซล`,
+      body: `ชุดแผง ${wpStr} Wp (${p.moduleCount}× 550Wp) ผลิตไฟได้ ${p.dailyEnergyKwh.toFixed(1)} kWh/day ทดแทนดีเซล ${p.monthlyDieselLiters} L/เดือน (~${p.monthlySavingsDisplay}/เดือน) คืนทุน ~3.4 ปี`,
+    };
+  }
+
+  if (lang === 'sv') {
+    if (promptId === 'schedule') {
+      return {
+        title: `Optimalt pumpschema (${p.optimalWindow})`,
+        body: `Kör ${p.pumpId} (${p.pumpFlowRate}) i två solanpassade pulser under ${p.optimalWindow} vid ${p.solar.toFixed(2)} kWh/m²/day för att leverera ${waterStr} L/day med minimal avdunstning.`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `Stressreducering i ekosystemet (${p.region})`,
+        body: `Vid ${p.moisture}% markfuktighet i ${p.locationName}, aktivera VFD-droppbevattning och utlös WhatsApp-varningar om fuktigheten sjunker under 20%.`,
+      };
+    }
+    return {
+      title: `ROI-jämförelse: Solpump vs Diesel`,
+      body: `Ett system på ${wpStr} Wp (${p.moduleCount}× 550Wp) ger ${p.dailyEnergyKwh.toFixed(1)} kWh/day, ersätter ${p.monthlyDieselLiters} L diesel/månad (~${p.monthlySavingsDisplay}/månad) med ~3,4 års återbetalning.`,
+    };
+  }
+
+  if (lang === 'no') {
+    if (promptId === 'schedule') {
+      return {
+        title: `Optimal pumpeplan (${p.optimalWindow})`,
+        body: `Kjør ${p.pumpId} (${p.pumpFlowRate}) i to soltilpassede pulser i løpet av ${p.optimalWindow} ved ${p.solar.toFixed(2)} kWh/m²/day for å levere ${waterStr} L/day med minimalt fordampningstap.`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `Økosystem-tiltaksplan (${p.region})`,
+        body: `Ved ${p.moisture}% jordfuktighet i ${p.locationName}, aktiver VFD-dryppvanning og utløs WhatsApp-varsler dersom fuktigheten faller under 20%.`,
+      };
+    }
+    return {
+      title: `ROI-analyse: Solpumpe vs Diesel`,
+      body: `Et anlegg på ${wpStr} Wp (${p.moduleCount}× 550Wp) produserer ${p.dailyEnergyKwh.toFixed(1)} kWh/day og erstatter ${p.monthlyDieselLiters} L diesel/måned (~${p.monthlySavingsDisplay}/mnd) med ~3,4 års tilbakebetaling.`,
+    };
+  }
+
+  if (lang === 'nl') {
+    if (promptId === 'schedule') {
+      return {
+        title: `Optimaal pompschema (${p.optimalWindow})`,
+        body: `Laat ${p.pumpId} (${p.pumpFlowRate}) draaien in twee zonnepulsen tijdens ${p.optimalWindow} bij ${p.solar.toFixed(2)} kWh/m²/day om ${waterStr} L/day te leveren met minimaal verdampingsverlies.`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `Mitigatie ecosysteemstress (${p.region})`,
+        body: `Activeer bij ${p.moisture}% bodemvocht in ${p.locationName} VFD-druppelirrigatie en stuur WhatsApp-waarschuwingen zodra het vocht onder 20% zakt.`,
+      };
+    }
+    return {
+      title: `ROI-analyse: Zonne- vs. Dieselpomp`,
+      body: `Een systeem van ${wpStr} Wp (${p.moduleCount}× 550Wp) levert ${p.dailyEnergyKwh.toFixed(1)} kWh/day, bespaart ${p.monthlyDieselLiters} L diesel/maand (~${p.monthlySavingsDisplay}/mnd) met ~3,4 jaar terugverdientijd.`,
+    };
+  }
+
+  if (lang === 'de') {
+    if (promptId === 'schedule') {
+      return {
+        title: `Optimaler Pumpzeitplan (${p.optimalWindow})`,
+        body: `${p.pumpId} (${p.pumpFlowRate}) in zwei sonnengeführten Pulsen während ${p.optimalWindow} bei ${p.solar.toFixed(2)} kWh/m²/day betreiben, um ${waterStr} L/day verdunstungsarm zu fördern.`,
+      };
+    }
+    if (promptId === 'peatland') {
+      return {
+        title: `Ökosystem-Stressminderung (${p.region})`,
+        body: `Bei ${p.moisture}% Bodenfeuchte in ${p.locationName} VFD-Tröpfchenbewässerung aktivieren und bei unter 20% sofort WhatsApp-Warnungen an Landwirte senden.`,
+      };
+    }
+    return {
+      title: `ROI-Vergleich: Solar- vs. Dieselpumpe`,
+      body: `Ein Feld mit ${wpStr} Wp (${p.moduleCount}× 550Wp) erzeugt ${p.dailyEnergyKwh.toFixed(1)} kWh/day, ersetzt ${p.monthlyDieselLiters} L Diesel/Monat (~${p.monthlySavingsDisplay}/Monat) bei ~3,4 Jahren Amortisation.`,
     };
   }
 
@@ -3525,15 +7017,231 @@ export function buildWhatsAppAlertMessage(p: {
       '',
       `📊 *Satellite NASA POWER :*`,
       `• Humidité du Sol : *${p.moisturePct}%*`,
-      `• Irradiance Solaire : *${p.solarKwh.toFixed(2)} kWh/m²/jour*`,
+      `• Irradiance Solaire : *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
       `• Température : *${p.tempC.toFixed(1)}°C*`,
       '',
       `⚡ *Recommandation Pompe Solaire :*`,
       `• Unité : *${p.pumpId}* (${p.pumpName})`,
-      `• Volume Cible : *${waterStr} L/jour*`,
+      `• Volume Cible : *${waterStr} L/day*`,
       `• Créneau Optimal : *${p.optimalWindow}*`,
       '',
       `_Envoyé automatiquement par SOLVARA Sat-Alert à ${p.sentAt}_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'ja') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *SOLVARA 緊急早期警戒アラート*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *SOLVARA 乾燥注意報*'
+        : '✅ *SOLVARA 日次灌漑ブリーフ*';
+    return [
+      statusTag,
+      `📍 *地域:* ${p.locationName}`,
+      `🗺️ *地区:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *NASA POWER 衛星テレメトリ:*`,
+      `• 土壌水分: *${p.moisturePct}%*`,
+      `• 日射量: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• 地表気温: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *推奨ソーラーポンプ:*`,
+      `• ユニット: *${p.pumpId}* (${p.pumpName})`,
+      `• 日次目標水量: *${waterStr} L/day*`,
+      `• 最適稼働時間: *${p.optimalWindow}*`,
+      '',
+      `_SOLVARA Sat-Alert により ${p.sentAt} に自動送信_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'ko') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *SOLVARA 긴급 조기 경보*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *SOLVARA 가뭄 주의보*'
+        : '✅ *SOLVARA 일일 관개 브리핑*';
+    return [
+      statusTag,
+      `📍 *지역:* ${p.locationName}`,
+      `🗺️ *구역:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *NASA POWER 위성 데이터:*`,
+      `• 토양 수분: *${p.moisturePct}%*`,
+      `• 태양 일사량: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• 지표 기온: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *권장 태양광 펌프:*`,
+      `• 장치: *${p.pumpId}* (${p.pumpName})`,
+      `• 일일 목표 수량: *${waterStr} L/day*`,
+      `• 최적 가동 시간: *${p.optimalWindow}*`,
+      '',
+      `_SOLVARA Sat-Alert를 통해 ${p.sentAt}에 자동 발송됨_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'it') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *ALLERTA CRITICA PRECOCE SOLVARA*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *AVVISO SICCITÀ SOLVARA*'
+        : '✅ *BOLLETTINO IRRIGAZIONE SOLVARA*';
+    return [
+      statusTag,
+      `📍 *Regione:* ${p.locationName}`,
+      `🗺️ *Distretto:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *Dati Satellitari NASA POWER:*`,
+      `• Umidità del Suolo: *${p.moisturePct}%*`,
+      `• Radiazione Solare: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• Temperatura: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *Pompa Solare Consigliata:*`,
+      `• Unità: *${p.pumpId}* (${p.pumpName})`,
+      `• Obiettivo Idrico: *${waterStr} L/day*`,
+      `• Orario Ottimale: *${p.optimalWindow}*`,
+      '',
+      `_Inviato automaticamente da SOLVARA Sat-Alert alle ${p.sentAt}_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'th') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *การแจ้งเตือนภัยแล้งวิกฤต SOLVARA*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *คำแนะนำเฝ้าระวังภัยแล้ง SOLVARA*'
+        : '✅ *สรุปการชลประทานรายวัน SOLVARA*';
+    return [
+      statusTag,
+      `📍 *ภูมิภาค:* ${p.locationName}`,
+      `🗺️ *เขตพื้นที่:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *ข้อมูลดาวเทียม NASA POWER:*`,
+      `• ความชื้นดิน: *${p.moisturePct}%*`,
+      `• รังสีดวงอาทิตย์: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• อุณหภูมิผิวดิน: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *คำแนะนำปั๊มน้ำโซลาร์:*`,
+      `• อุปกรณ์: *${p.pumpId}* (${p.pumpName})`,
+      `• เป้าหมายน้ำรายวัน: *${waterStr} L/day*`,
+      `• ช่วงเวลาทำงานเหมาะสม: *${p.optimalWindow}*`,
+      '',
+      `_ส่งอัตโนมัติผ่าน SOLVARA Sat-Alert เวลา ${p.sentAt}_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'sv') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *SOLVARA KRITISK TIDIG VARNING*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *SOLVARA TORKRÅD*'
+        : '✅ *SOLVARA DAGLIG BEVATTNINGSRAPPORT*';
+    return [
+      statusTag,
+      `📍 *Region:* ${p.locationName}`,
+      `🗺️ *Distrikt:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *NASA POWER Satellitdata:*`,
+      `• Markfuktighet: *${p.moisturePct}%*`,
+      `• Solstrålning: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• Yttemperatur: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *Rekommenderad solpump:*`,
+      `• Enhet: *${p.pumpId}* (${p.pumpName})`,
+      `• Dagligt vattenmål: *${waterStr} L/day*`,
+      `• Optimalt driftfönster: *${p.optimalWindow}*`,
+      '',
+      `_Automatiskt utskick via SOLVARA Sat-Alert kl. ${p.sentAt}_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'no') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *SOLVARA KRITISK TIDLIG VARSEL*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *SOLVARA TØRKEVARSEL*'
+        : '✅ *SOLVARA DAGLIG VANNINGSRAPPORT*';
+    return [
+      statusTag,
+      `📍 *Region:* ${p.locationName}`,
+      `🗺️ *Distrikt:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *NASA POWER Satellittdata:*`,
+      `• Jordfuktighet: *${p.moisturePct}%*`,
+      `• Solstråling: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• Overflatetemp: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *Anbefalt solpumpe:*`,
+      `• Enhet: *${p.pumpId}* (${p.pumpName})`,
+      `• Daglig vannmål: *${waterStr} L/day*`,
+      `• Optimale driftstimer: *${p.optimalWindow}*`,
+      '',
+      `_Automatisk utsendelse via SOLVARA Sat-Alert kl. ${p.sentAt}_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'nl') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *SOLVARA KRITIEKE VROEGE WAARSCHUWING*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *SOLVARA DROOGTEADVIES*'
+        : '✅ *SOLVARA DAGELIJKS IRRIGATIEBERICHT*';
+    return [
+      statusTag,
+      `📍 *Regio:* ${p.locationName}`,
+      `🗺️ *District:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *NASA POWER Satellietdata:*`,
+      `• Bodemvocht: *${p.moisturePct}%*`,
+      `• Zonnestraling: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• Oppervlaktetemp.: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *Aanbevolen zonnepomp:*`,
+      `• Eenheid: *${p.pumpId}* (${p.pumpName})`,
+      `• Dagelijks waterdoel: *${waterStr} L/day*`,
+      `• Optimale draaiuren: *${p.optimalWindow}*`,
+      '',
+      `_Automatisch verzonden via SOLVARA Sat-Alert om ${p.sentAt}_`,
+    ].join('\n');
+  }
+
+  if (p.lang === 'de') {
+    const statusTag =
+      p.riskLevel === 'critical'
+        ? '🚨 *SOLVARA KRITISCHE FRÜHWARNUNG*'
+        : p.riskLevel === 'moderate'
+        ? '⚠️ *SOLVARA DÜRREHINWEIS*'
+        : '✅ *SOLVARA TÄGLICHER BEWÄSSERUNGSBERICHT*';
+    return [
+      statusTag,
+      `📍 *Region:* ${p.locationName}`,
+      `🗺️ *Bezirk:* ${p.zoneName} (${p.region})`,
+      `🛰️ *GPS:* ${p.coordsStr}`,
+      '',
+      `📊 *NASA POWER Satellitendaten:*`,
+      `• Bodenfeuchte: *${p.moisturePct}%*`,
+      `• Sonneneinstrahlung: *${p.solarKwh.toFixed(2)} kWh/m²/day*`,
+      `• Oberflächentemp.: *${p.tempC.toFixed(1)}°C*`,
+      '',
+      `⚡ *Empfohlene Solarpumpe:*`,
+      `• Einheit: *${p.pumpId}* (${p.pumpName})`,
+      `• Tageswasserziel: *${waterStr} L/day*`,
+      `• Optimale Betriebszeiten: *${p.optimalWindow}*`,
+      '',
+      `_Automatischer Versand über SOLVARA Sat-Alert um ${p.sentAt}_`,
     ].join('\n');
   }
 

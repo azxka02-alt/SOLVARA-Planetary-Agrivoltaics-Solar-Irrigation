@@ -107,7 +107,7 @@ export const WhatsAppPreviewModal: React.FC<WhatsAppPreviewModalProps> = ({
         }`}
       >
         {/* Mini Smartphone Status & Notch Bar */}
-        <div className="bg-[#05463E] px-4 pt-2 pb-1 flex items-center justify-between text-[10px] font-mono text-emerald-100/85">
+        <div translate="no" className="notranslate bg-[#05463E] px-4 pt-2 pb-1 flex items-center justify-between text-[10px] font-mono text-emerald-100/85">
           <span>{shortTime}</span>
           <div className="w-14 h-1.5 rounded-full bg-black/40" />
           <span>Sat-SMS • 4G</span>
@@ -140,7 +140,7 @@ export const WhatsAppPreviewModal: React.FC<WhatsAppPreviewModalProps> = ({
 
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                <span className="text-xs font-bold truncate">{t.botName} ✓</span>
+                <span translate="no" className="notranslate text-xs font-bold truncate">{t.botName} ✓</span>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] text-emerald-100/90">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
@@ -202,7 +202,8 @@ export const WhatsAppPreviewModal: React.FC<WhatsAppPreviewModalProps> = ({
               {/* Timestamp & Double Blue Checkmarks */}
               <div
                 dir="ltr"
-                className={`mt-1.5 flex items-center justify-end gap-1 text-[10px] font-mono ${
+                translate="no"
+                className={`notranslate mt-1.5 flex items-center justify-end gap-1 text-[10px] font-mono ${
                   isDark ? 'text-[#8696A0]' : 'text-[#667781]'
                 }`}
               >

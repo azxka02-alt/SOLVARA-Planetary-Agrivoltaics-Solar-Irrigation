@@ -1,4 +1,4 @@
-export type FullLang = 'en' | 'id' | 'ar' | 'pt' | 'es' | 'hi' | 'fr';
+export type FullLang = 'en' | 'id' | 'ar' | 'pt' | 'es' | 'hi' | 'fr' | 'ja' | 'ko' | 'it' | 'th' | 'sv' | 'no' | 'nl' | 'de';
 
 export type EcosystemType =
   | 'peatland'
@@ -94,6 +94,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Turberas Ecuatoriales y Horticultura',
       hi: 'भूमध्यरेखीय पीटलैंड अग्नि सुरक्षा और बागवानी',
       fr: 'Tourbières Équatoriales et Horticulture',
+      ja: '赤道泥炭地火災対策・園芸灌漑',
+      ko: '적도 이탄지 화재 예방 및 원예 관개',
+      it: 'Torbiere Equatoriali e Orticoltura',
+      th: 'การป้องกันไฟป่าพรุเขตศูนย์สูตรและพืชสวน',
+      sv: 'Ekvatoriell torvmarksbrandbekämpning och trädgårdsodling',
+      no: 'Ekvatorial torvmyrbrannvern og hagebruk',
+      nl: 'Equatoriale veenbrandpreventie en tuinbouw',
+      de: 'Äquatorialer Moorbrandschutz und Gartenbau',
     },
     benchmarkBadge: {
       en: 'NASA Earth Observation & Tropical Peatland Benchmark',
@@ -103,6 +111,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Referencia NASA Observación Terrestre y Turberas Tropicales',
       hi: 'नासा पृथ्वी अवलोकन और उष्णकटिबंधीय पीटलैंड बेंचमार्क',
       fr: 'Référence NASA Observation Terrestre & Tourbières Tropicales',
+      ja: 'NASA 地球観測・熱帯泥炭地ベンチマーク',
+      ko: 'NASA 지구 관측 및 열대 이탄지 벤치마크',
+      it: 'Benchmark NASA Osservazione Terrestre e Torbiere Tropicali',
+      th: 'เกณฑ์มาตรฐานการสังเกตการณ์โลก NASA และพื้นที่พรุเขตร้อน',
+      sv: 'NASA Earth Observation och tropisk torvmarksstandard',
+      no: 'NASA jordobservasjon og tropisk torvmyrreferanse',
+      nl: 'NASA Aardobservatie en Tropische Veengebied-benchmark',
+      de: 'NASA-Erdbeobachtungs- und Tropenmoor-Benchmark',
     },
     zones: [
       {
@@ -210,6 +226,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Huertos Áridos de Precisión y Déficit Hídrico',
       hi: 'सटीक शुष्क बागान और भूजल कमी प्रबंधन',
       fr: 'Vergers Arides de Précision & Déficit Hydrique',
+      ja: '精密乾燥果樹園・地下水不足管理',
+      ko: '정밀 건조 과수원 및 지하수 부족 관리',
+      it: 'Frutteti Aridi di Precisione e Deficit Idrico',
+      th: 'สวนผลไม้เขตแห้งแล้งแม่นยำและการขาดแคลนน้ำใต้ดิน',
+      sv: 'Precisionsodling i torra fruktträdgårdar och grundvattenbrist',
+      no: 'Presisjonsfruktdyrking i tørre strøk og grunnvannsunderskudd',
+      nl: 'Precisiefruitteelt in droge gebieden en grondwatertekort',
+      de: 'Präzisions-Trockenobstbau und Grundwasserdefizit',
     },
     benchmarkBadge: {
       en: 'NASA Acres / OpenET Arid Irrigation Benchmark',
@@ -219,6 +243,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Referencia NASA Acres / OpenET de Riego Árido',
       hi: 'नासा एकर्स / ओपनईटी शुष्क सिंचाई बेंचमार्क',
       fr: 'Référence NASA Acres / OpenET Irrigation Aride',
+      ja: 'NASA Acres / OpenET 乾燥地灌漑ベンチマーク',
+      ko: 'NASA Acres / OpenET 건조지 관개 벤치마크',
+      it: 'Benchmark NASA Acres / OpenET Irrigazione Arida',
+      th: 'เกณฑ์มาตรฐานการชลประทานเขตแห้งแล้ง NASA Acres / OpenET',
+      sv: 'NASA Acres / OpenET-standard för torrbevattning',
+      no: 'NASA Acres / OpenET-referanse for tørrvanning',
+      nl: 'NASA Acres / OpenET-benchmark voor droge irrigatie',
+      de: 'NASA Acres / OpenET-Benchmark für Trockenbewässerung',
     },
     zones: [
       { id: 'Z-1', name: 'Zone A - Fresno West', region: 'Fresno County', crop: 'Almonds', baseMoisture: 17, solarOffset: 0.22, x: 24, y: 38, recommendedPump: 'PUMP-01' },
@@ -255,6 +287,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Agrovoltaica de Maíz y Soja en Sabana Tropical',
       hi: 'उष्णकटिबंधीय सवाना मक्का और सोया एग्रीवोल्टाइक्स',
       fr: 'Agrivoltaïque Maïs & Soja en Savane Tropicale',
+      ja: '熱帯サバンナ トウモロコシ・大豆アグリボルタイクス',
+      ko: '열대 사바나 옥수수·대두 영농형 태양광',
+      it: 'Agrivoltaico Mais e Soia in Savana Tropicale',
+      th: 'เกษตรโซลาร์เซลล์ข้าวโพดและถั่วเหลืองในทุ่งหญ้าสะวันนาเขตร้อน',
+      sv: 'Agrivoltaik med majs och soja i tropisk savann',
+      no: 'Agrivoltaikk for mais og soya på tropisk savanne',
+      nl: 'Agrivoltaïek voor maïs en soja in tropische savanne',
+      de: 'Agri-Photovoltaik für Mais und Soja in der tropischen Savanne',
     },
     benchmarkBadge: {
       en: 'NASA Harvest / Cerrado Tropical Savanna Benchmark',
@@ -264,6 +304,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Referencia NASA Harvest / Sabana Tropical Cerrado',
       hi: 'नासा हार्वेस्ट / सेराडो उष्णकटिबंधीय सवाना बेंचमार्क',
       fr: 'Référence NASA Harvest / Savane Tropicale du Cerrado',
+      ja: 'NASA Harvest / セラード熱帯サバンナ・ベンチマーク',
+      ko: 'NASA Harvest / 세하두 열대 사바나 벤치마크',
+      it: 'Benchmark NASA Harvest / Savana Tropicale del Cerrado',
+      th: 'เกณฑ์มาตรฐาน NASA Harvest / ทุ่งหญ้าสะวันนาเขตร้อนเซอร์ราโด',
+      sv: 'NASA Harvest / Cerrado tropisk savann-standard',
+      no: 'NASA Harvest / Cerrado tropisk savanne-referanse',
+      nl: 'NASA Harvest / Cerrado tropische savanne-benchmark',
+      de: 'NASA Harvest / Cerrado-Benchmark für tropische Savannen',
     },
     zones: [
       { id: 'Z-1', name: 'Zone A - Barreiras Sul', region: 'Oeste Baiano', crop: 'Soybeans', baseMoisture: 22, solarOffset: 0.14, x: 25, y: 34, recommendedPump: 'PUMP-01' },
@@ -300,6 +348,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Sequía El Niño y Riego de Cítricos y Trigo',
       hi: 'अल नीनो सूखा और नींबू/गेहूं सिंचाई',
       fr: 'Sécheresse El Niño & Irrigation Agrumes/Blé',
+      ja: 'エルニーニョ干ばつ・柑橘・小麦灌漑',
+      ko: '엘니뇨 가뭄 및 감귤·밀 관개',
+      it: 'Siccità El Niño e Irrigazione Agrumi/Grano',
+      th: 'ภัยแล้งเอลนีโญและการชลประทานส้ม/ข้าวสาลี',
+      sv: 'El Niño-torka och bevattning av citrus och vete',
+      no: 'El Niño-tørke og vanning av sitrus og hvete',
+      nl: 'El Niño-droogte en irrigatie van citrus en tarwe',
+      de: 'El-Niño-Dürre und Bewässerung von Zitrusfrüchten und Weizen',
     },
     benchmarkBadge: {
       en: 'NASA SMAP / GRACE-FO Basin Drought Benchmark',
@@ -309,6 +365,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Referencia NASA SMAP / GRACE-FO Sequía en Cuenca',
       hi: 'नासा एसएमएपी / ग्रेस-एफओ बेसिन सूखा बेंचमार्क',
       fr: 'Référence NASA SMAP / GRACE-FO Sécheresse Bassin',
+      ja: 'NASA SMAP / GRACE-FO 流域干ばつベンチマーク',
+      ko: 'NASA SMAP / GRACE-FO 유역 가뭄 벤치마크',
+      it: 'Benchmark NASA SMAP / GRACE-FO Siccità di Bacino',
+      th: 'เกณฑ์มาตรฐานภัยแล้งลุ่มน้ำ NASA SMAP / GRACE-FO',
+      sv: 'NASA SMAP / GRACE-FO-standard för flodbäckenstorka',
+      no: 'NASA SMAP / GRACE-FO-referanse for nedbørsfelttørke',
+      nl: 'NASA SMAP / GRACE-FO-benchmark voor stroomgebiedsdroogte',
+      de: 'NASA SMAP / GRACE-FO-Benchmark für Einzugsgebietsdürre',
     },
     zones: [
       { id: 'Z-1', name: 'Zone A - Mildura Irrigation District', region: 'Sunraysia', crop: 'Citrus', baseMoisture: 18, solarOffset: 0.21, x: 26, y: 36, recommendedPump: 'PUMP-01' },
@@ -345,6 +409,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Oasis de Palmeras Datileras y Máximo Rendimiento Solar',
       hi: 'रेगिस्तानी नखलिस्तान खजूर और अत्यधिक सौर उपज',
       fr: 'Palmeraie Dattière Désertique & Haut Rendement Solaire',
+      ja: '砂漠オアシス・ナツメヤシ園・高効率太陽光発電',
+      ko: '사막 오아시스 대추야자 및 고효율 태양광 발전',
+      it: 'Oasi Desertica di Palme da Dattero e Alta Resa Solare',
+      th: 'โอเอซิสอินทผลัมทะเลทรายและผลผลิตพลังงานแสงอาทิตย์สูง',
+      sv: 'Ökenoas med dadelpalmer och extrem solavkastning',
+      no: 'Ørkenoase med daddelpalmer og ekstrem solavkastning',
+      nl: 'Woestijnoase met dadelpalmen en extreem zonne-energierendement',
+      de: 'Wüstenoase mit Dattelpalmen und extremem Solarertrag',
     },
     benchmarkBadge: {
       en: 'Desert Agrivoltaic & MENA Solar Benchmark',
@@ -354,6 +426,14 @@ export const GLOBAL_LOCATION_PRESETS: GlobalLocationPreset[] = [
       es: 'Referencia Agrovoltaica Desértica y Solar MENA',
       hi: 'डेजर्ट एग्रीवोल्टाइक और मेना सोलर बेंचमार्क',
       fr: 'Référence Agrivoltaïque Désertique & Solaire MENA',
+      ja: '砂漠アグリボルタイクス・MENA 太陽光ベンチマーク',
+      ko: '사막 영농형 태양광 및 MENA 태양광 벤치마크',
+      it: 'Benchmark Agrivoltaico Desertico e Solare MENA',
+      th: 'เกณฑ์มาตรฐานเกษตรโซลาร์เซลล์ทะเลทรายและพลังงานแสงอาทิตย์ MENA',
+      sv: 'Öken-agrivoltaik och MENA-solstandard',
+      no: 'Ørken-agrivoltaikk og MENA-solreferanse',
+      nl: 'Woestijn-agrivoltaïek en MENA-zonne-energiebenchmark',
+      de: 'Wüsten-Agri-PV und MENA-Solarbenchmark',
     },
     zones: [
       { id: 'Z-1', name: 'Zone A - Al-Hofuf Oasis', region: 'Hofuf Central', crop: 'Date Palms', baseMoisture: 15, solarOffset: 0.24, x: 34, y: 46, recommendedPump: 'PUMP-01' },
@@ -884,7 +964,15 @@ function inferSuggestedLang(countryCode: string): FullLang {
   }
   if (['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'EC', 'VE'].includes(code)) return 'es';
   if (code === 'IN') return 'hi';
-  if (['FR', 'SN', 'CI', 'MA', 'CM', 'BE'].includes(code)) return 'fr';
+  if (['FR', 'SN', 'CI', 'CM', 'BE'].includes(code)) return 'fr';
+  if (code === 'JP') return 'ja';
+  if (code === 'KR') return 'ko';
+  if (['IT', 'SM', 'VA'].includes(code)) return 'it';
+  if (code === 'TH') return 'th';
+  if (code === 'SE') return 'sv';
+  if (code === 'NO') return 'no';
+  if (['NL', 'SR'].includes(code)) return 'nl';
+  if (['DE', 'AT', 'CH', 'LI'].includes(code)) return 'de';
   return 'en';
 }
 
@@ -994,6 +1082,14 @@ export function createCustomGlobalLocation(params: {
       es: `Telemetría Satelital Global y Dimensionamiento Solar (${fullDisplay})`,
       hi: `लाइव वैश्विक उपग्रह टेलीमेट्री और एग्रीवोल्टाइक साइजिंग (${fullDisplay})`,
       fr: `Télémétrie Satellitaire Globale & Dimensionnement Solaire (${fullDisplay})`,
+      ja: `グローバル衛星テレメトリ・ソーラー設計 (${fullDisplay})`,
+      ko: `글로벌 위성 텔레메트리 및 태양광 설계 (${fullDisplay})`,
+      it: `Telemetria Satellitare Globale e Dimensionamento Solare (${fullDisplay})`,
+      th: `ข้อมูลดาวเทียมสดระดับโลกและการคำนวณระบบเกษตรโซลาร์เซลล์ (${fullDisplay})`,
+      sv: `Global satellittelemetri i realtid och agrivoltaisk dimensionering (${fullDisplay})`,
+      no: `Direkte global satellittelemetri og agrivoltaisk dimensjonering (${fullDisplay})`,
+      nl: `Live wereldwijde satelliettelemetrie en agrivoltaïsche dimensionering (${fullDisplay})`,
+      de: `Globale Live-Satellitentelemetrie & Agri-PV-Auslegung (${fullDisplay})`,
     },
     benchmarkBadge: {
       en: 'Live NASA POWER Global Agrivoltaic Node',
@@ -1003,6 +1099,14 @@ export function createCustomGlobalLocation(params: {
       es: 'Nodo Agrovoltaico Global NASA POWER en Vivo',
       hi: 'लाइव नासा पावर वैश्विक एग्रीवोल्टाइक नोड',
       fr: 'Nœud Agrivoltaïque Mondial NASA POWER en Direct',
+      ja: 'ライブ NASA POWER グローバル・アグリボルタイクス拠点',
+      ko: '실시간 NASA POWER 글로벌 영농형 태양광 노드',
+      it: 'Nodo Agrivoltaico Globale NASA POWER in Diretta',
+      th: 'โหนดเกษตรโซลาร์เซลล์ระดับโลก NASA POWER แบบเรียลไทม์',
+      sv: 'Live NASA POWER global agrivoltaik-nod',
+      no: 'Direkte NASA POWER global agrivoltaikk-node',
+      nl: 'Live NASA POWER wereldwijd agrivoltaïek-knooppunt',
+      de: 'Globaler Live-Agri-PV-Knoten von NASA POWER',
     },
     zones,
     pumps: [

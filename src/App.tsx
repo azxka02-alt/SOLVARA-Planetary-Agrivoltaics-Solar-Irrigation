@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Globe, Search, Check } from 'lucide-react';
 import {
   buildSparklineGeometry,
   fetchNasaPowerForCoords,
@@ -14,16 +13,23 @@ import {
 import {
   AdvisorPromptId,
   buildWhatsAppAlertMessage,
+  FullLang,
   getAdvisorPromptAnswer,
   getAdvisorSummary,
   getEcosystemRiskCopy,
   getNumberLocale,
   getVfdRegimeCopy,
-  getWorldLanguageOption,
   TRANSLATIONS,
-  WORLD_LANGUAGES,
 } from './translations';
 import { WhatsAppPreviewModal } from './components/WhatsAppPreviewModal';
+import {
+  clearExternalTranslationArtifacts,
+  LanguageSwitcher,
+  normalizeLanguageCode,
+  persistLanguagePreference,
+  readPersistedLanguage,
+  syncHtmlDirection,
+} from './components/LanguageSwitcher';
 
 // --- CUSTOM SOLVARA EMBLEM & GLOWING DUOTONE SVG ICONS ---
 const SolvaraLogo = ({ className = 'w-11 h-11' }: { className?: string }) => {
@@ -343,19 +349,12 @@ interface DroughtZone {
 
 export default function SolvaraCommand() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const [selectedWorldLang, setSelectedWorldLang] = useState<string>('en');
-  const [langPopoverOpen, setLangPopoverOpen] = useState<boolean>(false);
-  const [langSearchQuery, setLangSearchQuery] = useState<string>('');
-  const langPopoverRef = useRef<HTMLDivElement | null>(null);
+  const [selectedLang, setSelectedLang] = useState<FullLang>(() => readPersistedLanguage());
 
   const [activeTab, setActiveTab] = useState<'macro' | 'ops' | 'feasibility'>('macro');
 
-  const activeLangOption = useMemo(
-    () => getWorldLanguageOption(selectedWorldLang),
-    [selectedWorldLang]
-  );
-  const lang = activeLangOption.dictLang;
-  const isRtl = activeLangOption.dir === 'rtl';
+  const lang: FullLang = normalizeLanguageCode(selectedLang);
+  const isRtl = lang === 'ar';
   const t = TRANSLATIONS[lang];
   const numLocale = getNumberLocale(lang);
 
@@ -364,34 +363,12 @@ export default function SolvaraCommand() {
   }, [theme]);
 
   useEffect(() => {
-    if (!langPopoverOpen) return;
-    const handleClickOutside = (e: MouseEvent) => {
-      if (langPopoverRef.current && !langPopoverRef.current.contains(e.target as Node)) {
-        setLangPopoverOpen(false);
-      }
-    };
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setLangPopoverOpen(false);
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('keydown', handleEsc);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('keydown', handleEsc);
-    };
-  }, [langPopoverOpen]);
+    clearExternalTranslationArtifacts();
+  }, []);
 
-  const filteredWorldLanguages = useMemo(() => {
-    const q = langSearchQuery.trim().toLowerCase();
-    if (!q) return WORLD_LANGUAGES;
-    return WORLD_LANGUAGES.filter(
-      (item) =>
-        item.nativeName.toLowerCase().includes(q) ||
-        item.englishName.toLowerCase().includes(q) ||
-        item.code.toLowerCase().includes(q) ||
-        item.shortCode.toLowerCase().includes(q)
-    );
-  }, [langSearchQuery]);
+  useEffect(() => {
+    syncHtmlDirection(lang);
+  }, [lang]);
 
   // Global Satellite Coordinate & City Explorer State (Default: Pontianak, Indonesia)
   const [activeLocation, setActiveLocation] = useState<GlobalLocationPreset>(GLOBAL_LOCATION_PRESETS[0]);
@@ -695,12 +672,23 @@ export default function SolvaraCommand() {
     if (warningTimerRef.current) {
       clearTimeout(warningTimerRef.current);
     }
-    const nowTime = new Intl.DateTimeFormat(lang === 'ar' ? 'ar-EG' : lang === 'id' ? 'id-ID' : 'en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false,
-    }).format(new Date());
+    let nowTime: string;
+    try {
+      const intlLocale = getNumberLocale(lang);
+      nowTime = new Intl.DateTimeFormat(intlLocale, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      }).format(new Date());
+    } catch {
+      nowTime = new Intl.DateTimeFormat('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      }).format(new Date());
+    }
 
     const sentBadgeTime =
       activeLocation.id === 'pontianak' ? `${nowTime} WIB` : `${nowTime} Local`;
@@ -926,6 +914,30 @@ export default function SolvaraCommand() {
     };
   }, []);
 
+  const handleSelectLanguage = (code: FullLang | string) => {
+    const normalized = normalizeLanguageCode(code);
+
+    if (advisorTimerRef.current) {
+      clearTimeout(advisorTimerRef.current);
+      advisorTimerRef.current = null;
+    }
+    if (warningTimerRef.current) {
+      clearTimeout(warningTimerRef.current);
+      warningTimerRef.current = null;
+    }
+
+    setAdvisorActivePrompt(null);
+    setAdvisorIsTyping(false);
+    setEarlyWarningToast(null);
+    setWhatsappPreviewData({ isOpen: false, message: '', sentAt: '' });
+    setExplorerError(null);
+
+    clearExternalTranslationArtifacts();
+    persistLanguagePreference(normalized);
+    syncHtmlDirection(normalized);
+    setSelectedLang(normalized);
+  };
+
   const advisorPrompts: { id: AdvisorPromptId; label: string }[] = useMemo(
     () => [
       { id: 'schedule', label: t.tab1.advisor.prompts.schedule },
@@ -1138,7 +1150,7 @@ export default function SolvaraCommand() {
   return (
     <div
       dir={isRtl ? 'rtl' : 'ltr'}
-      lang={selectedWorldLang}
+      lang={lang}
       className={`min-h-screen font-sans transition-colors duration-300 ${
         isDark ? 'bg-[#0A0F1C] text-slate-100' : 'bg-[#F8FAFC] text-slate-800'
       }`}
@@ -1164,12 +1176,12 @@ export default function SolvaraCommand() {
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span dir="ltr" className={`font-extrabold tracking-wider text-lg sm:text-xl whitespace-nowrap ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                <span dir="ltr" translate="no" className={`notranslate font-extrabold tracking-wider text-lg sm:text-xl whitespace-nowrap ${isDark ? 'text-white' : 'text-slate-900'}`}>
                   SOL<span className={`bg-gradient-to-r bg-clip-text text-transparent ${
                     isDark ? 'from-emerald-400 via-teal-300 to-cyan-400' : 'from-emerald-600 via-teal-600 to-cyan-600'
                   }`}>VARA</span>
                 </span>
-                <span className={`hidden sm:inline-block px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-full border whitespace-nowrap ${
+                <span translate="no" className={`notranslate hidden sm:inline-block px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-full border whitespace-nowrap ${
                   isDark
                     ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
                     : 'bg-emerald-50 text-emerald-700 border-emerald-200'
@@ -1248,108 +1260,15 @@ export default function SolvaraCommand() {
                 : t.header.telemetry.ready}
             </div>
 
-            {/* Compact Globe Language Switcher with Worldwide Search Popover */}
-            <div ref={langPopoverRef} className="relative" dir="ltr">
-              <button
-                type="button"
-                aria-haspopup="listbox"
-                aria-expanded={langPopoverOpen}
-                aria-label={t.header.langSwitcherLabel}
-                onClick={() => setLangPopoverOpen((prev) => !prev)}
-                className={`inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer whitespace-nowrap ${
-                  langPopoverOpen
-                    ? isDark
-                      ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.25)]'
-                      : 'bg-emerald-50 border-emerald-500 text-emerald-800 shadow-sm'
-                    : isDark
-                    ? 'bg-slate-900/80 hover:bg-slate-800 border-slate-700/80 text-slate-200'
-                    : 'bg-white hover:bg-slate-100 border-slate-300 text-slate-800 shadow-xs'
-                }`}
-              >
-                <Globe className={`w-4 h-4 shrink-0 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
-                <span>{activeLangOption.shortCode}</span>
-              </button>
-
-              {langPopoverOpen && (
-                <div
-                  role="dialog"
-                  aria-label={t.header.langSwitcherLabel}
-                  dir={isRtl ? 'rtl' : 'ltr'}
-                  className={`absolute right-0 mt-2 w-72 rounded-2xl border shadow-2xl overflow-hidden z-50 animate-fadeIn ${
-                    isDark
-                      ? 'bg-[#0F172A] border-slate-700/90 text-slate-100 shadow-black/80'
-                      : 'bg-white border-slate-200 text-slate-900 shadow-slate-900/15'
-                  }`}
-                >
-                  {/* Search Input */}
-                  <div className={`p-2.5 border-b ${isDark ? 'border-slate-800 bg-slate-900/70' : 'border-slate-100 bg-slate-50'}`}>
-                    <div className={`flex items-center gap-2 px-2.5 py-1.5 rounded-xl border ${
-                      isDark ? 'bg-slate-950 border-slate-700 text-slate-100' : 'bg-white border-slate-300 text-slate-900'
-                    }`}>
-                      <Search className={`w-3.5 h-3.5 shrink-0 ${isDark ? 'text-slate-400' : 'text-slate-500'}`} />
-                      <input
-                        type="text"
-                        autoFocus
-                        value={langSearchQuery}
-                        onChange={(e) => setLangSearchQuery(e.target.value)}
-                        placeholder={t.header.langSearchPlaceholder}
-                        className="w-full bg-transparent text-xs outline-none placeholder:text-slate-500"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Language List */}
-                  <div className="max-h-72 overflow-y-auto p-1.5 space-y-0.5" role="listbox">
-                    {filteredWorldLanguages.length === 0 ? (
-                      <div className={`py-6 text-center text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                        {t.header.langNoMatch}
-                      </div>
-                    ) : (
-                      filteredWorldLanguages.map((opt) => {
-                        const isSelected = opt.code === selectedWorldLang;
-                        return (
-                          <button
-                            key={opt.code}
-                            type="button"
-                            role="option"
-                            aria-selected={isSelected}
-                            onClick={() => {
-                              setSelectedWorldLang(opt.code);
-                              setLangPopoverOpen(false);
-                              setLangSearchQuery('');
-                            }}
-                            className={`w-full flex items-center justify-between gap-2 px-2.5 py-2 rounded-xl text-start transition-colors cursor-pointer ${
-                              isSelected
-                                ? isDark
-                                  ? 'bg-emerald-500/20 text-emerald-300'
-                                  : 'bg-emerald-50 text-emerald-800'
-                                : isDark
-                                ? 'hover:bg-slate-800/80 text-slate-200'
-                                : 'hover:bg-slate-100 text-slate-800'
-                            }`}
-                          >
-                            <div className="min-w-0">
-                              <div className="flex items-center gap-2">
-                                <span dir="ltr" className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                                  isDark ? 'bg-slate-800 text-cyan-300' : 'bg-slate-200/80 text-slate-700'
-                                }`}>
-                                  {opt.shortCode}
-                                </span>
-                                <span className="text-xs font-semibold truncate">{opt.nativeName}</span>
-                              </div>
-                              <div className={`text-[10px] mt-0.5 truncate ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                                {opt.englishName} · {opt.hasFullDictionary ? t.header.langFullLabel : t.header.langFallbackNote}
-                              </div>
-                            </div>
-                            {isSelected && <Check className="w-4 h-4 shrink-0 text-emerald-400" />}
-                          </button>
-                        );
-                      })
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
+            {/* Internal i18n Globe Switcher */}
+            <LanguageSwitcher
+              selectedLang={lang}
+              onSelectLanguage={handleSelectLanguage}
+              isDark={isDark}
+              searchPlaceholder={t.header.langSearchPlaceholder}
+              noMatchLabel={t.header.langNoMatch}
+              switcherLabel={t.header.langSwitcherLabel}
+            />
 
             {/* Dark / Light High-Visibility Toggle */}
             <button
@@ -1410,7 +1329,7 @@ export default function SolvaraCommand() {
       </header>
 
       {/* ===================== MAIN CONTENT WRAPPER ===================== */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main key={lang} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* ============================================================== */}
         {/* ===================== TAB 1: DROUGHT & PUMP MAP =============== */}
         {/* ============================================================== */}
@@ -1489,17 +1408,17 @@ export default function SolvaraCommand() {
                   }`}>
                     🛰️ {activeLocation.benchmarkBadge[lang]}
                   </span>
-                  {activeLocation.suggestedLang !== selectedWorldLang && (
+                  {normalizeLanguageCode(activeLocation.suggestedLang) !== lang && (
                     <button
                       type="button"
-                      onClick={() => setSelectedWorldLang(activeLocation.suggestedLang)}
+                      onClick={() => handleSelectLanguage(activeLocation.suggestedLang)}
                       className={`px-2.5 py-1 rounded-xl text-[11px] font-bold border transition-all cursor-pointer active:scale-95 ${
                         isDark
                           ? 'bg-cyan-500/15 hover:bg-cyan-500/25 border-cyan-400/50 text-cyan-300'
                           : 'bg-cyan-50 hover:bg-cyan-100 border-cyan-300 text-cyan-800'
                       }`}
                     >
-                      🌐 {t.tab1.globalExplorer.syncLangBtn}: {t.tab1.globalExplorer.langNames[activeLocation.suggestedLang]}
+                      🌐 {t.tab1.globalExplorer.syncLangBtn}: <span translate="no" className="notranslate">{t.tab1.globalExplorer.langNames[activeLocation.suggestedLang]}</span>
                     </button>
                   )}
                 </div>
@@ -1813,7 +1732,7 @@ export default function SolvaraCommand() {
                         >
                           {t.tab1.simulator.rainfallLabel}
                         </label>
-                        <span dir="ltr" className={`text-xs font-extrabold tabular-nums shrink-0 ${
+                        <span dir="ltr" translate="no" className={`notranslate text-xs font-extrabold tabular-nums shrink-0 ${
                           activeRainfallInput < 10
                             ? isDark
                               ? 'text-rose-400'
@@ -1845,7 +1764,7 @@ export default function SolvaraCommand() {
                       />
                       <div dir="ltr" className="flex justify-between text-[10px] font-mono mt-1 text-slate-500">
                         <span>{t.tab1.simulator.extremeDry}</span>
-                        <span>50 mm</span>
+                        <span translate="no" className="notranslate">50 mm</span>
                       </div>
                     </div>
 
@@ -1859,7 +1778,7 @@ export default function SolvaraCommand() {
                         >
                           {t.tab1.simulator.solarLabel}
                         </label>
-                        <span dir="ltr" className={`text-xs font-extrabold tabular-nums shrink-0 ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>
+                        <span dir="ltr" translate="no" className={`notranslate text-xs font-extrabold tabular-nums shrink-0 ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>
                           {activeSolarInput.toFixed(1)} kWh/m²
                         </span>
                       </div>
@@ -1881,7 +1800,7 @@ export default function SolvaraCommand() {
                         }}
                         className="w-full h-2 rounded-lg cursor-pointer accent-amber-500"
                       />
-                      <div dir="ltr" className="flex justify-between text-[10px] font-mono mt-1 text-slate-500">
+                      <div dir="ltr" translate="no" className="notranslate flex justify-between text-[10px] font-mono mt-1 text-slate-500">
                         <span>3.0 kWh/m²</span>
                         <span>8.0 kWh/m²</span>
                       </div>
@@ -1989,7 +1908,7 @@ export default function SolvaraCommand() {
 
                   {/* Satellite Compass & GPS Coordinate Overlay */}
                   <div className="absolute top-3 left-3 right-3 z-10 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-                    <div className="bg-slate-900/85 backdrop-blur border border-slate-700/60 rounded-xl px-2.5 py-1 text-[10px] sm:text-[11px] font-mono text-emerald-400 flex items-center gap-2">
+                    <div translate="no" className="notranslate bg-slate-900/85 backdrop-blur border border-slate-700/60 rounded-xl px-2.5 py-1 text-[10px] sm:text-[11px] font-mono text-emerald-400 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
                       <span>
                         LAT: {activeCoords.latStr} | LON: {activeCoords.lonStr} • {activeLocation.shortLabel}
@@ -1997,7 +1916,7 @@ export default function SolvaraCommand() {
                     </div>
 
                     <div dir={isRtl ? 'rtl' : 'ltr'} className="bg-slate-900/85 backdrop-blur border border-slate-700/60 rounded-xl px-2.5 py-1 text-[10px] sm:text-[11px] font-semibold text-slate-300">
-                      {t.tab1.map.resolutionLabel} <span className="text-cyan-400">{t.tab1.map.resolutionValue}</span>
+                      {t.tab1.map.resolutionLabel} <span translate="no" className="notranslate text-cyan-400">{t.tab1.map.resolutionValue}</span>
                     </div>
                   </div>
 
@@ -2109,8 +2028,8 @@ export default function SolvaraCommand() {
                           </span>
 
                           <div dir={isRtl ? 'rtl' : 'ltr'} className="absolute bottom-11 left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col items-center bg-slate-950/95 text-white text-[11px] py-1.5 px-2.5 rounded-xl shadow-2xl border border-emerald-400/50 whitespace-nowrap z-50">
-                            <span className="font-bold text-emerald-300">{pump.name}</span>
-                            <span className="text-slate-200">{t.tab1.map.pumpCapPrefix} {pump.flowRate} • {t.tab1.map.pumpStatuses[pump.status]}</span>
+                            <span translate="no" className="notranslate font-bold text-emerald-300">{pump.name}</span>
+                            <span className="text-slate-200">{t.tab1.map.pumpCapPrefix} <span translate="no" className="notranslate">{pump.flowRate}</span> • {t.tab1.map.pumpStatuses[pump.status]}</span>
                           </div>
                         </div>
                       </div>
@@ -2264,13 +2183,13 @@ export default function SolvaraCommand() {
                       </h4>
                       <p className={`text-xs mt-1 leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
                         <strong className={isDark ? 'text-cyan-400' : 'text-cyan-700'}>
-                          {t.tab1.priorityBanner.pumpSitePrefix} {driestZone.recommendedPump} — {driestZone.name}
+                          {t.tab1.priorityBanner.pumpSitePrefix} <span translate="no" className="notranslate">{driestZone.recommendedPump}</span> — {driestZone.name}
                         </strong>{' '}
-                        ({t.tab1.priorityBanner.criticalMoistureText} <strong>{driestZone.moisture}%</strong>).{' '}
-                        {activeLocation.name} NASA POWER ({nasaTelemetry.latestDate}) {t.tab1.priorityBanner.recordsText}{' '}
-                        <strong dir="ltr">{nasaTelemetry.solarKwh.toFixed(2)} kWh/m²/day</strong> ({nasaTelemetry.solarMj.toFixed(2)} MJ/m²),{' '}
-                        <strong dir="ltr">{nasaTelemetry.tempC.toFixed(1)}°C</strong> &amp; {t.tab1.priorityBanner.macroWetnessText}{' '}
-                        <strong>{nasaTelemetry.soilMoisturePct}%</strong>.
+                        ({t.tab1.priorityBanner.criticalMoistureText} <strong translate="no" className="notranslate">{driestZone.moisture}%</strong>).{' '}
+                        {activeLocation.name} <span translate="no" className="notranslate">NASA POWER ({nasaTelemetry.latestDate})</span> {t.tab1.priorityBanner.recordsText}{' '}
+                        <strong dir="ltr" translate="no" className="notranslate">{nasaTelemetry.solarKwh.toFixed(2)} kWh/m²/day</strong> (<span translate="no" className="notranslate">{nasaTelemetry.solarMj.toFixed(2)} MJ/m²</span>),{' '}
+                        <strong dir="ltr" translate="no" className="notranslate">{nasaTelemetry.tempC.toFixed(1)}°C</strong> &amp; {t.tab1.priorityBanner.macroWetnessText}{' '}
+                        <strong translate="no" className="notranslate">{nasaTelemetry.soilMoisturePct}%</strong>.
                       </p>
                     </div>
                   </div>
@@ -2402,14 +2321,14 @@ export default function SolvaraCommand() {
                       </span>
                     </div>
                     <div className="flex items-baseline gap-2" title={`${(selectedZone.solar * 3.6).toFixed(2)} MJ/m²/day`}>
-                      <span className={`text-3xl font-extrabold tabular-nums ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>{selectedZone.solar.toFixed(2)}</span>
-                      <span dir="ltr" className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>kWh/m²/day</span>
+                      <span translate="no" className={`notranslate text-3xl font-extrabold tabular-nums ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>{selectedZone.solar.toFixed(2)}</span>
+                      <span dir="ltr" translate="no" className={`notranslate text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>kWh/m²/day</span>
                     </div>
 
                     <div className="pt-1">
                       <div className={`flex justify-between text-[10px] mb-1 font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                         <span>{t.tab1.telemetryPanel.solarPumpYield}</span>
-                        <span className={`font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>{solarCapacityBars} / 5 {t.tab1.telemetryPanel.capacityUnit}</span>
+                        <span className={`font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}><span translate="no" className="notranslate">{solarCapacityBars} / 5</span> {t.tab1.telemetryPanel.capacityUnit}</span>
                       </div>
                       <div dir="ltr" className="flex gap-1.5 h-2">
                         {[1, 2, 3, 4, 5].map((bar) => (
@@ -2432,15 +2351,15 @@ export default function SolvaraCommand() {
                       <div className={`text-[11px] font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                         {t.tab1.telemetryPanel.surfaceTempLabel}
                       </div>
-                      <div dir="ltr" className={`text-lg font-extrabold tabular-nums ${isDark ? 'text-orange-300' : 'text-orange-600'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-lg font-extrabold tabular-nums ${isDark ? 'text-orange-300' : 'text-orange-600'} ${isRtl ? 'text-end' : ''}`}>
                         {nasaTelemetry.tempC.toFixed(1)} °C
                       </div>
                     </div>
                     <div className="text-end">
-                      <div className={`text-[10px] font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                      <div translate="no" className={`notranslate text-[10px] font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                         PRECTOTCORR
                       </div>
-                      <div dir="ltr" className={`text-xs font-bold tabular-nums ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-xs font-bold tabular-nums ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>
                         {nasaTelemetry.precipMm.toFixed(2)} mm/d
                       </div>
                     </div>
@@ -2602,11 +2521,11 @@ export default function SolvaraCommand() {
                         {t.tab1.solarSizing.arraySizeLabel}
                       </div>
                       <div className="flex items-baseline justify-between gap-2 mt-0.5">
-                        <span dir="ltr" className={`text-xl font-extrabold tabular-nums ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>
+                        <span dir="ltr" translate="no" className={`notranslate text-xl font-extrabold tabular-nums ${isDark ? 'text-amber-400' : 'text-amber-600'}`}>
                           {solarSizing.recommendedWp.toLocaleString(numLocale)} <span className="text-xs font-bold">Wp</span>
                         </span>
                         <span className={`text-[10px] font-mono ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                          {solarSizing.moduleCount}× {t.tab1.solarSizing.panelUnit}
+                          <span translate="no" className="notranslate">{solarSizing.moduleCount}×</span> {t.tab1.solarSizing.panelUnit}
                         </span>
                       </div>
                     </div>
@@ -2618,10 +2537,10 @@ export default function SolvaraCommand() {
                         {t.tab1.solarSizing.dailyWaterLabel}
                       </div>
                       <div className="flex items-baseline justify-between gap-2 mt-0.5">
-                        <span className={`text-xl font-extrabold tabular-nums ${isDark ? 'text-cyan-400' : 'text-cyan-700'}`}>
+                        <span translate="no" className={`notranslate text-xl font-extrabold tabular-nums ${isDark ? 'text-cyan-400' : 'text-cyan-700'}`}>
                           {solarSizing.dailyWaterLiters.toLocaleString(numLocale)} <span className="text-xs font-bold">{t.tab1.solarSizing.dailyWaterUnit}</span>
                         </span>
-                        <span className={`text-[10px] font-mono ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                        <span translate="no" className={`notranslate text-[10px] font-mono ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                           {solarSizing.dailyEnergyKwh.toFixed(1)} {t.tab1.solarSizing.dailyEnergyUnit}
                         </span>
                       </div>
@@ -2642,11 +2561,11 @@ export default function SolvaraCommand() {
                           {t.tab1.solarSizing.vsDiesel}
                         </span>
                       </div>
-                      <div dir="ltr" className={`text-xl font-black mt-1 tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-xl font-black mt-1 tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
                         {solarSizing.monthlySavingsDisplay}
                       </div>
                       <div className={`text-[11px] font-medium mt-0.5 ${isDark ? 'text-emerald-300' : 'text-emerald-700'}`}>
-                        {t.tab1.solarSizing.saveFuelPrefix} {solarSizing.monthlyDieselLiters.toLocaleString(numLocale)} {t.tab1.solarSizing.saveFuelSuffix}
+                        {t.tab1.solarSizing.saveFuelPrefix} <span translate="no" className="notranslate">{solarSizing.monthlyDieselLiters.toLocaleString(numLocale)}</span> {t.tab1.solarSizing.saveFuelSuffix}
                       </div>
                     </div>
                   </div>
@@ -2663,7 +2582,7 @@ export default function SolvaraCommand() {
                   <div className="flex items-start justify-between gap-2 mb-3">
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className={`text-[10px] font-extrabold uppercase tracking-wider ${
+                        <span className={`notranslate text-[10px] font-extrabold uppercase tracking-wider ${
                           isDark ? 'text-cyan-400' : 'text-cyan-700'
                         }`}>
                           {t.tab1.advisor.eyebrow}
@@ -2693,8 +2612,8 @@ export default function SolvaraCommand() {
                     <div className={`flex items-center justify-between text-[10px] font-mono mb-1.5 ${
                       isDark ? 'text-cyan-400' : 'text-cyan-700'
                     }`}>
-                      <span>{t.tab1.advisor.liveBriefPrefix} · {selectedZone.id} ({selectedZone.moisture}%)</span>
-                      <span dir="ltr">{selectedZone.solar.toFixed(2)} kWh/m²</span>
+                      <span>{t.tab1.advisor.liveBriefPrefix} · <span translate="no" className="notranslate">{selectedZone.id} ({selectedZone.moisture}%)</span></span>
+                      <span dir="ltr" translate="no" className="notranslate">{selectedZone.solar.toFixed(2)} kWh/m²</span>
                     </div>
                     <p className="text-xs leading-relaxed">
                       {advisorSummaryTwoSentences}
@@ -2796,7 +2715,7 @@ export default function SolvaraCommand() {
                     {t.tab2.bannerTitle} — {activeLocation.flag} {activeLocation.name}
                   </h4>
                   <p className={`text-xs font-mono ${isDark ? 'text-slate-400' : 'text-emerald-700'}`}>
-                    {t.tab2.bannerSubtitle} ({activeCoords.full})
+                    {t.tab2.bannerSubtitle} (<span translate="no" className="notranslate">{activeCoords.full}</span>)
                   </p>
                 </div>
               </div>
@@ -2805,7 +2724,7 @@ export default function SolvaraCommand() {
                   ? 'text-emerald-400 bg-slate-900/60 border-emerald-500/30'
                   : 'text-emerald-800 bg-emerald-100/80 border-emerald-300'
               }`}>
-                <span dir="ltr">{nasaTelemetry.latestDate}</span> • {t.tab2.telemetryOk}
+                <span dir="ltr" translate="no" className="notranslate">{nasaTelemetry.latestDate}</span> • {t.tab2.telemetryOk}
               </div>
             </div>
 
@@ -2820,7 +2739,7 @@ export default function SolvaraCommand() {
                   <span>{t.tab2.kpis.solarOutput}</span>
                   <SunIcon className={`w-4 h-4 shrink-0 transition-transform duration-500 ease-out group-hover:rotate-45 group-hover:scale-125 ${isDark ? 'text-amber-400' : 'text-amber-500'}`} />
                 </div>
-                <div dir="ltr" className={`text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
+                <div dir="ltr" translate="no" className={`notranslate text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
                   {((5.4 * nasaTelemetry.solarKwh) / 5.15).toFixed(1)} <span className={`text-sm font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>kW</span>
                 </div>
                 <div className={`text-[11px] mt-1 font-medium ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>{t.tab2.kpis.solarSub}</div>
@@ -2835,7 +2754,7 @@ export default function SolvaraCommand() {
                   <span>{t.tab2.kpis.pumpCapacity}</span>
                   <ActivityIcon className={`w-4 h-4 shrink-0 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
                 </div>
-                <div dir="ltr" className={`text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
+                <div dir="ltr" translate="no" className={`notranslate text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
                   {(12000).toLocaleString(numLocale)} <span className={`text-sm font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>L/hr</span>
                 </div>
                 <div className={`text-[11px] mt-1 font-medium ${isDark ? 'text-cyan-400' : 'text-cyan-700'}`}>{t.tab2.kpis.pumpSub}</div>
@@ -2850,7 +2769,7 @@ export default function SolvaraCommand() {
                   <span>{t.tab2.kpis.waterReserve}</span>
                   <DropletIcon className={`w-4 h-4 shrink-0 transition-transform duration-300 ease-out group-hover:scale-125 group-hover:-rotate-12 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
                 </div>
-                <div dir="ltr" className={`text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
+                <div dir="ltr" translate="no" className={`notranslate text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
                   78% <span className={`text-xs font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>(15,600 L)</span>
                 </div>
                 <div className={`text-[11px] mt-1 font-medium ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>{t.tab2.kpis.waterSub}</div>
@@ -2865,11 +2784,11 @@ export default function SolvaraCommand() {
                   <span>{t.tab2.kpis.rain3Day}</span>
                   <SatelliteIcon className={`w-4 h-4 shrink-0 transition-transform duration-300 ease-out group-hover:scale-125 group-hover:rotate-12 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
                 </div>
-                <div dir="ltr" className={`text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
+                <div dir="ltr" translate="no" className={`notranslate text-2xl font-extrabold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
                   {nasaTelemetry.avg3DayPrecipMm.toFixed(1)} <span className={`text-sm font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>mm/d</span>
                 </div>
                 <div className={`text-[11px] mt-1 font-medium truncate ${isDark ? 'text-purple-400' : 'text-purple-700'}`}>
-                  {t.tab2.kpis.rainLatestPrefix} {nasaTelemetry.precipMm.toFixed(1)} mm/d • {nasaTelemetry.avg3DayPrecipMm < 3 ? t.tab2.kpis.rainOptimalSolar : t.tab2.kpis.rainActiveRecharge}
+                  {t.tab2.kpis.rainLatestPrefix} <span translate="no" className="notranslate">{nasaTelemetry.precipMm.toFixed(1)} mm/d</span> • {nasaTelemetry.avg3DayPrecipMm < 3 ? t.tab2.kpis.rainOptimalSolar : t.tab2.kpis.rainActiveRecharge}
                 </div>
               </div>
 
@@ -3034,7 +2953,7 @@ export default function SolvaraCommand() {
                     }`}>
                       {vfdOptimization.regimeLabel}
                     </span>
-                    <span dir="ltr" className={`text-[11px] font-mono tabular-nums ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                    <span dir="ltr" translate="no" className={`notranslate text-[11px] font-mono tabular-nums ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                       {t.tab2.vfd.affinityLawPrefix}
                     </span>
                   </div>
@@ -3159,10 +3078,10 @@ export default function SolvaraCommand() {
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                       <span className={`font-semibold ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                        {t.tab2.vfd.activeInverterSpeed} <strong dir="ltr" className="tabular-nums font-mono">{vfdOptimization.effectiveCurrentHz.toFixed(1)} Hz</strong> ({vfdOptimization.currentRpm.toLocaleString(numLocale)} RPM)
+                        {t.tab2.vfd.activeInverterSpeed} <strong dir="ltr" translate="no" className="notranslate tabular-nums font-mono">{vfdOptimization.effectiveCurrentHz.toFixed(1)} Hz</strong> <span translate="no" className="notranslate">({vfdOptimization.currentRpm.toLocaleString(numLocale)} RPM)</span>
                       </span>
                       <span className={`font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>
-                        {t.tab2.vfd.targetPrefix} <span dir="ltr" className="tabular-nums font-mono">{vfdOptimization.recommendedHz.toFixed(1)} Hz</span>
+                        {t.tab2.vfd.targetPrefix} <span dir="ltr" translate="no" className="notranslate tabular-nums font-mono">{vfdOptimization.recommendedHz.toFixed(1)} Hz</span>
                       </span>
                     </div>
 
@@ -3251,10 +3170,10 @@ export default function SolvaraCommand() {
                       <ActivityIcon className={`w-4 h-4 shrink-0 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
                     </div>
                     <div className="mt-2">
-                      <div dir="ltr" className={`text-2xl font-black tabular-nums ${isDark ? 'text-emerald-400' : 'text-emerald-700'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-2xl font-black tabular-nums ${isDark ? 'text-emerald-400' : 'text-emerald-700'} ${isRtl ? 'text-end' : ''}`}>
                         {vfdOptimization.recommendedHz.toFixed(1)} <span className="text-xs font-bold">Hz</span>
                       </div>
-                      <div dir="ltr" className={`text-[11px] font-mono tabular-nums mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-[11px] font-mono tabular-nums mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600'} ${isRtl ? 'text-end' : ''}`}>
                         {vfdOptimization.recommendedRpm.toLocaleString(numLocale)} RPM
                       </div>
                     </div>
@@ -3270,11 +3189,11 @@ export default function SolvaraCommand() {
                       <DropletIcon className={`w-4 h-4 shrink-0 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
                     </div>
                     <div className="mt-2">
-                      <div dir="ltr" className={`text-2xl font-black tabular-nums ${isDark ? 'text-cyan-400' : 'text-cyan-700'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-2xl font-black tabular-nums ${isDark ? 'text-cyan-400' : 'text-cyan-700'} ${isRtl ? 'text-end' : ''}`}>
                         {vfdOptimization.recommendedFlowLph.toLocaleString(numLocale)} <span className="text-xs font-bold">L/hr</span>
                       </div>
                       <div className={`text-[11px] font-mono tabular-nums mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                        {t.tab2.vfd.kpiVsActivePrefix} {vfdOptimization.currentFlowLph.toLocaleString(numLocale)} {t.tab2.vfd.kpiVsActiveSuffix}
+                        {t.tab2.vfd.kpiVsActivePrefix} <span translate="no" className="notranslate">{vfdOptimization.currentFlowLph.toLocaleString(numLocale)}</span> {t.tab2.vfd.kpiVsActiveSuffix}
                       </div>
                     </div>
                   </div>
@@ -3289,7 +3208,7 @@ export default function SolvaraCommand() {
                       <SunIcon className={`w-4 h-4 shrink-0 ${isDark ? 'text-amber-400' : 'text-amber-600'}`} />
                     </div>
                     <div className="mt-2">
-                      <div dir="ltr" className={`text-2xl font-black tabular-nums ${isDark ? 'text-amber-400' : 'text-amber-600'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-2xl font-black tabular-nums ${isDark ? 'text-amber-400' : 'text-amber-600'} ${isRtl ? 'text-end' : ''}`}>
                         {vfdOptimization.recommendedPowerKw.toFixed(2)} <span className="text-xs font-bold">kW</span>
                       </div>
                       <div className={`text-[11px] font-mono tabular-nums mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
@@ -3312,11 +3231,11 @@ export default function SolvaraCommand() {
                       <ShieldCheckIcon className={`w-4 h-4 shrink-0 ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`} />
                     </div>
                     <div className="mt-2">
-                      <div dir="ltr" className={`text-2xl font-black tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
+                      <div dir="ltr" translate="no" className={`notranslate text-2xl font-black tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>
                         {vfdOptimization.powerSavedPctVsFixed}% <span className={`text-xs font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>kWh</span>
                       </div>
                       <div className={`text-[11px] font-medium tabular-nums mt-0.5 ${isDark ? 'text-emerald-300' : 'text-emerald-700'}`}>
-                        +{vfdOptimization.dailyKwhSavedVsFixed.toFixed(1)} {t.tab2.vfd.kpiToBatterySuffix}
+                        <span translate="no" className="notranslate">+{vfdOptimization.dailyKwhSavedVsFixed.toFixed(1)}</span> {t.tab2.vfd.kpiToBatterySuffix}
                       </div>
                     </div>
                   </div>
@@ -3355,7 +3274,7 @@ export default function SolvaraCommand() {
                     <div key={item.name} className="flex items-center gap-2 min-w-0">
                       <span className={`w-3 h-3 rounded-full shrink-0 ${item.color}`}></span>
                       <span className={`truncate ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                        {item.name} ({item.crop}): <strong>{item.pct}%</strong> ({item.kw} kW)
+                        {item.name} ({item.crop}): <strong translate="no" className="notranslate">{item.pct}%</strong> <span translate="no" className="notranslate">({item.kw} kW)</span>
                       </span>
                     </div>
                   ))}
@@ -3374,7 +3293,7 @@ export default function SolvaraCommand() {
                       {t.tab2.forecast.title}
                     </h4>
                     <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                      {t.tab2.forecast.subtitlePrefix} <strong dir="ltr" className={isDark ? 'text-emerald-400' : 'text-emerald-700'}>{activeLocation.optimalWindow}</strong> {t.tab2.forecast.subtitleSuffix}
+                      {t.tab2.forecast.subtitlePrefix} <strong dir="ltr" translate="no" className={`notranslate ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>{activeLocation.optimalWindow}</strong> {t.tab2.forecast.subtitleSuffix}
                     </p>
                   </div>
                   <span className={`px-2.5 py-1 rounded-lg text-xs font-bold border whitespace-nowrap ${
@@ -3410,7 +3329,7 @@ export default function SolvaraCommand() {
                     />
                     <circle cx="280" cy="15" r="4.5" fill="#10B981" stroke="#fff" strokeWidth="2" />
                   </svg>
-                  <div className={`flex justify-between text-[10px] font-mono mt-1 ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
+                  <div translate="no" className={`notranslate flex justify-between text-[10px] font-mono mt-1 ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
                     <span>00h</span>
                     <span>04h</span>
                     <span>08h</span>
@@ -3446,7 +3365,7 @@ export default function SolvaraCommand() {
                   }`}>
                     {t.tab3.rankBadge}
                   </span>
-                  <span dir="ltr" className={`text-xs font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  <span dir="ltr" translate="no" className={`notranslate text-xs font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                     {t.tab3.siteCodePrefix} {activeLocation.id.toUpperCase()} • {activeCoords.full}
                   </span>
                 </div>
@@ -3463,13 +3382,13 @@ export default function SolvaraCommand() {
                   ? 'bg-slate-900/80 border-emerald-500/30 shadow-emerald-500/10'
                   : 'bg-emerald-50/80 border-emerald-300 shadow-emerald-500/5'
               }`}>
-                <div className="relative flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-slate-950 font-black text-2xl shadow-lg shadow-emerald-500/30 tabular-nums">
+                <div translate="no" className="notranslate relative flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-slate-950 font-black text-2xl shadow-lg shadow-emerald-500/30 tabular-nums">
                   {(86 + Math.min(12, nasaTelemetry.solarKwh * 1.45)).toFixed(1)}
                 </div>
                 <div>
                   <div className={`text-[10px] uppercase font-bold tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{t.tab3.suitabilityScore}</div>
                   <div className={`text-base font-extrabold ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>{t.tab3.tierGrade}</div>
-                  <div className={`text-[10px] ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{t.tab3.confidencePrefix} 97.3%</div>
+                  <div className={`text-[10px] ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{t.tab3.confidencePrefix} <span translate="no" className="notranslate">97.3%</span></div>
                 </div>
               </div>
             </div>
@@ -3483,7 +3402,7 @@ export default function SolvaraCommand() {
                   }`}
                 >
                   <div className={`text-[11px] font-medium ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>{item.label}</div>
-                  <div className={`text-lg font-black mt-0.5 tabular-nums ${isDark ? 'text-white' : 'text-slate-900'}`}>{item.val}</div>
+                  <div dir="ltr" translate="no" className={`notranslate text-lg font-black mt-0.5 tabular-nums ${isDark ? 'text-white' : 'text-slate-900'} ${isRtl ? 'text-end' : ''}`}>{item.val}</div>
                   <div className={`text-[10px] mt-0.5 ${isDark ? 'text-emerald-400' : 'text-emerald-700'}`}>{item.sub}</div>
                 </div>
               ))}
@@ -3505,7 +3424,7 @@ export default function SolvaraCommand() {
                       ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                       : 'bg-emerald-50 text-emerald-700 border-emerald-200'
                   }`}>
-                    {t.tab3.confidenceBadgePrefix} 97.3%
+                    {t.tab3.confidenceBadgePrefix} <span translate="no" className="notranslate">97.3%</span>
                   </span>
                 </div>
 
@@ -3517,7 +3436,7 @@ export default function SolvaraCommand() {
                     <div>
                       <strong className={isDark ? 'text-white' : 'text-slate-900'}>{t.tab3.reasons[0].title}</strong>{' '}
                       {t.tab3.reasons[0].bodyBefore}{' '}
-                      <span dir="ltr" className={`font-semibold ${isDark ? 'text-amber-400' : 'text-amber-700'}`}>
+                      <span dir="ltr" translate="no" className={`notranslate font-semibold ${isDark ? 'text-amber-400' : 'text-amber-700'}`}>
                         {nasaTelemetry.solarKwh.toFixed(2)} kWh/m²/day ({nasaTelemetry.solarMj.toFixed(2)} MJ/m²)
                       </span>{' '}
                       {t.tab3.reasons[0].bodyAfter}
@@ -3634,7 +3553,7 @@ export default function SolvaraCommand() {
                     />
                     <circle cx="280" cy="10" r="4.5" fill="#F59E0B" stroke="#fff" strokeWidth="2" />
                   </svg>
-                  <div className={`flex justify-between text-[10px] font-mono mt-1 ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
+                  <div translate="no" className={`notranslate flex justify-between text-[10px] font-mono mt-1 ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
                     <span>06:00</span>
                     <span>09:00</span>
                     <span className={`font-bold ${isDark ? 'text-amber-400' : 'text-amber-700'}`}>{t.tab3.solarPeakZen}</span>
@@ -3657,7 +3576,7 @@ export default function SolvaraCommand() {
                     </h4>
                     <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{t.tab3.irradianceMonthlySubtitle}</p>
                   </div>
-                  <span dir="ltr" className={`text-xs font-mono px-2.5 py-1 rounded-md border whitespace-nowrap ${
+                  <span dir="ltr" translate="no" className={`notranslate text-xs font-mono px-2.5 py-1 rounded-md border whitespace-nowrap ${
                     isDark
                       ? 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20'
                       : 'text-cyan-700 bg-cyan-50 border-cyan-200'
@@ -3713,6 +3632,7 @@ export default function SolvaraCommand() {
 
       {/* ===================== CREDIBLE ATTRIBUTION FOOTER ===================== */}
       <footer
+        key={`footer-${lang}`}
         className={`mt-12 border-t py-6 transition-colors ${
           isDark ? 'bg-[#080d17] border-slate-800/80 text-slate-400' : 'bg-white border-slate-200 text-slate-600'
         }`}
@@ -3721,11 +3641,12 @@ export default function SolvaraCommand() {
           <div className="flex items-center gap-2">
             <span className={`w-2 h-2 rounded-full shrink-0 ${isDark ? 'bg-emerald-400' : 'bg-emerald-500'}`}></span>
             <span className={`font-semibold ${isDark ? 'text-slate-300' : 'text-slate-800'}`}>
-              {t.footer.brandLine}
+              <span translate="no" className="notranslate">SOLVARA</span>{' '}
+              {t.footer.brandLine.replace(/^SOLVARA\s*/, '')}
             </span>
           </div>
 
-          <div className={`flex flex-wrap items-center justify-center gap-3 sm:gap-4 ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
+          <div translate="no" className={`notranslate flex flex-wrap items-center justify-center gap-3 sm:gap-4 ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
             <span>{t.footer.resolution}</span>
             <span>•</span>
             <span>{t.footer.iec}</span>
